@@ -1,0 +1,5 @@
+
+REM # SET THE PATH
+@ECHO OFF
+
+SET PATH=C:\Users\%USERNAME%\bin;%PATH%
