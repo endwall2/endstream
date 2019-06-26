@@ -1,0 +1,613 @@
+######################################################################
+# Title: endstream.m3u8
+# Description:  Clearnet streaming from youtube of selected news 
+#               stations m3u8 playlist only
+# Author: The Endware Development Team
+# Copyright: 2017-2019, The Endware Development Team, 
+# All Rights Reserved
+# Creation Date: February 22, 2017
+# Version: 0.0001
+# Revision Date: June 26, 2019
+#
+#####################################################################
+#####################################################################
+# Instructions:   load as a playlist into your favourite streaming player
+# $ mpv --fullscreen --no-resume-playback endstream.m3u8
+####################################################################
+#############################################################################################################################################################################
+#                                         ACKNOWLEDGMENTS
+#############################################################################################################################################################################
+#  The Endware Development Team would like to acknowledge the work and efforts of OdiliTime, Balrog and SnakeDude who graciously hosted and promoted this software project. 
+#  We would also like to acknowledge the work and efforts of Stephen Lynx, the creator and maintainer of LynxChan.  
+#  Without their efforts and their wonderful web site www.endchan.xyz, The Endware Suite would not exist in the public domain at all in any form. 
+#
+#  So thanks to OdiliTime, Balrog, SnakeDude, and Stephen Lynx for inspiring this work and for hosting and promoting it. 
+#  
+#  The Endware Suite including Endwall,Endsets,Endlists,Endtools,Endloads and Endtube are named in honor of Endchan.
+#
+#  The Endware Suite is available for download at the following locations:
+#  https://gitgud.io/Endwall/ , https://github.com/endwall2/, https://www.endchan.xyz/os/, http://42xlyaqlurifvvtq.onion,
+#
+#  Special thanks to the designer of the current EndWare logo which replaces the previous logo. It looks great!
+#  Thank you also to early beta testers including a@a, and to other contributors including Joshua Moon (for user_agents.txt split and other good suggestions) 
+#  as well as to the detractors who helped to critique this work and to ultimately improve it.  
+#  
+#  We also acknowledge paste.debian.net, ix.io, gitgud and github for their hosting services, 
+#  without which distribution would be limited, so thank you.
+#
+#  https://www.endchan.xyz, http://paste.debian.net, https://gitgud.io, https://github.com, http://ix.io  
+#
+#  We salute you! 
+#  
+#  In the end, may it all end well.
+#
+#  The Endware Development Team
+##############################################################################################################################################################################
+##############################################################################################################################################################################
+#                                                              LICENSE AGREEMENT  
+##############################################################################################################################################################################
+#  BEGINNING OF LICENSE AGREEMENT
+#  TITLE:  THE ENDWARE END USER LICENSE AGREEMENT (EULA) 
+#  CREATION DATE: MARCH 19, 2016
+#  VERSION: 1.18
+#  VERSION DATE: JUNE 28, 2018
+#  COPYRIGHT: THE ENDWARE DEVELOPMENT TEAM, 2016-2018
+#  ALL RIGHTS RESERVED  
+#    
+#  WHAT CONSTITUTES "USE"? WHAT IS A "USER"?
+#  0) a) Use of this program means the ability to study, possess, run, copy, modify, publish, distribute and sell the code as included in all lines of this file,
+#        in text format or as a binary file constituting this particular program or its compiled binary machine code form, as well as the the performance 
+#        of these aforementioned actions and activities. 
+#  0) b) A user of this program is any individual who has been granted use as defined in section 0) a) of the LICENSE AGREEMENT, and is granted to those individuals listed in section 1.
+#  WHO MAY USE THIS PROGRAM ?
+#  1) a) This program may be used by any living human being, any person, any corporation, any company, and by any sentient individual with the willingness and ability to do so.
+#  1) b) This program may be used by any citizen or resident of any country, and by any human being without citizenship or residency.
+#  1) c) This program may be used by any civilian, military officer, government agent, private citizen, government official, sovereign, monarch, head of state,
+#        dignitary, ambassador, legislator,congressional representative, member of parliament, senator, judicial official, judge, prosecutor, lawyer, law enforcement officer, 
+#        police constable, noble, commoner, clergy, laity, and generally all classes and ranks of people, persons, and human beings mentioned and those not mentioned.
+#  1) d) This program may be used by any human being of any sex or gender, including men, women, or any other sex, or gender not mentioned.       
+#  1) e) This program may be used by any human being of any affiliation, political viewpoint, political affiliation, religious belief, religious affiliation, and by those of non-belief or non affiliation.
+#  1) f) This program may be used by any human being of any race, ethnicity, identity, origin, genetic makeup, physical appearance, mental ability, and by those of any other physical 
+#        or non physical characteristics of differentiation.
+#  1) g) This program may be used by any human being of any sexual orientation, including heterosexual, homosexual, bisexual, asexual, or any other sexual orientation not mentioned.
+#  1) h) This program may be used by all business classes and business entities, including corporations, limited liability companies, sole proprietorships, partnerships, joint venture companies, private companies, publicly owned companies, and any other business class not specifically mentioned. 
+#  1) i) This program may be used by anyone. 
+#  WHERE MAY A USER USE THIS PROGRAM ?
+#  2) a) This program may be used in any country, in any geographic location of the planet Earth, in any marine or maritime environment, at sea, sub-sea, in a submarine, underground,
+#        in the air, in an airplane, dirigible, blimp, or balloon, in a car, bus, motor vehicle, armored transport vehicle, and at any distance from the surface of the planet Earth, including in orbit about the Earth or the Moon,
+#        on a satellite orbiting about the Earth, the Moon, about any Solar System planet and its moons, on any space transport vehicle, and anywhere in the Solar System including the Moon, Mars, and all other Solar System planets not listed.  
+#  2) b) This program may be used in any residential, commercial, business, and governmental property or location and in all public and private spaces. 
+#  2) c) This program may be used anywhere.
+#  IN WHAT CONTEXT OR CIRCUMSTANCES MAY A USER USE THIS PROGRAM?
+#  3)  This program may be used by any person, human being or sentient individual for any purpose and in any context and in any setting including for personal use, academic use,
+#      business use, commercial use, government use, non-governmental organization use, non-profit organization use, military use, civilian use, and generally any other use 
+#      not specifically mentioned.
+#  WHAT MAY A "USER" DO WITH THIS PROGRAM ?
+#  4) Any user of this program is granted the freedom to read and study the code.
+#  5) a) Any user of this program is granted the freedom to distribute, publish, and share the code with any recipient of their choice electronically or by any other method of transmission. 
+#  5) b) The LICENCSE AGREEMENT, ACKNOWLEDGMENTS, Header and Instructions must remain attached to the code in their entirety when re-distributed.
+#  5) c) Any user of this program is granted the freedom to sell this software as distributed or to bundle it with other software or saleable goods.
+#  6) a) Any user of this program is granted the freedom to modify the code.
+#  6) b) When modified, any user of this program is granted the freedom of re-distribution of their modified code if and only if the user attatchs the LICENSE AGREEMENT
+#        in its entirety to their modified code before re-distribution.
+#  6) c) Any user of this software is granted the freedom to sell their modified copy of this software or to bundle their modified copy with other software or saleable goods.
+#  6) d) Any modified code shall be sublicensed by the modifier and distributor only under the original terms of the Endware End User License Agreement as presented in this LICENSE AGREEMENT.
+#  6) e) Any user of this software agrees that any derivative works produced as a result of user modification will be sublicensed when re-distributed under the original terms of this LICENSE AGREEMENT exactly as presented.
+#  7) a) Any user of this program is granted the freedom to run this code on any computer of their choice.
+#  7) b) Any user of this program is granted the freedom to run as many simultaneous instances of this code, on as many computers as they are able to and desire, and for as long as they desire and are
+#        able to do so with any degree of simultaneity in use. 
+#  WHAT MUST A "USER" NOT DO WITH THIS PROGRAM ?
+#  8) Any user of this program is not granted the freedom to procure a patent for the methods presented in this software, and agrees not to do so.
+#  9) Any user of this program is not granted the freedom to arbitrarily procure a copyright on this software as presented, and agrees not to do so.
+#  10) Any user of this program is not granted the freedom to obtain or retain intellectual property rights on this software as presented and agrees not to do so.
+#  11) a) Any user of this program may use this software as part of a patented process, as a substitutable input into the process; however the user agrees not to attempt to patent this software as part of their patented process. 
+#  11) b) This software is a tool, like a hammer, and may be used in a process which applies for and gains a patent, as a substitutable input into the process;
+#         however the software tool itself may not be included in the patent or covered by the patent as a novel invention, and the user agrees not to do this and not to attempt to do this.
+#  WHO GRANTS THESE FREEDOMS ?
+#  12) The creators of this software are the original developer,"Endwall", and anyone listed as being a member of "The Endware Development Team" by "Endwall", as well as ancillary contributors, and user modifiers and developers of the software. 
+#  13) The aforementioned freedoms of use listed in sections 4),5),6),and 7) are granted by the creators of this software and the Endware Development Team to any qualifying user listed in section 1) and 
+#      comporting with any restrictions and qualifications mentioned in sections 2), 3), 8), 9), 10) and 11) of this LICENSE AGREEMENT.
+#  WHAT RELATIONSHIP DO THE USERS HAVE WITH THE CREATORS OF THE SOFTWARE ?
+#  14)  This software is distributed "AS IS" without any warranty and without any guaranty and the creators do not imply anything about its usefulness or efficacy.
+#  15)  If the user suffers or sustains financial loss, informational loss, material loss, physical loss or data loss as a result of using, running, or modifying this software 
+#       the user agrees that they will hold the creators of this software, "The Endware Development Team", "Endwall", and the programmers involved in its creation, free from prosecution, 
+#       free from indemnity, and free from liability, and will not attempt to seek restitution, compensation, or payment for any such loss real or imagined.
+#  16)  If a user makes a significant improvement to this software, and if this improvement is included in a release, the user agrees not to seek remuneration or payment 
+#       from the creators of this software or from Endwall or from the Endware Development Team, for any such work contribution performed, and the user understands 
+#       that there will be no such remuneration or payment rendered to them for any such contribution. 
+#  END OF LICENSE AGREEMENT
+##################################################################################################################################################################################
+#  ADDITIONAL NOTES:
+#  17)  If a user finds a significant flaw or makes a significant improvement to this software, please feel free to notify the original developers so that we may also
+#       include your user improvement in the next release; users are not obligated to do this, but we would enjoy this courtesy tremendously.
+#
+#  18)  Sections 0) a) 0) b) and 1) a) are sufficient for use; however sections 1) b) through 1) i) are presented to clarify 1 a) and to enforce non-discrimination and non-exclusion of use.  
+#       For example some people may choose to redefine the meaning of the words "person" "human being" or "sentient individual" to exclude certain types of people.
+#       This would be deemed unacceptable and is specifically rejected by the enumeration presented.  If the wording presented is problematic please contact us and suggest a change,
+#       and it will be taken into consideration.  
+#################################################################################################################################################################################
+
+#EXTM3U 
+###################### SKY NEWS UK ####################################################
+#EXTINF:-1 tvg-id="1" tvg-name="SKY NEWS UK" tvg-logo="" group-title="ENGLISH I", SKY NEWS UK
+http://skydvn-nowtv-atv-prod.skydvn.com/atv/skynews/1404/live/06.m3u8
+##http://skydvn-nowtv-atv-prod.skydvn.com/atv/skynews/1404/live/05.m3u8
+##http://skydvn-nowtv-atv-prod.skydvn.com/atv/skynews/1404/live/04.m3u8
+##http://skydvn-nowtv-atv-prod.skydvn.com/atv/skynews/1404/live/03.m3u8
+##http://skydvn-nowtv-atv-prod.skydvn.com/atv/skynews/1404/live/02.m3u8
+##http://skydvn-nowtv-atv-prod.skydvn.com/atv/skynews/1404/live/01.m3u8
+
+######################### RT UK #####################################################
+#EXTINF:-1 tvg-id="2" tvg-name="RT-UK" tvg-logo="" group-title="ENGLISH I", RT UK
+https://rt-uk.secure.footprint.net/1106-inadv-qidx-1k_v5.m3u8
+##https://rt-uk.secure.footprint.net/1106-inadv-qidx-2k_v5.m3u8
+##https://rt-uk.secure.footprint.net/1106-inadv-qidx-3k_v5.m3u8
+##https://rt-uk.secure.footprint.net/1106-inadv-qidx-4k_v5.m3u8
+##https://rt-uk.secure.footprint.net/1106-inadv-qidx-5k_v5.m3u8
+###AUDIO
+##https://rt-uk.secure.footprint.net/1106-inadv-qidx-0k_v5.m3u8
+
+######################## RTE NEWS NOW IE ########################################
+#EXTINF:-1 tvg-id="3" tvg-name="RTE NEWS NOW IRELAND" tvg-logo="" group-title="ENGLISH I", RTE NEWS NOW IE
+#http://wmsrtsp1.rte.ie/live/android.sdp/playlist.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2089682,CODECS="avc1.77.31,mp4a.40.2",RESOLUTION=1024x576
+http://wmsrtsp1.rte.ie/live/android.sdp/chunklist_w1150005197.m3u8
+
+#########################   FRANCE 24    ################################################
+#EXTINF:-1 tvg-id="4" tvg-name="FRANCE 24" tvg-logo="" group-title="ENGLISH I", FRANCE 24
+#http://static.france24.com/live/F24_EN_LO_HLS/live_web.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1095600,CODECS="avc1.4d001f,mp4a.40.2",RESOLUTION=1024x576
+#http://f24hls-i.akamaihd.net/hls/live/221193/F24_EN_LO_HLS/master_900.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1095600,CODECS="avc1.4d001f,mp4a.40.2",RESOLUTION=1024x576
+http://f24hls-i.akamaihd.net/hls/live/221193-b/F24_EN_LO_HLS/master_900.m3u8
+#http://f24hls-i.akamaihd.net/hls/live/221193-b/F24_EN_LO_HLS/master.m3u8
+#http://f24hls-i.akamaihd.net/hls/live/221193-b/F24_EN_LO_HLS/master_900.m3u8
+#http://f24hls-i.akamaihd.net/hls/live/221193/F24_EN_LO_HLS/master.m3u8
+#"http://f24hls-i.akamaihd.net/hls/live/221193/F24_EN_LO_HLS/master_900.m3u8"
+## audio only
+#http://f24hls-i.akamaihd.net/hls/live/221193/F24_EN_LO_HLS/master_96.m3u8 
+#http://static.france24.com/live/F24_EN_LO_HLS/live_web.m3u8
+#http://static.france24.com/live/F24_EN_LO_HLS/live_ios.m3u8
+
+#########################   DW DE    ################################################
+#EXTINF:-1 tvg-id="5" tvg-name="Deutsche Welle DE" tvg-logo="" group-title="ENGLISH I", DW DE
+
+#https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/master.m3u8
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=163000,RESOLUTION=400x224,CODECS="avc1.77.30, mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_5_av-p.m3u8?sd=10&rebase=on"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=163000,RESOLUTION=400x224,CODECS="avc1.77.30, mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_5_av-b.m3u8?sd=10&rebase=on"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=264000,RESOLUTION=400x224,CODECS="avc1.77.30, mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_4_av-p.m3u8?sd=10&rebase=on"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=264000,RESOLUTION=400x224,CODECS="avc1.77.30, mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_4_av-b.m3u8?sd=10&rebase=on"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=464000,RESOLUTION=400x224,CODECS="avc1.77.30, mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_3_av-p.m3u8?sd=10&rebase=on"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=464000,RESOLUTION=400x224,CODECS="avc1.77.30, mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_3_av-b.m3u8?sd=10&rebase=on"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=864000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_2_av-p.m3u8?sd=10&rebase=on"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=864000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_2_av-b.m3u8?sd=10&rebase=on"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1664000,RESOLUTION=720x400,CODECS="avc1.77.30, mp4a.40.2"
+https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_1_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1664000,RESOLUTION=720x400,CODECS="avc1.77.30, mp4a.40.2"
+##https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_1_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=64000,CODECS="mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_5_a-p.m3u8?sd=10&rebase=on"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=64000,CODECS="mp4a.40.2"
+#"https://dwstream4-lh.akamaihd.net/i/dwstream4_live@131329/index_5_a-b.m3u8?sd=10&rebase=on"
+#https://dwstream1-lh.akamaihd.net/i/dwstream1_live@120422/master.m3u8
+#https://www.filmon.com/tv/dw-english
+
+#########################   RT RU    ################################################
+#EXTINF:-1 tvg-id="6" tvg-name="RT Russia Today RU" tvg-logo="" group-title="ENGLISH I", RT RU
+https://rt-news.secure.footprint.net/1103-inadv-qidx-1k_v5.m3u8
+##https://rt-news.secure.footprint.net/1103-inadv-qidx-2k_v5.m3u8
+##https://rt-news.secure.footprint.net/1103-inadv-qidx-3k_v5.m3u8
+##https://rt-news.secure.footprint.net/1103-inadv-qidx-4k_v5.m3u8
+##https://rt-news.secure.footprint.net/1103-inadv-qidx-5k_v5.m3u8
+#### AUDIO
+##https://rt-news.secure.footprint.net/1103-inadv-qidx-0k_v5.m3u8
+
+#########################   CBSN USA    ################################################
+#EXTINF:-1 tvg-id="7" tvg-name="CBSN USA" tvg-logo="" group-title="ENGLISH I", CBSN USA
+https://dai.google.com/linear/hls/event/Sid4xiTQTkCT1SLu6rjUSQ/master.m3u8
+##https://www.cbsnews.com/common/video/dai_prod.m3u8
+
+#########################  BLOOMBERG USA    ################################################
+#EXTINF:-1 tvg-id="8" tvg-name="BLOOMBERG USA" tvg-logo="" group-title="ENGLISH I", BLOOMBERG USA
+https://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8
+
+#########################   RT USA   ################################################
+#EXTINF:-1 tvg-id="9" tvg-name="RT USA" tvg-logo="" group-title="ENGLISH I", RT USA
+https://rt-usa.secure.footprint.net/1105-inadv-qidx-1k_v5.m3u8
+#https://rt-usa.secure.footprint.net/1105-inadv-qidx-2k_v5.m3u8
+#https://rt-usa.secure.footprint.net/1105-inadv-qidx-3k_v5.m3u8
+#https://rt-usa.secure.footprint.net/1105-inadv-qidx-4k_v5.m3u8
+#https://rt-usa.secure.footprint.net/1105-inadv-qidx-5k_v5.m3u8
+###AUDIO
+#https://rt-usa.secure.footprint.net/1105-inadv-qidx-0k_v5.m3u8
+
+#########################  NEWSY USA    ################################################
+#EXTINF:-1 tvg-id="10" tvg-name="NEWSY USA" tvg-logo="" group-title="ENGLISH I", NEWSY USA
+#http://www.newsy.com/live/
+https://content.jwplatform.com/players/hBmO7M6k
+#https://content-ause5.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37/h.m3u8?pbs=88f6df2cbf4844c488de5cf552b4a402
+#https://www.filmon.com/tv/newsy
+#https://content.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37.m3u8?ad=newsyweb
+
+#########################  ABC USA    ################################################
+#EXTINF:-1 tvg-id="11" tvg-name="NEWSY USA" tvg-logo="" group-title="ENGLISH I", ABC USA
+
+#https://abclive2-lh.akamaihd.net/i/abc_live11@423404/master.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=400000,RESOLUTION=320x180,CODECS="avc1.77.30, mp4a.40.2"
+#https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_400_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=400000,RESOLUTION=320x180,CODECS="avc1.77.30, mp4a.40.2"
+#https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_400_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=800000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_800_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=800000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_800_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1200000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#link="https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_1200_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1200000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_1200_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2499000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+#https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_2500_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2499000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+#https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_2500_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=4000000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_4000_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=4000000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+#https://abclive2-lh.akamaihd.net/i/abc_live11@423404/index_4000_av-b.m3u8?sd=10&rebase=on
+
+#########################  CHEDDAR BIG NEWS USA    ################################################
+#EXTINF:-1 tvg-id="12" tvg-name="CHEDDAR BIG NEWS USA" tvg-logo="" group-title="ENGLISH I", CHEDDAR BIG NEWS
+https://live.chdrstatic.com/cbn/index.m3u8
+
+#########################  CHEDDAR BUSINESS USA    ################################################
+#EXTINF:-1 tvg-id="13" tvg-name="CHEDDAR BUSINESS NEWS USA" tvg-logo="" group-title="ENGLISH I", CHEDDAR BUSINESS NEWS
+https://live.chdrstatic.com/cheddar/index.m3u8
+
+#########################  TRT WORLD TURKEY    ################################################
+#EXTINF:-1 tvg-id="14" tvg-name="TRT WORLD TK" tvg-logo="" group-title="ENGLISH I", TRT WORLD TK
+#https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/master.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=627000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/index_360pp_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=827000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
+#https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/index_480p_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=827000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.5"
+#https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/index_480p_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1328000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/index_720p_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1328000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.5"
+#https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/index_720p_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1328000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+#https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/index_720pp_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3128000,RESOLUTION=1920x1080,CODECS="avc1.77.30, mp4a.40.2"
+#https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/index_1080pp_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=627000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.5"
+#https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/index_360p_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3128000,RESOLUTION=1920x1080,CODECS="avc1.77.30, mp4a.40.2"
+#https://trtcanlitv-lh.akamaihd.net/i/TRTWORLD_1@321783/index_1080p_av-b.m3u8?sd=10&rebase=on
+
+#########################  ALJAZEERA ENGLISH    ################################################
+#EXTINF:-1 tvg-id="15" tvg-name="ALJAZEERA ENGLISH" tvg-logo="" group-title="ENGLISH I", AL JAZEERA ENGLISH
+#https://players.brightcove.net/665003303001/SkrZHHcl_default/index.html?videoId=4865263685001
+#https://english.streaming.aljazeera.net/aljazeera/english2/index4147.m3u8
+https://english.streaming.aljazeera.net/aljazeera/english2/index2073.m3u8
+#https://english.streaming.aljazeera.net/aljazeera/english2/index1296.m3u8
+#https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8
+#https://english.streaming.aljazeera.net/aljazeera/english2/index576.m3u8
+#https://english.streaming.aljazeera.net/aljazeera/english2/index255.m3u8
+#########################
+#https://english.streaming.aljazeera.net/aljazeera/english1/index4147.m3u8
+#https://english.streaming.aljazeera.net/aljazeera/english1/index2073.m3u8
+#https://english.streaming.aljazeera.net/aljazeera/english1/index1296.m3u8
+#https://english.streaming.aljazeera.net/aljazeera/english1/index783.m3u8
+#https://english.streaming.aljazeera.net/aljazeera/english1/index576.m3u8
+#https://english.streaming.aljazeera.net/aljazeera/english1/index255.m3u8
+##############################
+#http://aljazeera-eng-apple-live.adaptive.level3.net/apple/aljazeera/english/160audio.m3u8
+#http://aljazeera-eng-apple-live.adaptive.level3.net/apple/aljazeera/english/800.m3u8
+
+#########################  PRESS TV IRAN    ################################################
+#EXTINF:-1 tvg-id="16" tvg-name="PRESS TV IRAN" tvg-logo="" group-title="ENGLISH I", PRESS TV IRAN
+#https://www.filmon.com/tv/press-tv
+#https://5a61de8ed719d.streamlock.net/liveprs/smil:liveprs.smil/chunklist.m3u8
+https://5a61de8ed719d.streamlock.net/liveprs/smil:liveprs.smil/playlist.m3u8
+
+#########################  INDIA TODAY    ################################################
+#EXTINF:-1 tvg-id="17" tvg-name="INDIA TODAY" tvg-logo="" group-title="ENGLISH I", INDIA TODAY
+https://player-api.new.livestream.com/accounts/11965022/events/4086327/live.m3u8
+
+#########################  CGTN PEOPLES REPUBLIC OF CHINA    ################################################
+#EXTINF:-1 tvg-id="18" tvg-name="CGTN PRC CN" tvg-logo="" group-title="ENGLISH I", CGTN CN
+#https://live.cgtn.com/manifest.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1096000,NAME="720p HD"
+https://live.cgtn.com/1000/prog_index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=2,BANDWIDTH=564000,NAME="360p SD"
+#https://live.cgtn.com/500/prog_index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=3,BANDWIDTH=192000,NAME="180p 3G"
+#https://live.cgtn.com/200/prog_index.m3u8
+
+#########################  NHK JAPAN    ################################################
+#EXTINF:-1 tvg-id="19" tvg-name="NHK JP" tvg-logo="" group-title="ENGLISH I", NHK JP
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458-b/nhkwlive-xjp/index_2100.m3u8
+https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458-b/nhkwlive-xjp/index_1180.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458-b/nhkwlive-xjp/index_900.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458-b/nhkwlive-xjp/index_600.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458-b/nhkwlive-xjp/index_400.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458-b/nhkwlive-xjp/index_200.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458-b/nhkwlive-xjp/index_100.m3u8
+##########
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_2100.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_1180.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_900.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_600.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_400.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_200.m3u8
+#https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_100.m3u8
+
+#########################  ARIRANG SOUTH KOREA   ################################################
+#EXTINF:-1 tvg-id="20" tvg-name="ARIRANG KR" tvg-logo="" group-title="ENGLISH I", ARIRANG KR
+#https://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1728000,RESOLUTION=1280x720
+https://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/chunklist_b1728000_sleng.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1328000,RESOLUTION=960x540
+#https://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/chunklist_b1328000_sleng.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=928000,RESOLUTION=850x480
+#https://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/chunklist_b928000_sleng.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=528000,RESOLUTION=640x360
+#https://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/chunklist_b528000_sleng.m3u8
+
+#########################  CHANNELS NEWS ASIA SINGAPOUR   ################################################
+#EXTINF:-1 tvg-id="21" tvg-name="CHANNELS NEWS ASIA SG" tvg-logo="" group-title="ENGLISH I", CHANNELS NEWS ASIA SG
+https://drsh196ivjwe8.cloudfront.net/hls/cnai/03.m3u8
+#https://drsh196ivjwe8.cloudfront.net/hls/cnai/02.m3u8
+#https://drsh196ivjwe8.cloudfront.net/hls/cnai/01.m3u8
+
+#########################  ABC NEWS AUSTRALIA   ################################################
+#EXTINF:-1 tvg-id="22" tvg-name="ABC NEWS AU" tvg-logo="" group-title="ENGLISH I", ABC NEWS AUSTRALIA 
+https://abc-iview-mediapackagestreams-1.akamaized.net/out/v1/50345bf35f664739912f0b255c172ae9/index_1.m3u8
+#https://abc-iview-mediapackagestreams-1.akamaized.net/out/v1/50345bf35f664739912f0b255c172ae9/index_2.m3u8
+#https://abc-iview-mediapackagestreams-1.akamaized.net/out/v1/50345bf35f664739912f0b255c172ae9/index_3.m3u8
+
+#https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/master.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=306000,RESOLUTION=320x180,CODECS="avc1.66.30, mp4a.40.2"
+#https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/index_250_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=514000,RESOLUTION=400x224,CODECS="avc1.77.30, mp4a.40.2"
+#https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/index_450_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=730000,RESOLUTION=512x288,CODECS="avc1.66.30, mp4a.40.2"
+#https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/index_650_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=846000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/index_750_av-p.m3u8?sd=10&rebase=on
+
+#########################  ARISE NEWS NIGERIA/LONDON  ################################################
+#EXTINF:-1 tvg-id="23" tvg-name="ARISE NEWS NG" tvg-logo="" group-title="ENGLISH I", ARISE NEWS NG
+http://contributionstreams.ashttp9.visionip.tv/live/visiontv-contributionstreams-arise-tv-hsslive-25f-16x9-SD/chunklist.m3u8
+
+#########################  TELESUR ENGLISH VE  ################################################
+#EXTINF:-1 tvg-id="24" tvg-name="TELESURE ENGLISH VE" tvg-logo="" group-title="ENGLISH I", TELESUR ENGLISH VE
+https://d7g1ebft2592.cloudfront.net/mblivev3/hd/playlist.m3u8
+#https://d7g1ebft2592.cloudfront.net/mblivev3/480p/playlist.m3u8
+#https://d7g1ebft2592.cloudfront.net/mblivev3/360p/playlist.m3u8
+
+#########################  NEWSMAX USA  ################################################
+#EXTINF:-1 tvg-id="25" tvg-name="NEWSMAX USA" tvg-logo="" group-title="ENGLISH I", NEWSMAX USA
+#https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/a.m3u8
+#https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_720.m3u8
+#https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_480.m3u8
+#https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_360.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=5640800,AVERAGE-BANDWIDTH=5640800,CODECS="avc1.4d4028,mp4a.40.2",RESOLUTION=1920x1080,FRAME-RATE=30.000,SUBTITLES="subs"
+https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_1080.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2890800,AVERAGE-BANDWIDTH=2890800,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=1280x720,FRAME-RATE=30.000,SUBTITLES="subs"
+#https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_720.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1425600,AVERAGE-BANDWIDTH=1425600,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=720x404,FRAME-RATE=30.000,SUBTITLES="subs"
+#https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_404.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=875600,AVERAGE-BANDWIDTH=875600,CODECS="avc1.4d4015,mp4a.40.2",RESOLUTION=512x288,FRAME-RATE=30.000,SUBTITLES="subs"
+#https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_288.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=589600,AVERAGE-BANDWIDTH=589600,CODECS="avc1.4d400d,mp4a.40.2",RESOLUTION=384x216,FRAME-RATE=30.000,SUBTITLES="subs"
+#https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_218.m3u8
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="English",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="eng",URI="index_cc.m3u8"
+#https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
+
+#########################  FREESPEECH TV USA  ################################################
+#EXTINF:-1 tvg-id="26" tvg-name="FRESPEECH TV USA" tvg-logo="" group-title="ENGLISH I", FREESPEECH TV USA
+#https://edge.free-speech-tv-live.top.comcast.net/out/u/fstv.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1861222,RESOLUTION=848x480,CODECS="avc1.4D401F,mp4a.40.5"
+https://edge.free-speech-tv-live.top.comcast.net/out/u/fstv_3.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1311282,RESOLUTION=640x360,CODECS="avc1.4D401F,mp4a.40.5"
+#https://edge.free-speech-tv-live.top.comcast.net/out/u/fstv_4.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=871088,RESOLUTION=512x288,CODECS="avc1.42C01E,mp4a.40.5"
+#https://edge.free-speech-tv-live.top.comcast.net/out/u/fstv_5.m3u8
+
+#########################  INFOWARS USA  ################################################
+#EXTINF:-1 tvg-id="27" tvg-name="INFOWARS USA" tvg-logo="" group-title="ENGLISH I", INFOWARS USA
+#https://infostream.secure.footprint.net/hls-live/infostream-infostream/_definst_/chunklist.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=866304,RESOLUTION=640x360
+#https://infostream.secure.footprint.net/hls-live/infostream-infostream/_definst_/chunklist_b866304.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1155072,RESOLUTION=854x480
+#https://infostream.secure.footprint.net/hls-live/infostream-infostream/_definst_/chunklist_b1155072.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2244608,RESOLUTION=1280x720
+https://infostream.secure.footprint.net/hls-live/infostream-infostream/_definst_/chunklist_b2244608.m3u8
+
+#########################  INFOWARS REAL NEWS USA  ################################################
+#EXTINF:-1 tvg-id="28" tvg-name="REAL NEWS USA" tvg-logo="" group-title="ENGLISH I", REAL NEWS USA
+#https://infostream.secure.footprint.net/hls-live/infostream2-infostream2/_definst_/chunklist.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=866304,RESOLUTION=640x360
+#https://infostream.secure.footprint.net/hls-live/infostream2-infostream2/_definst_/chunklist_b866304.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1155072,RESOLUTION=854x480
+#https://infostream.secure.footprint.net/hls-live/infostream2-infostream2/_definst_/chunklist_b1155072.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2244608,RESOLUTION=1280x720
+https://infostream.secure.footprint.net/hls-live/infostream2-infostream2/_definst_/chunklist_b2244608.m3u8 
+
+#########################  INFOWARS WAR ROOM USA  ################################################
+#EXTINF:-1 tvg-id="29" tvg-name="THE WAR ROOM USA" tvg-logo="" group-title="ENGLISH I", THE WAR ROOM USA
+#https://infostream.secure.footprint.net/hls-live/infostream3-infostream3/_definst_/chunklist.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=866304,RESOLUTION=640x360
+#https://infostream.secure.footprint.net/hls-live/infostream3-infostream3/_definst_/chunklist_b866304.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1155072,RESOLUTION=854x480
+#https://infostream.secure.footprint.net/hls-live/infostream3-infostream3/_definst_/chunklist_b1155072.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2244608,RESOLUTION=1280x720
+https://infostream.secure.footprint.net/hls-live/infostream3-infostream3/_definst_/chunklist_b2244608.m3u8
+
+#########################  UNITED NATIONS TV ################################################
+#EXTINF:-1 tvg-id="30" tvg-name="UN TV" tvg-logo="" group-title="ENGLISH I", UN TV
+https://players.brightcove.net/1362235914001/B1J3DDQJf_default/index.html?videoId=5689257377001
+#https://bcliveunivsecure-lh.akamaihd.net/i/un150_1@575439/master.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=828000,RESOLUTION=960x540,CODECS="avc1.77.30, mp4a.40.5"
+#https://bcliveunivsecure-lh.akamaihd.net/i/un150_1@575439/index_828_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1328000,RESOLUTION=640x480,CODECS="avc1.77.30, mp4a.40.5"
+#https://bcliveunivsecure-lh.akamaihd.net/i/un150_1@575439/index_1328_av-p.m3u8?sd=10&rebase=on
+
+#########################  WGN 9 CHICAGO USA ################################################
+#EXTINF:-1 tvg-id="31" tvg-name="WGN 9 CHICAGO USA" tvg-logo="" group-title="ENGLISH I", WGN 9 CHICAGO USA
+#https://wgntribune-lh.akamaihd.net/i/WGNPrimary_1@304622/master.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=878000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://wgntribune-lh.akamaihd.net/i/WGNPrimary_1@304622/index_750_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=878000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://wgntribune-lh.akamaihd.net/i/WGNPrimary_1@304622/index_750_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=878000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://wgntribune-lh.akamaihd.net/i/WGNPrimary_1@304622/index_750_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=878000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://wgntribune-lh.akamaihd.net/i/WGNPrimary_1@304622/index_750_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1128000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
+#https://wgntribune-lh.akamaihd.net/i/WGNPrimary_1@304622/index_1000_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1128000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
+#https://wgntribune-lh.akamaihd.net/i/WGNPrimary_1@304622/index_1000_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2628000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+https://wgntribune-lh.akamaihd.net/i/WGNPrimary_1@304622/index_2500_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2628000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+#https://wgntribune-lh.akamaihd.net/i/WGNPrimary_1@304622/index_2500_av-b.m3u8?sd=10&rebase=on
+
+#########################  WEATHER NATION USA ################################################
+#EXTINF:-1 tvg-id="32" tvg-name="WEATHER NATION USA" tvg-logo="" group-title="ENGLISH I", WEATHER NATION USA
+#https://cdnapi.kaltura.com/p/931702/sp/93170200/playManifest/entryId/1_oorxcge2/format/applehttp/protocol/http/uiConfId/28428751/a.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2128000,RESOLUTION=1280x720
+#https://cdnapi.kaltura.com/p/931702/sp/93170200/playManifest/entryId/1_oorxcge2/format/applehttp/protocol/http/uiConfId/28428751/chunklist_b2128000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=504000,RESOLUTION=480x270
+#https://cdnapi.kaltura.com/p/931702/sp/93170200/playManifest/entryId/1_oorxcge2/format/applehttp/protocol/http/uiConfId/28428751/chunklist_b464000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=724000,RESOLUTION=640x360
+#https://cdnapi.kaltura.com/p/931702/sp/93170200/playManifest/entryId/1_oorxcge2/format/applehttp/protocol/http/uiConfId/28428751/chunklist_b664000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1054000,RESOLUTION=640x360
+##https://cdnapi.kaltura.com/p/931702/sp/93170200/playManifest/entryId/1_oorxcge2/format/applehttp/protocol/http/uiConfId/28428751/chunklist_b964000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2192000,RESOLUTION=1280x720
+https://cdnapi.kaltura.com/p/931702/sp/93170200/playManifest/entryId/1_oorxcge2/format/applehttp/protocol/http/uiConfId/28428751/chunklist_b2192000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=504000,RESOLUTION=480x270
+#https://cdnapi.kaltura.com/p/931702/sp/93170200/playManifest/entryId/1_oorxcge2/format/applehttp/protocol/http/uiConfId/28428751/chunklist_b464000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=724000,RESOLUTION=640x360
+#https://cdnapi.kaltura.com/p/931702/sp/93170200/playManifest/entryId/1_oorxcge2/format/applehttp/protocol/http/uiConfId/28428751/chunklist_b664000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1054000,RESOLUTION=640x360
+#https://cdnapi.kaltura.com/p/931702/sp/93170200/playManifest/entryId/1_oorxcge2/format/applehttp/protocol/http/uiConfId/28428751/chunklist_b964000.m3u8
+
+#########################  THE WEATHER CHANNEL USA ################################################
+#EXTINF:-1 tvg-id="33" tvg-name="THE WEATHER CHANNEL USA" tvg-logo="" group-title="ENGLISH I", THE WEATHER CHANNEL USA
+#https://weather-lh.akamaihd.net/i/twc_1@92006/master.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=464000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://weather-lh.akamaihd.net/i/twc_1@92006/index_400_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=464000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
+#https://weather-lh.akamaihd.net/i/twc_1@92006/index_400_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=864000,RESOLUTION=960x540,CODECS="avc1.77.30, mp4a.40.2"
+#https://weather-lh.akamaihd.net/i/twc_1@92006/index_800_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=864000,RESOLUTION=960x540,CODECS="avc1.77.30, mp4a.40.2"
+#https://weather-lh.akamaihd.net/i/twc_1@92006/index_800_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1328000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+#https://weather-lh.akamaihd.net/i/twc_1@92006/index_1200_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1328000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+#https://weather-lh.akamaihd.net/i/twc_1@92006/index_1200_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2528000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+https://weather-lh.akamaihd.net/i/twc_1@92006/index_2400_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2528000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
+#https://weather-lh.akamaihd.net/i/twc_1@92006/index_2400_av-b.m3u8?sd=10&rebase=on
+
+#########################  VOICE OF AMERICA USA ################################################
+#EXTINF:-1 tvg-id="34" tvg-name="VOA USA" tvg-logo="" group-title="ENGLISH I", VOA USA
+#https://voa-lh.akamaihd.net/i/voa_mpls_tvmc6@320298/master.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=857000,RESOLUTION=512x288,CODECS="avc1.77.30, mp4a.40.2"
+#https://voa-lh.akamaihd.net/i/voa_mpls_tvmc6@320298/index_0288_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=613000,RESOLUTION=512x288,CODECS="avc1.77.30, mp4a.40.2"
+#https://voa-lh.akamaihd.net/i/voa_mpls_tvmc6@320298/index_0288_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1589000,RESOLUTION=720x404,CODECS="avc1.77.30, mp4a.40.2"
+#https://voa-lh.akamaihd.net/i/voa_mpls_tvmc6@320298/index_0404_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1101000,RESOLUTION=720x404,CODECS="avc1.77.30, mp4a.40.2"
+#https://voa-lh.akamaihd.net/i/voa_mpls_tvmc6@320298/index_0404_av-b.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2078000,RESOLUTION=960x540,CODECS="avc1.77.30, mp4a.40.2"
+#https://voa-lh.akamaihd.net/i/voa_mpls_tvmc6@320298/index_0540_av-p.m3u8?sd=10&rebase=on
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2078000,RESOLUTION=960x540,CODECS="avc1.77.30, mp4a.40.2"
+https://voa-lh.akamaihd.net/i/voa_mpls_tvmc6@320298/index_0540_av-b.m3u8?sd=10&rebase=on
+
+#########################  RT DOCUMENTARY ################################################
+#EXTINF:-1 tvg-id="35" tvg-name="RT DOCS RU" tvg-logo="" group-title="ENGLISH I", RT DOCS RU
+#https://rtd.rt.com/on-air/
+#https://rt-doc.secure.footprint.net/1101-inadv-qidx-1k_v5.m3u8
+https://rt-doc.secure.footprint.net/1101-inadv-qidx-2k_v5.m3u8
+#https://rt-doc.secure.footprint.net/1101-inadv-qidx-3k_v5.m3u8
+#https://rt-doc.secure.footprint.net/1101-inadv-qidx-4k_v5.m3u8
+#https://rt-doc.secure.footprint.net/1101-inadv-qidx-5k_v5.m3u8
+## AUDIO 
+#https://rt-doc.secure.footprint.net/1101-inadv-qidx-0k_v5.m3u8
+
+######################### CGTN DOCUMENTARY ################################################
+#EXTINF:-1 tvg-id="36" tvg-name="CGTN DOCS CN" tvg-logo="" group-title="ENGLISH I", CGTN DOCS CN
+#https://live.cgtn.com/cctv-d.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1096000,RESOLUTION=1280x720,NAME="720p HD"
+https://livedoc.cgtn.com/1000d/prog_index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=564000,RESOLUTION=640x360,NAME="360p SD"
+#https://livedoc.cgtn.com/500d/prog_index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=192000,RESOLUTION=320x180,NAME="180p 3G"
+#https://livedoc.cgtn.com/200d/prog_index.m3u8
+
+######################### BRINGHAM YOUNG UNIVERSITY USA ################################################
+#EXTINF:-1 tvg-id="37" tvg-name="BYU TV USA" tvg-logo="" group-title="ENGLISH I", BYU TV USA
+#https://byubhls-i.akamaihd.net/hls/live/267187/byutvhls/master.m3u8
+#EXT-X-MEDIA:TYPE=CLOSED-CAPTIONS,GROUP-ID="CC",LANGUAGE="eng",NAME="EN",INSTREAM-ID="CC1"
+#EXT-X-STREAM-INF:BANDWIDTH=290400,AVERAGE-BANDWIDTH=290400,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=400x224,FRAME-RATE$
+#https://byubhls-i.akamaihd.net/hls/live/267187/byutvhls/master_264.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=510400,AVERAGE-BANDWIDTH=510400,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=400x224,FRAME-RATE$
+#https://byubhls-i.akamaihd.net/hls/live/267187/byutvhls/master_464.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=950400,AVERAGE-BANDWIDTH=950400,CODECS="avc1.4d401f,mp4a.40.5",RESOLUTION=640x360,FRAME-RAT$
+#https://byubhls-i.akamaihd.net/hls/live/267187/byutvhls/master_864.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1830400,AVERAGE-BANDWIDTH=1830400,CODECS="avc1.4d401f,mp4a.40.5",RESOLUTION=960x540,FRAME-R$
+#https://byubhls-i.akamaihd.net/hls/live/267187/byutvhls/master_1664.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2820400,AVERAGE-BANDWIDTH=2820400,CODECS="avc1.640028,mp4a.40.5",RESOLUTION=1280x720,FRAME-$
+#https://byubhls-i.akamaihd.net/hls/live/267187/byutvhls/master_2564.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=4470400,AVERAGE-BANDWIDTH=4470400,CODECS="avc1.640028,mp4a.40.5",RESOLUTION=1280x720,FRAME-$
+https://byubhls-i.akamaihd.net/hls/live/267187/byutvhls/master_4064.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=70400,AVERAGE-BANDWIDTH=70400,CODECS="mp4a.40.5",CLOSED-CAPTIONS="CC"
+#https://byubhls-i.akamaihd.net/hls/live/267187/byutvhls/master_64.m3u8
+
+######################### CBC CANADA ################################################
+#EXTINF:-1 tvg-id="38" tvg-name="CBC CANADA" tvg-logo="" group-title="ENGLISH I", CBC CANADA
+https://cbclivedai5-i.akamaihd.net/hls/live/567235/event2/CBOT/master5.m3u8
+#https://cbclivedai5-i.akamaihd.net/hls/live/567235/event2/CBOT/master4.m3u8
+#https://cbclivedai5-i.akamaihd.net/hls/live/567235/event2/CBOT/master3.m3u8
+#https://cbclivedai5-i.akamaihd.net/hls/live/567235/event2/CBOT/master2.m3u8
+#https://cbclivedai5-i.akamaihd.net/hls/live/567235/event2/CBOT/master1.m3u8
+#https://cbcnewshd-f.akamaihd.net/i/cbcnews_1@8981/index_2500_av-p.m3u8
+
+######################### CPAC CANADA ################################################
+#EXTINF:-1 tvg-id="39" tvg-name="CPAC CANADA" tvg-logo="" group-title="ENGLISH I", CPAC CANADA
+https://players.brightcove.net/1242843915001/SJ3Tc5kb_default/index.html?videoId=5027924874001
+#https://bcoveliveios-i.akamaihd.net/hls/live/248519/1242843915001_1/master.m3u8
+#https://bcoveliveios-i.akamaihd.net/hls/live/248519/1242843915001_1/master.m3u8
+#https://bcoveliveios-i.akamaihd.net/hls/live/248522/1242843915001_4/master.m3u8
+
+######################### OIREACHTAS IRELAND ################################################
+#EXTINF:-1 tvg-id="40" tvg-name="OIREACHTAS IE" tvg-logo="" group-title="ENGLISH I", OIREACHTAS IE
+#https://oirlive.heanet.ie/oireachtas/ngrp:oireachtas.stream_all/playlist.m3u8
+https://oirlive.heanet.ie/oireachtas/ngrp:oireachtas.stream_all/chunklist_b1228000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1338000,CODECS="avc1.66.32,mp4a.40.2",RESOLUTION=854x480
+#https://oirlive.heanet.ie/oireachtas/ngrp:oireachtas.stream_all/chunklist_b1228000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1063000,CODECS="avc1.66.31,mp4a.40.2",RESOLUTION=640x360
+#https://oirlive.heanet.ie/oireachtas/ngrp:oireachtas.stream_all/chunklist_b978000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=513000,CODECS="avc1.66.30,mp4a.40.2",RESOLUTION=426x240
+#https://oirlive.heanet.ie/oireachtas/ngrp:oireachtas.stream_all/chunklist_b478000.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=128000,CODECS="mp4a.40.2"q
+#https://oirlive.heanet.ie/oireachtas/ngrp:oireachtas.stream_all/chunklist_b128000.m3u8
+
+
+######################## END OF FILE #########################################################
+
