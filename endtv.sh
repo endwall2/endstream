@@ -6,8 +6,8 @@
 # Author: The Endware Development Team
 # Copyright: 2017, The Endware Development Team
 # Creation Date: February 21, 2017
-# Version: 0.08
-# Revision Date: November 12, 2019
+# Version: 0.091
+# Revision Date: July 26, 2021
 #
 # Change Log:  - Stay on previously selected menu after video finishes
 #              - proper implimentation of channel switching while loop
@@ -159,8 +159,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.08"
-rev_date="12/11/2018"
+version="0.091"
+rev_date="26/07/2021"
 branch="gnu/linux"
 product="EndTV"
 ##################################################
@@ -2206,56 +2206,85 @@ if [ "$uamode" == "on" ]
 
 
 ######################## FUNCTION FOR PLAYING MEDIA STREAM CHANNELS #############################
+
 play_channel()
 {
-if [ "$menstat" == "no" ]
+if [ "$menstat" = "no" ]
 then
+getlink=1
 channel_select "$num"
-echo "$chan_name Channel $num" 
-  
-  if [ "$uamode" == "on" ]
-  then 
+echo "$chan_name Channel $num"
+
+  if [ "$uamode" = "on" ]
+  then
   echo "$UA"
-   
-    if [ "$use_cookies" == "yes" ]
+
+    if [ "$use_cookies" = "yes" ]
     then
     echo "Fetching Cookie, Please Wait..."
     curl -A "$UA" --cookie-jar "$cookie" --silent "$link"  >  /dev/null 2>&1
-    mpv --user-agent="$UA" --ytdl-format="$format" --no-resume-playback --cache=yes --fullscreen --loop-playlist=inf --stream-lavf-o=timeout=10000000 --cookies  --cookies-file "$cookie" "$link" 
+    mpv --user-agent="$UA" --ytdl-format="$format" --no-resume-playback --cache="yes" --fullscreen --loop-playlist=inf --stream-lavf-o=timeout=10000000 --cookies  --cookies-file "$cookie" "$link"
     # clear the cookie
     echo " " > "$cookie"
+    elif [ "$method" = "Streamlink" ]
+    then
+    streamlink --player "mpv --user-agent="$UA" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen" "$link"  "$format"
+    elif [ "$method" = "Tor" ]
+    then
+    torsocks -a "$torsocks_ip" -P "$torsocks_port" -i mpv --user-agent="$UA" --ytdl-format="$format" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen "$link"
+    elif [ "$method" = "Tor-Streamlink" ]
+    then
+    torsocks -a "$torsocks_ip" -P "$torsocks_port" -i streamlink --player "mpv --user-agent="$UA" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen" "$link"  "$format"
+    elif [ "$method" = "Proxychains" ]
+    then
+    proxychains mpv --user-agent="$UA" --ytdl-format "$format" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen "$link"
     else
-    mpv --user-agent="$UA" --ytdl-format="$format" --no-resume-playback --loop-playlist=inf --cache=yes --fullscreen "$link" 
+    mpv --user-agent="$UA" --ytdl-format="$format" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen "$link"
     fi
   else
-   
-    if [ "$use_cookies" == "yes" ]
+
+    if [ "$use_cookies" = "yes" ]
     then
     echo "Fetching Cookie, Please Wait..."
     curl --cookie-jar "$cookie" --silent "$link"  >  /dev/null 2>&1
-    mpv --ytdl-format="$format" --no-resume-playback --cache=yes --fullscreen --loop-playlist=inf --stream-lavf-o=timeout=10000000 --cookies  --cookies-file "$cookie" "$link" 
+    mpv --ytdl-format="$format" --no-resume-playback --cache="yes" --fullscreen --loop-playlist=inf --stream-lavf-o=timeout=10000000 --cookies  --cookies-file "$cookie" "$link"
     # clear the cookie
     echo " " > "$cookie"
+    elif [ "$method" = "Streamlink" ]
+    then
+    streamlink --player "mpv --user-agent="$UA" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen" "$link"  "$format"
+    elif [ "$method" = "Tor" ]
+    then
+    torsocks -a "$torsocks_ip" -P "$torsocks_port" -i mpv --user-agent="$UA" --ytdl-format="$format" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen "$link"
+    elif [ "$method" = "Tor-Streamlink" ]
+    then
+    torsocks -a "$torsocks_ip" -P "$torsocks_port" -i streamlink --player "mpv --user-agent="$UA" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen" "$link"  "$format"
+    elif [ "$method" = "Proxychains" ]
+    then
+    proxychains mpv --user-agent="$UA" --ytdl-format "$format" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen "$link"
     else
-    mpv --ytdl-format="$format" --no-resume-playback --loop-playlist=inf --cache=yes --fullscreen "$link" 
+    mpv --ytdl-format="$format" --no-resume-playback --loop-playlist=inf --cache="yes" --fullscreen "$link"
     fi
-     
+
   fi
 clear
 menu_switch "$menu"
-echo "You were watching "$chan_name" on Channel "$num" "  
+echo "You were watching "$chan_name" on Channel "$num" "
 chan_state="normal"
 format=""
+method=""
 read entry
-else 
+else
 clear
 menu_switch "$menu"
 chan_state="normal"
 menstat="no"
 format=""
+method=""
 read entry
 fi
 }
+
 
 ### Some more commands to add 
 # mpv --http-header-fields='Field1: value1','Field2: value2' 
@@ -2279,7 +2308,7 @@ men_num=0
 entry=1
 num=1
 format="best"
-use_cookies="yes"
+use_cookies="no"
 
 ############## USER INPUT FIRST RUN  ###################################
 ##  If input is non empty display and select
