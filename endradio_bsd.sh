@@ -478,7 +478,8 @@ use_playlist="no"
 chan_name="WKSU News";;
 # 5) Infowars
 5) 
-  rnum=$( expr $( head -c 2 /dev/urandom | od -A n -i ) % 7 ) 
+  rnum="$(expr $(expr $(head -n 1 /dev/urandom | od -A n -i | head -n 1 | awk '{ print $1 }' ) % 7 + 20 ) % 7)"
+
   case $rnum in 
   0) link="http://50.7.79.92:80"
      #link=http://stream-aac.infowars.com 
@@ -602,7 +603,8 @@ chan_name="Bloomberg Radio";;
 # 26) Genesis Communications Network 
 26) 
 
- rnum=$( expr $( head -c 2 /dev/urandom | od -A n -i ) % 6 ) 
+ rnum="$(expr $(expr $(head -n 1 /dev/urandom | od -A n -i | head -n 1 | awk '{ print $1 }' ) % 6 + 30 ) % 6)" 
+ 
  case $rnum in 
  0) link=http://www.gcnlive.com/playlists/live/channel1.m3u ;;
  1) link=http://www.gcnlive.com/playlists/live/channel2.m3u ;;
