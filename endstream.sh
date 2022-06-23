@@ -7,8 +7,8 @@
 # Copyright: 2017-2019, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63567
-# Revision Date: June 17, 2022
+# Version: 0.63568
+# Revision Date: June 22, 2022
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -140,8 +140,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63567"
-rev_date="17/05/2022"
+version="0.63568"
+rev_date="22/06/2022"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##################################################
@@ -164,10 +164,10 @@ uamode="off"
 headmode="off"
 
 http_proxy_port=3128
-http_proxy_ip=192.168.1.103
+http_proxy_ip=192.168.100.103
 
 torsocks_ip=127.0.0.1
-#torsocks_ip=192.168.1.103
+#torsocks_ip=192.168.100.103
 torsocks_port=9050
 
 ### Define function for displaying channels  CHANGE MENU HERE
@@ -299,12 +299,12 @@ channel_matrix_2()
    echo "584)ICI Maurice      624)Paraguay Noticias   664)Senal UNTREF      704)Rede Super BeloBR   744)KXAN News          784)ABC News 2        824)KSL NOW Salt Lake "
    echo "585)ICI Montreal     625)Canal Tr3ce CO      665)NRT 4 monclova    705)Talenu Luanda AO    745)Miami TV           785)ABC News 3        825)KUSI San Diego"
    echo "586)ICI Saguenay     626)Cali TV             666)TVUNAM 20         706)Vatican Media PT    746)KNTV-TV            786)ABC News 4        826)KEYT ABC 3 Santa Barbara"
-   echo "587)ICI Quebec       627)Canal 12 CO         667)EVTV Miami        707)ABC Paraguay       747)KNTV Telemundo     787)ABC News 5        827)KHSL CBS 12 Redding"
+   echo "587)ICI Quebec       627)Canal 12 CO         667)EVTV Miami        707)ABC Paraguay        747)KNTV Telemundo     787)ABC News 5        827)KHSL CBS 12 Redding"
    echo "588)ICI Est-Quebec   628)Imagen Radio MX     668)Cosmovision TV BO 708)Abya Yala BO        748)NBC2 News KTUU     788)ABC News 6        828)KRCR ABC 7 Redding "
-   echo "589)CityLine         629)Euronews ES         669)VIVE VE           709)UFROVision CL        749)News2 WCBD         789)ABC News 7        829)KION CBS 5/46 Salinas"
-   echo "590)CBC News Montreal630)Teleamazonas        670)Vatican Media ES  710)Campo Abierto CL       750)News4 WRC Wash D.C.790)ABC News 8        830)KSBY NBC 6 Santa Barbara"
-   echo "591)Global BC        631)TV Camara PY        671)Televen VE        711)UNITV AR       751)News4 White House  791)ABC News 9        831)KESQ ABC 3 Palm Springs  "
-   echo "592)Global Okanagan  632)Tu Canal Panama     672)Impacto USA       712)TelePacifico CO        752)News5 WCYB         792)ABC News 10       832)KCOY CBS 12 Santa Maria "
+   echo "589)CityLine         629)Euronews ES         669)VIVE VE           709)UFROVision CL       749)News2 WCBD         789)ABC News 7        829)KION CBS 5/46 Salinas"
+   echo "590)CBC News Montreal630)Teleamazonas        670)Vatican Media ES  710)Campo Abierto CL    750)News4 WRC Wash D.C.790)ABC News 8        830)KSBY NBC 6 Santa Barbara"
+   echo "591)Global BC        631)TV Camara PY        671)Televen VE        711)UNITV AR            751)News4 White House  791)ABC News 9        831)KESQ ABC 3 Palm Springs  "
+   echo "592)Global Okanagan  632)Tu Canal Panama     672)Impacto USA       712)TelePacifico CO     752)News5 WCYB         792)ABC News 10       832)KCOY CBS 12 Santa Maria "
    echo "593)Global Edmonton  633)Colosal TV 1        673)UCVTV CL          713)-------------       753)NewsWest 9 KWES    793)ABC News 11       833)MCAET Salinas "
    echo "594)Global Calgary   634)Canal 8 AR          674)UCVTV 2 CL        714)-------------       754)NBC4 WNBC          794)------------      834)KVVB CH.33 Victorville"
    echo "595)Global Lethbridge635)CanalShowsport AR   675)Univision MX      715)-------------       755)NBC4 WNBC Traffic  795)------------      835)KOAA NBC 5 Colorado"
@@ -445,6 +445,7 @@ chan_name="CBC News Network " ;;
 if [ "$getlink" = 1 ]
 then
 
+website="https://globalnews.ca/live/national/"
 eventID="cQOVg6jKSvusQAfYpTrUoQ"
 googleGrab 
 
@@ -7982,6 +7983,7 @@ chan_name="CBC News, Montreal, Canada";;
 # 591) Global News BC
 591)
 
+website="https://globalnews.ca/live/bc/"
 eventID="eIIBH8jkR-SWGaD5E4MesA"
 googleGrab 
 
@@ -7992,7 +7994,7 @@ chan_name="Global News BC";;
 
 # 592) Global News Okanagan
 592)
-
+website="https://globalnews.ca/live/okanagan/"
 eventID="PLPlPfeDQCCe4GaxAWpi4g"
 googleGrab 
 
@@ -8002,7 +8004,7 @@ chan_name="Global News Okanagan BC CA ";;
 
 # 593) Global News Edmonton
 593)
-
+website="https://globalnews.ca/live/edmonton/"
 eventID="K8ZZN35nQA2N_hskrUB2oQ"
 googleGrab 
 
@@ -8012,7 +8014,7 @@ chan_name="Global News Edmonton AB";;
 
 # 594) Global News Calgary
 594)
-
+website="https://globalnews.ca/live/calgary/"
 eventID="AYQ1ssB7RcOX9D78FtdoQQ"
 googleGrab 
 
@@ -8023,6 +8025,7 @@ chan_name="Global News Calgary AB";;
 # 595) Global News Lethbridge
 595)
 
+website="https://globalnews.ca/live/lethbridge/"
 eventID="hYQh95EXRwaF0IOhUrJoEQ"
 googleGrab 
 
@@ -8031,7 +8034,7 @@ chan_name="Global News Lethbridge AB";;
 
 # 596) Global News Regina
 596)
-
+website="https://globalnews.ca/live/regina/"
 eventID="A69Xh6OaTfOrRf2oHVLaPQ"
 googleGrab 
 
@@ -8040,7 +8043,7 @@ chan_name="Global News Regina SK";;
 
 # 597) Global News Saskatoon
 597)
-
+website="https://globalnews.ca/live/saskatoon/"
 eventID="cAeO9FUXSRatnrvaksoJ9A"
 googleGrab 
 
@@ -8049,7 +8052,7 @@ chan_name="Global News Saskatoon SK";;
 
 # 598) Global News Winnipeg
 598)
-
+website="https://globalnews.ca/live/winnipeg/"
 eventID="R5XZJcTAQPuyvhsVWIKRhw"
 googleGrab 
 
@@ -8058,7 +8061,7 @@ chan_name="Global News Winnipeg MB";;
 
 # 599) Global News Toronto
 599)
-
+website="https://globalnews.ca/live/toronto/"
 eventID="BblZeSsBRSSCtvkKRZ8XJQ"
 googleGrab 
 
@@ -8067,7 +8070,7 @@ chan_name="Global News Toronto ON";;
 
 # 600) Global News Peterburough 
 600)
-
+website="https://globalnews.ca/live/peterburough/"
 eventID="CQ82MHxxS7qwe7Zvs4_sUA"
 googleGrab 
 
@@ -8079,7 +8082,7 @@ chan_name="Global News Peterburough ON";;
 
 # 601) Global News Kingston
 601)
-
+website="https://globalnews.ca/live/kingston/"
 eventID="poxVVQNQSMqFBnT6qR-Lwg"
 googleGrab 
 
@@ -8088,7 +8091,7 @@ chan_name="Global News Kingston ON";;
 
 # 602) Global News Montreal
 602)
-
+website="https://globalnews.ca/live/montreal/"
 eventID="wI13hMWhRSKbyZ8Q1DQR3Q"
 googleGrab 
 
@@ -8097,7 +8100,7 @@ chan_name="Global News Montreal QC";;
 
 # 603) Global News Halifax
 603)
-
+website="https://globalnews.ca/live/halifax/"
 eventID="ljv6O6ZiSiKudWk7qwWbEw"
 googleGrab 
 
@@ -11684,7 +11687,7 @@ esac
 
 googleGrab(){
 
-base="$(curl "https://pubads.g.doubleclick.net/ssai/event/"$eventID"/streams"   -H 'authority: pubads.g.doubleclick.net'   -H 'accept: */*'   -H 'accept-language: en-US,en;q=0.9'   -H 'content-type: application/x-www-form-urlencoded;charset=UTF-8'   -H 'origin: https://globalnews.ca'   -H 'referer: https://globalnews.ca/'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="102"'   -H 'sec-ch-ua-mobile: ?0'   -H 'sec-ch-ua-platform: "Linux"'   -H 'sec-fetch-dest: empty'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-site: cross-site'   -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Safari/537.36'   --data-raw ''   --compressed | cut -d \: -f 6)"
+base="$(curl "https://pubads.g.doubleclick.net/ssai/event/"$eventID"/streams"   -H 'authority: pubads.g.doubleclick.net'   -H 'accept: */*'   -H 'accept-language: en-US,en;q=0.9'   -H 'content-type: application/x-www-form-urlencoded;charset=UTF-8'   -H 'origin: "$website"'   -H 'referer: "$website"'   -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="102"'   -H 'sec-ch-ua-mobile: ?0'   -H 'sec-ch-ua-platform: "Linux"'   -H 'sec-fetch-dest: empty'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-site: cross-site'   -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Safari/537.36'   --data-raw ''   --compressed | cut -d \: -f 6)"
 link=https:"$base":DLS/master.m3u8
 
 }
