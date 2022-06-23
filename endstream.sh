@@ -446,6 +446,18 @@ if [ "$getlink" = 1 ]
 then
 
 website="https://globalnews.ca/live/national/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="cQOVg6jKSvusQAfYpTrUoQ"
 googleGrab 
 
@@ -7984,6 +7996,18 @@ chan_name="CBC News, Montreal, Canada";;
 591)
 
 website="https://globalnews.ca/live/bc/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="eIIBH8jkR-SWGaD5E4MesA"
 googleGrab 
 
@@ -7995,6 +8019,18 @@ chan_name="Global News BC";;
 # 592) Global News Okanagan
 592)
 website="https://globalnews.ca/live/okanagan/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="PLPlPfeDQCCe4GaxAWpi4g"
 googleGrab 
 
@@ -8005,6 +8041,18 @@ chan_name="Global News Okanagan BC CA ";;
 # 593) Global News Edmonton
 593)
 website="https://globalnews.ca/live/edmonton/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="K8ZZN35nQA2N_hskrUB2oQ"
 googleGrab 
 
@@ -8015,6 +8063,18 @@ chan_name="Global News Edmonton AB";;
 # 594) Global News Calgary
 594)
 website="https://globalnews.ca/live/calgary/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="AYQ1ssB7RcOX9D78FtdoQQ"
 googleGrab 
 
@@ -8026,6 +8086,18 @@ chan_name="Global News Calgary AB";;
 595)
 
 website="https://globalnews.ca/live/lethbridge/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="hYQh95EXRwaF0IOhUrJoEQ"
 googleGrab 
 
@@ -8035,6 +8107,19 @@ chan_name="Global News Lethbridge AB";;
 # 596) Global News Regina
 596)
 website="https://globalnews.ca/live/regina/"
+
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="A69Xh6OaTfOrRf2oHVLaPQ"
 googleGrab 
 
@@ -8044,6 +8129,18 @@ chan_name="Global News Regina SK";;
 # 597) Global News Saskatoon
 597)
 website="https://globalnews.ca/live/saskatoon/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="cAeO9FUXSRatnrvaksoJ9A"
 googleGrab 
 
@@ -8053,6 +8150,18 @@ chan_name="Global News Saskatoon SK";;
 # 598) Global News Winnipeg
 598)
 website="https://globalnews.ca/live/winnipeg/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="R5XZJcTAQPuyvhsVWIKRhw"
 googleGrab 
 
@@ -8062,6 +8171,18 @@ chan_name="Global News Winnipeg MB";;
 # 599) Global News Toronto
 599)
 website="https://globalnews.ca/live/toronto/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="BblZeSsBRSSCtvkKRZ8XJQ"
 googleGrab 
 
@@ -8071,6 +8192,18 @@ chan_name="Global News Toronto ON";;
 # 600) Global News Peterburough 
 600)
 website="https://globalnews.ca/live/peterburough/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="CQ82MHxxS7qwe7Zvs4_sUA"
 googleGrab 
 
@@ -8083,6 +8216,18 @@ chan_name="Global News Peterburough ON";;
 # 601) Global News Kingston
 601)
 website="https://globalnews.ca/live/kingston/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="poxVVQNQSMqFBnT6qR-Lwg"
 googleGrab 
 
@@ -8092,6 +8237,18 @@ chan_name="Global News Kingston ON";;
 # 602) Global News Montreal
 602)
 website="https://globalnews.ca/live/montreal/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="wI13hMWhRSKbyZ8Q1DQR3Q"
 googleGrab 
 
@@ -8101,6 +8258,18 @@ chan_name="Global News Montreal QC";;
 # 603) Global News Halifax
 603)
 website="https://globalnews.ca/live/halifax/"
+
+#Upstream source website URL to Global News Canada stations. 
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at these listed URLs 
+#distributed free of charge to anyone who navigates to those web URLs, by them.  
+#They do not have GeoLocation blocking, pay-wall, encryption, or user logon, DRM (digital rights management), 
+#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which is public publishing of the URL hosting the media.
+#These direct links have been removed from this file, and replaced with an alternative Google API based method.
+#This is the same method that your web-browser uses to link to the media stream. 
+
 eventID="ljv6O6ZiSiKudWk7qwWbEw"
 googleGrab 
 
