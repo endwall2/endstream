@@ -54,47 +54,47 @@
 #  The Endware Development Team
 ##############################################################################################################################################################################
 ##############################################################################################################################################################################
-#                                                              LICENSE AGREEMENT
+#                                                              LICENSE AGREEMENT  
 ##############################################################################################################################################################################
 #  BEGINNING OF LICENSE AGREEMENT
-#  TITLE:  THE ENDWARE END USER LICENSE AGREEMENT (EULA)
+#  TITLE:  THE ENDWARE END USER LICENSE AGREEMENT (EULA) 
 #  CREATION DATE: MARCH 19, 2016
-#  VERSION: 1.18
-#  VERSION DATE: JUNE 28, 2018
+#  VERSION: 1.19
+#  VERSION DATE: JUNE 23, 2022
 #  COPYRIGHT: THE ENDWARE DEVELOPMENT TEAM, 2016-2018
-#  ALL RIGHTS RESERVED
-#
+#  ALL RIGHTS RESERVED  
+#    
 #  WHAT CONSTITUTES "USE"? WHAT IS A "USER"?
 #  0) a) Use of this program means the ability to study, possess, run, copy, modify, publish, distribute and sell the code as included in all lines of this file,
-#        in text format or as a binary file constituting this particular program or its compiled binary machine code form, as well as the the performance
-#        of these aforementioned actions and activities.
+#        in text format or as a binary file constituting this particular program or its compiled binary machine code form, as well as the the performance 
+#        of these aforementioned actions and activities. 
 #  0) b) A user of this program is any individual who has been granted use as defined in section 0) a) of the LICENSE AGREEMENT, and is granted to those individuals listed in section 1.
 #  WHO MAY USE THIS PROGRAM ?
 #  1) a) This program may be used by any living human being, any person, any corporation, any company, and by any sentient individual with the willingness and ability to do so.
 #  1) b) This program may be used by any citizen or resident of any country, and by any human being without citizenship or residency.
 #  1) c) This program may be used by any civilian, military officer, government agent, private citizen, government official, sovereign, monarch, head of state,
-#        dignitary, ambassador, legislator,congressional representative, member of parliament, senator, judicial official, judge, prosecutor, lawyer, law enforcement officer,
+#        dignitary, ambassador, legislator,congressional representative, member of parliament, senator, judicial official, judge, prosecutor, lawyer, law enforcement officer, 
 #        police constable, noble, commoner, clergy, laity, and generally all classes and ranks of people, persons, and human beings mentioned and those not mentioned.
-#  1) d) This program may be used by any human being of any sex or gender, including men, women, or any other sex, or gender not mentioned.
+#  1) d) This program may be used by any human being of any sex or gender, including men, women, or any other sex, or gender not mentioned.       
 #  1) e) This program may be used by any human being of any affiliation, political viewpoint, political affiliation, religious belief, religious affiliation, and by those of non-belief or non affiliation.
-#  1) f) This program may be used by any human being of any race, ethnicity, identity, origin, genetic makeup, physical appearance, mental ability, and by those of any other physical
+#  1) f) This program may be used by any human being of any race, ethnicity, identity, origin, genetic makeup, physical appearance, mental ability, and by those of any other physical 
 #        or non physical characteristics of differentiation.
 #  1) g) This program may be used by any human being of any sexual orientation, including heterosexual, homosexual, bisexual, asexual, or any other sexual orientation not mentioned.
-#  1) h) This program may be used by all business classes and business entities, including corporations, limited liability companies, sole proprietorships, partnerships, joint venture companies, private companies, publicly owned companies, and any other business class not specifically mentioned.
-#  1) i) This program may be used by anyone.
+#  1) h) This program may be used by all business classes and business entities, including corporations, limited liability companies, sole proprietorships, partnerships, joint venture companies, private companies, publicly owned companies, and any other business class not specifically mentioned. 
+#  1) i) This program may be used by anyone. 
 #  WHERE MAY A USER USE THIS PROGRAM ?
 #  2) a) This program may be used in any country, in any geographic location of the planet Earth, in any marine or maritime environment, at sea, sub-sea, in a submarine, underground,
-#        in the air, in an airplane, dirigible, blimp, or balloon, in a car, bus, motor vehicle, armored transport vehicle, and at any distance from the surface of the planet Earth, including in orbit about the Earth or the Moon,
-#        on a satellite orbiting about the Earth, the Moon, about any Solar System planet and its moons, on any space transport vehicle, and anywhere in the Solar System including the Moon, Mars, and all other Solar System planets not listed.
-#  2) b) This program may be used in any residential, commercial, business, and governmental property or location and in all public and private spaces.
+#        in the air, in an airplane, dirigible, blimp, or balloon, in a car, bus, motor vehicle, train, armored transport vehicle, and at any distance from the surface of the planet Earth, including in orbit about the Earth, the Moon, or the planet Mars,
+#        on a satellite orbiting about the Earth, the Moon, the planet Mars, and about any Solar System planet and its moons, on any space transport vehicle, and anywhere in the Solar System including the Moon, Mars, and all other Solar System planets not listed.  
+#  2) b) This program may be used in any residential, commercial, business, and governmental property or location and in all public and private spaces. 
 #  2) c) This program may be used anywhere.
 #  IN WHAT CONTEXT OR CIRCUMSTANCES MAY A USER USE THIS PROGRAM?
 #  3)  This program may be used by any person, human being or sentient individual for any purpose and in any context and in any setting including for personal use, academic use,
-#      business use, commercial use, government use, non-governmental organization use, non-profit organization use, military use, civilian use, and generally any other use
+#      business use, commercial use, government use, non-governmental organization use, non-profit organization use, military use, civilian use, and generally any other use 
 #      not specifically mentioned.
 #  WHAT MAY A "USER" DO WITH THIS PROGRAM ?
 #  4) Any user of this program is granted the freedom to read and study the code.
-#  5) a) Any user of this program is granted the freedom to distribute, publish, and share the code with any recipient of their choice electronically or by any other method of transmission.
+#  5) a) Any user of this program is granted the freedom to distribute, publish, and share the code with any recipient of their choice electronically or by any other method of transmission. 
 #  5) b) The LICENCSE AGREEMENT, ACKNOWLEDGMENTS, Header and Instructions must remain attached to the code in their entirety when re-distributed.
 #  5) c) Any user of this program is granted the freedom to sell this software as distributed or to bundle it with other software or saleable goods.
 #  6) a) Any user of this program is granted the freedom to modify the code.
@@ -105,36 +105,41 @@
 #  6) e) Any user of this software agrees that any derivative works produced as a result of user modification will be sublicensed when re-distributed under the original terms of this LICENSE AGREEMENT exactly as presented.
 #  7) a) Any user of this program is granted the freedom to run this code on any computer of their choice.
 #  7) b) Any user of this program is granted the freedom to run as many simultaneous instances of this code, on as many computers as they are able to and desire, and for as long as they desire and are
-#        able to do so with any degree of simultaneity in use.
+#        able to do so with any degree of simultaneity in use. 
 #  WHAT MUST A "USER" NOT DO WITH THIS PROGRAM ?
 #  8) Any user of this program is not granted the freedom to procure a patent for the methods presented in this software, and agrees not to do so.
 #  9) Any user of this program is not granted the freedom to arbitrarily procure a copyright on this software as presented, and agrees not to do so.
 #  10) Any user of this program is not granted the freedom to obtain or retain intellectual property rights on this software as presented and agrees not to do so.
-#  11) a) Any user of this program may use this software as part of a patented process, as a substitutable input into the process; however the user agrees not to attempt to patent this software as part of their patented process.
+#  11) a) Any user of this program may use this software as part of a patented process, as a substitutable input into the process; however the user agrees not to attempt to patent this software as part of their patented process. 
 #  11) b) This software is a tool, like a hammer, and may be used in a process which applies for and gains a patent, as a substitutable input into the process;
 #         however the software tool itself may not be included in the patent or covered by the patent as a novel invention, and the user agrees not to do this and not to attempt to do this.
+#  12) a) Any user of this program is not granted the freedom to remove, replace, alter or modify the LICENSE AGREEMENT, ACKNOWLEDGMENTS, or the Header and Instructions from the file, if being re-distributed without modification of the program code. 
+#         The LICENSE AGREEMENT, ACKKNWLEGEMENTS and Header and Instructions sections must remain attached to the code in their entirety when re-distributed without modification. 
+#      b) If the code is moodified, by a user, as permitted and allowed under section 6) a),b),c),d),e) of this LICENSE AGREEMENT, then 
+#         the user of this program who made the program code modifications may modify or alter the ACKNKOWLEGEMENTS, or the Header and Instructions sections to document these new modifications and their authorship, and to acknowledge any asistance in doing so, 
+#         however, these user modifiers are not granted the freedom to removem, replace, alter or modify the LICENSE AGREEMENT which must remain attached to the code in their entirety when re-distributed without modification.
 #  WHO GRANTS THESE FREEDOMS ?
-#  12) The creators of this software are the original developer,"Endwall", and anyone listed as being a member of "The Endware Development Team" by "Endwall", as well as ancillary contributors, and user modifiers and developers of the software.
-#  13) The aforementioned freedoms of use listed in sections 4),5),6),and 7) are granted by the creators of this software and the Endware Development Team to any qualifying user listed in section 1) and
+#  13) The creators of this software are the original developer,"Endwall", and anyone listed as being a member of "The Endware Development Team" by "Endwall", as well as ancillary contributors, and user modifiers and developers of the software. 
+#  14) The aforementioned freedoms of use listed in sections 4),5),6),and 7) are granted by the creators of this software and the Endware Development Team to any qualifying user listed in section 1) and 
 #      comporting with any restrictions and qualifications mentioned in sections 2), 3), 8), 9), 10) and 11) of this LICENSE AGREEMENT.
 #  WHAT RELATIONSHIP DO THE USERS HAVE WITH THE CREATORS OF THE SOFTWARE ?
-#  14)  This software is distributed "AS IS" without any warranty and without any guaranty and the creators do not imply anything about its usefulness or efficacy.
-#  15)  If the user suffers or sustains financial loss, informational loss, material loss, physical loss or data loss as a result of using, running, or modifying this software
-#       the user agrees that they will hold the creators of this software, "The Endware Development Team", "Endwall", and the programmers involved in its creation, free from prosecution,
+#  15)  This software is distributed "AS IS" without any warranty and without any guaranty and the creators do not imply anything about its usefulness or efficacy.
+#  16)  If the user suffers or sustains financial loss, informational loss, material loss, physical loss or data loss as a result of using, running, or modifying this software 
+#       the user agrees that they will hold the creators of this software, "The Endware Development Team", "Endwall", and the programmers involved in its creation, free from prosecution, 
 #       free from indemnity, and free from liability, and will not attempt to seek restitution, compensation, or payment for any such loss real or imagined.
-#  16)  If a user makes a significant improvement to this software, and if this improvement is included in a release, the user agrees not to seek remuneration or payment
-#       from the creators of this software or from Endwall or from the Endware Development Team, for any such work contribution performed, and the user understands
-#       that there will be no such remuneration or payment rendered to them for any such contribution.
+#  17)  If a user makes a significant improvement to this software, and if this improvement is included in a release, the user agrees not to seek remuneration or payment 
+#       from the creators of this software or from Endwall or from the Endware Development Team, for any such work contribution performed, and the user understands 
+#       that there will be no such remuneration or payment rendered to them for any such contribution. 
 #  END OF LICENSE AGREEMENT
 ##################################################################################################################################################################################
 #  ADDITIONAL NOTES:
-#  17)  If a user finds a significant flaw or makes a significant improvement to this software, please feel free to notify the original developers so that we may also
+#  18)  If a user finds a significant flaw or makes a significant improvement to this software, please feel free to notify the original developers so that we may also
 #       include your user improvement in the next release; users are not obligated to do this, but we would enjoy this courtesy tremendously.
 #
-#  18)  Sections 0) a) 0) b) and 1) a) are sufficient for use; however sections 1) b) through 1) i) are presented to clarify 1 a) and to enforce non-discrimination and non-exclusion of use.
+#  19)  Sections 0) a) 0) b) and 1) a) are sufficient for use; however sections 1) b) through 1) i) are presented to clarify 1 a) and to enforce non-discrimination and non-exclusion of use.  
 #       For example some people may choose to redefine the meaning of the words "person" "human being" or "sentient individual" to exclude certain types of people.
 #       This would be deemed unacceptable and is specifically rejected by the enumeration presented.  If the wording presented is problematic please contact us and suggest a change,
-#       and it will be taken into consideration.
+#       and it will be taken into consideration.  
 #################################################################################################################################################################################
 
 ######################################## BEGINNING OF PROGRAM    ##########################################################
@@ -176,13 +181,13 @@ channel_matrix_0()
    echo "============================================================    "$product"  "$version"   =========================================================================="
    echo "||     ENGLISH        ||    ENGLISH II   ||     FRANCAIS      ||      ESPANOL     ||      EAST EUROPE      ||   SOUTH EUROPE/TURK      ||  ARABIC/FARSI/Pashtun/||"
    echo "============================================================================================================================================================="
-   echo "1)CBC NewsNet CA      41)QVC UK          81)France 24 FR      121)RT Espanol       161)WDR DE            201)QVC Italian               241)RT Arabic"
-   echo "2)Global News CA      42)QVC 1 USA       82)BFM TV FR         122)DW Espanol       162)DW Deutsch        202)Mediaon BergamoTV IT      242)France 24 Arabic"
-   echo "3)CBSN USA            43)TSC CA          83)BFM Business FR   123)CGTN Espanol     163)ZDK InfoKanal     203)Radio TV Rome IT          243)BBC Arabic"
-   echo "4)Bloomberg USA       44)QVC 2 USA       84)RT France         124)France24 Espanol 164)Tagesschau/MOMA DE204)RTM Arcevia IT            244)DW Arabic"
-   echo "5)Newsy USA           45)QVC 3 USA       85)France Info TV    125)TeleSUR VE       165)RT DE             205)Udinese IT                245)CGTN Arabic"
-   echo "6)ABC News USA        46)QVC 4 USA       86)TV5 Monde FR      126)Hispan TV IR     166)QVC DE            206)50NewsVersiliaViareggio IT246)Al Jazeera QA"
-   echo "7)Cheddar News        47)HSN             87)CGTN Francais     127)Malaga TV ES     167)ADR Alpha DE      207)50 Canale Pisa IT         247)Al Jazeera Mubasher QA"
+   echo "1)CBSN USA            41)QVC UK          81)France 24 FR      121)RT Espanol       161)WDR DE            201)QVC Italian               241)RT Arabic"
+   echo "2)Bloomberg USA       42)QVC 1 USA       82)BFM TV FR         122)DW Espanol       162)DW Deutsch        202)Mediaon BergamoTV IT      242)France 24 Arabic"
+   echo "3)Newsy USA           43)TSC CA          83)BFM Business FR   123)CGTN Espanol     163)ZDK InfoKanal     203)Radio TV Rome IT          243)BBC Arabic"
+   echo "4)ABC News USA        44)QVC 2 USA       84)RT France         124)France24 Espanol 164)Tagesschau/MOMA DE204)RTM Arcevia IT            244)DW Arabic"
+   echo "5)Cheddar News        45)QVC 3 USA       85)France Info TV    125)TeleSUR VE       165)RT DE             205)Udinese IT                245)CGTN Arabic"
+   echo "6)CBC NewsNet CA      46)QVC 4 USA       86)TV5 Monde FR      126)Hispan TV IR     166)QVC DE            206)50NewsVersiliaViareggio IT246)Al Jazeera QA"
+   echo "7)Global News CA      47)HSN             87)CGTN Francais     127)Malaga TV ES     167)ADR Alpha DE      207)50 Canale Pisa IT         247)Al Jazeera Mubasher QA"
    echo "8)TeleSUR Eng VE      48)HSN 2           88)Africa News       128)C5N AR           168)Radio 21 DE       208)Teleliberta Piacenza IT   248)Al Arabiya AE"
    echo "9)DW English          49)TWIT USA        89)TVA CA            129)AcequiaMendozaAR 169)DW Deutsch + DE   209)Top News Albania          249)Al Mayadeen LB"
    echo "10)RT UK              50)DC Network      90)RDI ICI CA        130)Todo Noticias AR 170)Baden TV DE       210)Star Lamia GR             250)Belqees TV YE"
@@ -424,52 +429,9 @@ chan_num=$1
 case $chan_num in
 ################    ENGLISH     ##################################
 
-########################## CANADA MAINSTREAM #################################################
-
-###################### CANADA ##########################################################
-# 1) CBC News Network
-1)
-if [ "$getlink" = 1 ]
-then
-#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master6.m3u8"
-link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master5.m3u8"
-#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master4.m3u8"
-#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master3.m3u8"
-#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master2.m3u8"
-#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master1.m3u8"
-fi
-use_cookies="no"
-chan_name="CBC News Network " ;;
-
-# 2) Global News CA
-2)
-if [ "$getlink" = 1 ]
-then
-
-#Upstream source website URL to Global News Canada stations. 
-website="https://globalnews.ca/live/national/"
-
-#Comment:
-#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
-#distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
-
-eventID="cQOVg6jKSvusQAfYpTrUoQ"
-googleGrab 
-
-fi
-#method="Tor"
-use_cookies="no"
-TAG=" GLOBAL CA______"
-chan_name="Global News CA" ;;
-
 ########################## USA MAINSTREAM ###################################################
-# 3) CBSN
-3)
+# 1) CBSN
+1)
 keyword="LIVE"
 if [ "$getlink" = 1 ]
 then
@@ -491,8 +453,8 @@ use_cookies="no"
 TAG=" CBSN_______"
 chan_name="CBSN" ;;
 
-# 4) Bloomberg Business USA
-4)
+# 2) Bloomberg Business USA
+2)
 keyword="Bloomberg"
 if [ "$getlink" = 1 ]
 then
@@ -516,8 +478,8 @@ use_cookies="no"
 TAG=" BLMBRG_____"
 chan_name="Bloomberg Business USA";;
 
-# 5) Newsy
-5)
+# 3) Newsy
+3)
 
 if [ "$getlink" = 1 ]
 then
@@ -565,8 +527,8 @@ use_cookies="no"
 TAG="NEWSY-----"
 chan_name="Newsy" ;;
 
-# 6)ABC News USA
-6)
+# 4)ABC News USA
+4)
 
 if [ "$getlink" = 1 ]
 then
@@ -597,8 +559,8 @@ TAG="ABC_NEWS_USA"
 chan_name="ABC News USA" ;;
 
 
-# 7)Cheddar News 
-7)
+# 5)Cheddar News 
+5)
 if [ "$getlink" = 1 ]
 then
 #link="https://live.chdrstatic.com/cheddar/index.m3u8"
@@ -681,6 +643,50 @@ fi
 #####method="Tor"
 use_cookies="no"
 chan_name="Cheddar News";;
+
+
+########################## CANADA MAINSTREAM #################################################
+
+###################### CANADA ##########################################################
+# 6) CBC News Network
+6)
+if [ "$getlink" = 1 ]
+then
+#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master6.m3u8"
+link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master5.m3u8"
+#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master4.m3u8"
+#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master3.m3u8"
+#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master2.m3u8"
+#link="https://livecbcdai-i.akamaihd.net/hls/live/567245/event2/CBCNN/master1.m3u8"
+fi
+use_cookies="no"
+chan_name="CBC News Network " ;;
+
+# 7) Global News CA
+7)
+if [ "$getlink" = 1 ]
+then
+
+#Upstream source website URL to Global News Canada stations. 
+website="https://globalnews.ca/live/national/"
+
+#Comment:
+#Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
+#distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
+
+eventID="cQOVg6jKSvusQAfYpTrUoQ"
+googleGrab 
+
+fi
+#method="Tor"
+use_cookies="no"
+TAG=" GLOBAL CA______"
+chan_name="Global News CA" ;;
 
 
 ######################## SOUTH AMERICA #############################################
@@ -7978,11 +7984,11 @@ website="https://globalnews.ca/live/bc/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="eIIBH8jkR-SWGaD5E4MesA"
 googleGrab 
@@ -8000,11 +8006,11 @@ website="https://globalnews.ca/live/okanagan/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="PLPlPfeDQCCe4GaxAWpi4g"
 googleGrab 
@@ -8022,11 +8028,11 @@ website="https://globalnews.ca/live/edmonton/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="K8ZZN35nQA2N_hskrUB2oQ"
 googleGrab 
@@ -8044,11 +8050,11 @@ website="https://globalnews.ca/live/calgary/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="AYQ1ssB7RcOX9D78FtdoQQ"
 googleGrab 
@@ -8065,11 +8071,11 @@ website="https://globalnews.ca/live/lethbridge/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="hYQh95EXRwaF0IOhUrJoEQ"
 googleGrab 
@@ -8085,11 +8091,11 @@ website="https://globalnews.ca/live/regina/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="A69Xh6OaTfOrRf2oHVLaPQ"
 googleGrab 
@@ -8106,11 +8112,11 @@ website="https://globalnews.ca/live/saskatoon/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="cAeO9FUXSRatnrvaksoJ9A"
 googleGrab 
@@ -8126,11 +8132,11 @@ website="https://globalnews.ca/live/winnipeg/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="R5XZJcTAQPuyvhsVWIKRhw"
 googleGrab 
@@ -8146,11 +8152,11 @@ website="https://globalnews.ca/live/toronto/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="BblZeSsBRSSCtvkKRZ8XJQ"
 googleGrab 
@@ -8167,11 +8173,11 @@ website="https://globalnews.ca/live/peterburough/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="CQ82MHxxS7qwe7Zvs4_sUA"
 googleGrab 
@@ -8190,11 +8196,11 @@ website="https://globalnews.ca/live/kingston/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="poxVVQNQSMqFBnT6qR-Lwg"
 googleGrab 
@@ -8210,11 +8216,11 @@ website="https://globalnews.ca/live/montreal/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News.  
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="wI13hMWhRSKbyZ8Q1DQR3Q"
 googleGrab 
@@ -8230,11 +8236,11 @@ website="https://globalnews.ca/live/halifax/"
 #Comment:
 #Corus Entertainment publicly broadcasts their content to anyone with a web-browser at the above listed URL 
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
-#They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
-#or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
+#They do not have Geo-Location blocking, a pay-wall, a user logon with a password, DRM (digital rights management), encryption, 
+#or even a cookie or token scheme to authorize viewers. Their stream and its links are published to the web-browser 
 #after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
-#These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
-#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
+#The direct links to these media streams have been removed from this file, and replaced with the Google API based method.
+#This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News or Corus Entertainment. 
 
 eventID="ljv6O6ZiSiKudWk7qwWbEw"
 googleGrab 
