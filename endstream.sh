@@ -7,8 +7,8 @@
 # Copyright: 2017-2019, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63568
-# Revision Date: June 22, 2022
+# Version: 0.63569
+# Revision Date: June 23, 2022
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -140,11 +140,11 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63568"
-rev_date="22/06/2022"
+version="0.63569"
+rev_date="23/06/2022"
 branch="gnu/linux"
 product="ENDSTREAM"
-##################################################
+##################################################..
 temp_pl="$HOME/tmp/master.m3u8"
 USERAGENTS="$HOME/bin/user_agents.txt"
 chan_columns="$HOME/bin/streams.txt"
@@ -204,7 +204,8 @@ channel_matrix_0()
    echo "26)Free Speech TV     66)NYXT Manhattan  106)BX1 BE           146)VPItv VE         186)News 24 UA        226)-------------             266)KSA Quaran SA"
    echo "27)Infowars Live      67)CBSN NY USA     107)France Info      147)TeleDiario MX    187)UA TV UA          227)-------------             267)KSA Sunna SA"
    echo "28)American Journal   68)CBSN LA USA     108)CNEWS FR         148)Excelsior MX *   188)News 1 UA         228)-------------             268)KSA Al Ekhbariya SA"
-   echo "29)United Nations TV  70)CBSN Boston     110)RTL 2 BE         150)-------------    190)TV Publica Moldova230)-------------             270)KSA SBC SA"
+   echo "29)Infowars WarRoom   69)CBSN Bay Area   109)RTL BE           149)Excelsior MX *   189)UA 5  UA          229)-------------             269)KSA Zikrayat SA"
+   echo "30)United Nations TV  70)CBSN Boston     110)RTL 2 BE         150)-------------    190)TV Publica Moldova230)-------------             270)KSA SBC SA"
    echo "31)RT Documentary     71)CBSN Chicago    111)Europe 1 FR      151)-------------    191)RT Docs RU        231)-------------             271)KSA Saudi Radio SA"
    echo "32)CGTN Documentary   72)CBSN Dallas     112)RTL BE           152)-------------    192)Thromadske UA *   232)-------------             272)KSA Jedha Radio SA"
    echo "33)CBC CA             73)CBSN Denver     113)France Inter FR  153)-------------    193)Espresso UA  *    233)-------------             273)KSA Rhiyad Radio SA"
@@ -453,7 +454,7 @@ website="https://globalnews.ca/live/national/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -898,10 +899,18 @@ then
 #link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_radio.m3u8"
 #link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master.m3u8"
 
-link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino3.m3u8"
 
+
+#link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino3.m3u8"
 # link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino2.m3u8"
 # link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino1.m3u8"
+
+
+#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_0/chunklist.m3u8"
+#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_1/chunklist.m3u8"
+#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_2/chunklist.m3u8"
+link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_3/chunklist.m3u8"
+#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_4/chunklist.m3u8"
 
 fi
 #method="Tor"
@@ -1301,7 +1310,17 @@ chan_name="NEWSMAX USA";;
 26)
 if [ "$getlink" = 1 ]
 then
-link="https://freespeech.akamaized.net/hls/live/2024573/live2/playlist.m3u8"
+
+#link="https://edge.fstv-live-linear-channel.top.comcast.net/Content/HLS_HLSv3/Live/channel(b168a609-19c1-2203-ae1d-6b9726f05e67)/index.m3u8"
+##EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1749451,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=640x360,FRAME-RATE=29.970
+#link="https://edge.fstv-live-linear-channel.top.comcast.net/Content/HLS_HLSv3/Live/channel(b168a609-19c1-2203-ae1d-6b9726f05e67)/02.m3u8"
+##EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1299886,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=512x288,FRAME-RATE=29.970
+#link="https://edge.fstv-live-linear-channel.top.comcast.net/Content/HLS_HLSv3/Live/channel(b168a609-19c1-2203-ae1d-6b9726f05e67)/01.m3u8"
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2311408,CODECS="avc1.77.40,mp4a.40.2",RESOLUTION=853x480,FRAME-RATE=29.970
+#REM set link="https://edge.fstv-live-linear-channel.top.comcast.net/Content/HLS_HLSv3/Live/channel(b168a609-19c1-2203-ae1d-6b9726f05e67)/03.m3u8"
+#REM #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3997277,CODECS="avc1.77.40,mp4a.40.2",RESOLUTION=1280x720,FRAME-RATE=29.970
+link="https://edge.fstv-live-linear-channel.top.comcast.net/Content/HLS_HLSv3/Live/channel(b168a609-19c1-2203-ae1d-6b9726f05e67)/04.m3u8"
+
 fi
 #method="Tor"
 use_cookies="no"
@@ -2403,25 +2422,12 @@ then
 #link=http://f24hls-i.akamaihd.net/hls/live/221192/F24_FR_LO_HLS/master_900.m3u8
 #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="program_audio",LANGUAGE="fra",NAME="audio_1",AUTOSELECT=YES,DEFAULT=YES,URI="master_96.m3u8"
 #link=http://f24hls-i.akamaihd.net/hls/live/221192/F24_FR_LO_HLS/master_96.m3u8
-
 #link=http://static.france24.com/live/F24_FR_HI_HLS/live_tv.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=673025,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=640x360
-#Link="http://f24hls-i.akamaihd.net/hls/live/221146/F24_FR_HI_HLS/05.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=673025,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=640x360
-#link="http://f24hls-i.akamaihd.net/hls/live/221146-b/F24_FR_HI_HLS/05.m3u8"
-##EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1081720,CODECS="avc1.64001f,mp4a.40.2",RESOLUTION=720x576
-#link="http://f24hls-i.akamaihd.net/hls/live/221146/F24_FR_HI_HLS/04.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1081720,CODECS="avc1.64001f,mp4a.40.2",RESOLUTION=720x576
-#link="http://f24hls-i.akamaihd.net/hls/live/221146-b/F24_FR_HI_HLS/04.m3u8"
-##EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2512155,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720
-#link="http://f24hls-i.akamaihd.net/hls/live/221146/F24_FR_HI_HLS/03.m3u8"
-##EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2512155,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720
-#link="http://f24hls-i.akamaihd.net/hls/live/221146-b/F24_FR_HI_HLS/03.m3u8"
-##EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5270851,CODECS="avc1.640028,mp4a.40.2",RESOLUTION=1920x1080
-#link="http://f24hls-i.akamaihd.net/hls/live/221146/F24_FR_HI_HLS/01.m3u8"
-##EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5270851,CODECS="avc1.640028,mp4a.40.2",RESOLUTION=1920x1080
-link="http://f24hls-i.akamaihd.net/hls/live/221146-b/F24_FR_HI_HLS/01.m3u8"
-#link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/france24/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
+
+keyword="DIRECT"
+channelURL="https://www.youtube.com/c/FRANCE24/videos?view=2&live_view=501"
+youTubeGrab
+
 fi
 use_cookies="no"
 #format=hls-720
@@ -2498,6 +2504,7 @@ fi
 use_cookies="no"
 #method="Tor"
 chan_name="RT France" ;;
+
 # 85) France Info TV
 85)
 keyword="franceinfo"
@@ -3076,34 +3083,18 @@ chan_name="CGTN Espanol" ;;
 
 if [ "$getlink" = 1 ]
 then
-keyword="Vivo"
+
 #link=http://f24hls-i.akamaihd.net/hls/live/520844/F24_ES_LO_HLS/master.m3u8
 #link=http://static.france24.com/live/F24_ES_LO_HLS/live_web.m3u8
 #link=http://f24hls-i.akamaihd.net/hls/live/520844/F24_ES_LO_HLS/master_900.m3u8
 #link=http://f24hls-i.akamaihd.net/hls/live/520844-b/F24_ES_LO_HLS/master.m3u8
 #link=http://f24hls-i.akamaihd.net/hls/live/520844-b/F24_ES_LO_HLS/master_900.m3u8
-
-
 #link=http://static.france24.com/live/F24_ES_HI_HLS/live_tv.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=673025,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=640x360
-#link="http://f24hls-i.akamaihd.net/hls/live/520845/F24_ES_HI_HLS/05.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=673025,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=640x360
-#link="http://f24hls-i.akamaihd.net/hls/live/520845-b/F24_ES_HI_HLS/05.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1081720,CODECS="avc1.64001f,mp4a.40.2",RESOLUTION=720x576
-#link="http://f24hls-i.akamaihd.net/hls/live/520845/F24_ES_HI_HLS/04.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1081720,CODECS="avc1.64001f,mp4a.40.2",RESOLUTION=720x576
-#link="http://f24hls-i.akamaihd.net/hls/live/520845-b/F24_ES_HI_HLS/04.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2512155,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720
-#link="http://f24hls-i.akamaihd.net/hls/live/520845/F24_ES_HI_HLS/03.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2512155,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720
-#link="http://f24hls-i.akamaihd.net/hls/live/520845-b/F24_ES_HI_HLS/03.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5270851,CODECS="avc1.640028,mp4a.40.2",RESOLUTION=1920x1080
-link="http://f24hls-i.akamaihd.net/hls/live/520845/F24_ES_HI_HLS/01.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5270851,CODECS="avc1.640028,mp4a.40.2",RESOLUTION=1920x1080
-#link="http://f24hls-i.akamaihd.net/hls/live/520845-b/F24_ES_HI_HLS/01.m3u8"
 
+keyword="VIVO"
+channelURL="https://www.youtube.com/c/FRANCE24Espa%C3%B1ol/videos?view=2&live_view=501"
+youTubeGrab
 
-#link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/channel/UCUdOoVWuWmgo1wByzcsyKDQ/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
 fi
 use_cookies="no"
 #method="Tor"
@@ -4485,36 +4476,23 @@ use_cookies="no"
 chan_name="RT Arabic" ;;
 # 242) France 24 Arabic
 242)
-keyword="الأخبار "
+
 if [ "$getlink" = 1 ]
 then
-#link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/france24arabic/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
-#link=http://static.france24.com/live/F24_AR_LO_HLS/live_web.m3u8
+
+##link=http://static.france24.com/live/F24_AR_LO_HLS/live_web.m3u8
 #link=http://f24hls-i.akamaihd.net/hls/live/221196/F24_AR_LO_HLS/master.m3u8
 #link=http://f24hls-i.akamaihd.net/hls/live/221196-b/F24_AR_LO_HLS/master.m3u8
 #EXT-X-STREAM-INF:BANDWIDTH=1095600,AVERAGE-BANDWIDTH=1095600,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=1024x576,FRAME-RATE=25.000,AUDIO="program_audio"
 #link=http://f24hls-i.akamaihd.net/hls/live/221196-b/F24_AR_LO_HLS/master_900.m3u8
 #link=http://f24hls-i.akamaihd.net/hls/live/221196/F24_AR_LO_HLS/master_900.m3u8
 #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="program_audio",LANGUAGE="fra",NAME="audio_1",AUTOSELECT=YES,DEFAULT=YES,URI="master_96.m3u8"
-
 #link=http://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8
 
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=673025,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=640x360
-#link="http://f24hls-i.akamaihd.net/hls/live/221148/F24_AR_HI_HLS/05.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=673025,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=640x360
-#link="http://f24hls-i.akamaihd.net/hls/live/221148-b/F24_AR_HI_HLS/05.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1081720,CODECS="avc1.64001f,mp4a.40.2",RESOLUTION=720x576
-#link="http://f24hls-i.akamaihd.net/hls/live/221148/F24_AR_HI_HLS/04.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1081720,CODECS="avc1.64001f,mp4a.40.2",RESOLUTION=720x576
-#link="http://f24hls-i.akamaihd.net/hls/live/221148-b/F24_AR_HI_HLS/04.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2512155,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720
-#link="http://f24hls-i.akamaihd.net/hls/live/221148/F24_AR_HI_HLS/03.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2512155,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720
-#link="http://f24hls-i.akamaihd.net/hls/live/221148-b/F24_AR_HI_HLS/03.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5270851,CODECS="avc1.640028,mp4a.40.2",RESOLUTION=1920x1080
-#link="http://f24hls-i.akamaihd.net/hls/live/221148/F24_AR_HI_HLS/01.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5270851,CODECS="avc1.640028,mp4a.40.2",RESOLUTION=1920x1080
-link="http://f24hls-i.akamaihd.net/hls/live/221148-b/F24_AR_HI_HLS/01.m3u8"
+keyword="الأخبار "
+channelURL="https://www.youtube.com/c/FRANCE24Arabic/videos?view=2&live_view=501"
+youTubeGrab
+
 
 fi
 use_cookies="no"
@@ -8002,7 +7980,7 @@ website="https://globalnews.ca/live/bc/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8024,7 +8002,7 @@ website="https://globalnews.ca/live/okanagan/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8046,7 +8024,7 @@ website="https://globalnews.ca/live/edmonton/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8068,7 +8046,7 @@ website="https://globalnews.ca/live/calgary/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8089,7 +8067,7 @@ website="https://globalnews.ca/live/lethbridge/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8109,7 +8087,7 @@ website="https://globalnews.ca/live/regina/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8130,7 +8108,7 @@ website="https://globalnews.ca/live/saskatoon/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8150,7 +8128,7 @@ website="https://globalnews.ca/live/winnipeg/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8170,7 +8148,7 @@ website="https://globalnews.ca/live/toronto/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8191,7 +8169,7 @@ website="https://globalnews.ca/live/peterburough/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8214,7 +8192,7 @@ website="https://globalnews.ca/live/kingston/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
@@ -8234,7 +8212,7 @@ website="https://globalnews.ca/live/montreal/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News.  
 
@@ -8254,7 +8232,7 @@ website="https://globalnews.ca/live/halifax/"
 #distributed free of charge to anyone who navigates to this web URL, published publicly by Global News (Corus Entertainment).  
 #They do not have GeoLocation blocking, a pay-wall, encryption, a user logon, DRM (digital rights management), 
 #or even a cookie or token scheme to authorize viewers, their stream and its links are published to the web-browser 
-#after a javascript video player is installed, which the publicly publishs the URL hosting the media through a Google API.
+#after a javascript video player is installed, which then publicly publishs the URL hosting the media through a Google API.
 #These direct links to these media streams have been removed from this file, and replaced with the Google API based method.
 #This is the same method that your web-browser uses to link to the media stream, and is not exclusive to Global News. 
 
