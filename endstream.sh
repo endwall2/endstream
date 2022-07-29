@@ -190,12 +190,12 @@ channel_matrix_0()
    echo "7)Global News CA      47)CBSN Denver      87)CGTN Francais     127)Malaga TV ES     167)ADR Alpha DE      207)50 Canale Pisa IT         247)Al Jazeera Mubasher QA"
    echo "8)NBC News US         48)CBSN Minnesota   88)Africa News       128)C5N AR           168)Radio 21 DE       208)Teleliberta Piacenza IT   248)Al Arabiya AE"
    echo "9)TeleSUR Eng VE      49)CBSN Philli      89)TVA CA            129)AcequiaMendozaAR 169)DW Deutsch + DE   209)Top News Albania          249)Al Mayadeen LB"
-   echo "10)DW English         50)CBSN Pittsburgh  90)RDI ICI CA        130)Todo Noticias AR 170)Baden TV DE       210)Star Lamia GR             250)Belqees TV YE"
-   echo "11)RT UK              51)CBSN Sacramento  91)France 2          131)La Nacion AR     171)W24 Wein AT       211)Action 24 GR              251)Sky Arabic AE"
-   echo "12)GB News UK         52)CBSN Baltimore   92)France 3          132)A24 AR           172)Tirol TV AT       212)TRT Haber TR              252)Alghad EG"
-   echo "13)France 24 EN       53)CBSN Miami       93)ARTE Francais     133)KZO AR           173)Musig24 CH        213)NTV TR                    253)Extra News EG"
-   echo "14)TRT World TK       54)DC Network       94)IL TV FR          134)Canal 2 AR       174)RTL LU            214)HaberTurk TV              254)CBC Sofra EG"
-   echo "15)Russia Today       55)DC Capitol       95)BFM Paris FR      135)TV5 AR           175)TV OOST BE        215)Star TV TR                255)CBC Drama EG"
+   echo "10)RT UK              50)CBSN Pittsburgh  90)RDI ICI CA        130)Todo Noticias AR 170)Baden TV DE       210)Star Lamia GR             250)Belqees TV YE"
+   echo "11)GB News UK         51)CBSN Sacramento  91)France 2          131)La Nacion AR     171)W24 Wein AT       211)Action 24 GR              251)Sky Arabic AE"
+   echo "12)France 24 EN       52)CBSN Baltimore   92)France 3          132)A24 AR           172)Tirol TV AT       212)TRT Haber TR              252)Alghad EG"
+   echo "13)DW English         53)CBSN Miami       93)ARTE Francais     133)KZO AR           173)Musig24 CH        213)NTV TR                    253)Extra News EG"
+   echo "14)Russia Today       54)DC Network       94)IL TV FR          134)Canal 2 AR       174)RTL LU            214)HaberTurk TV              254)CBC Sofra EG"
+   echo "15)TRT World TK       55)DC Capitol       95)BFM Paris FR      135)TV5 AR           175)TV OOST BE        215)Star TV TR                255)CBC Drama EG"
    echo "16)Al Jazeera         56)DC Knowledge     96)Alsace 20 FR      136)Canal 7 AR       176)RTV OOST NL       216)KRT Kulture TR            256)DMC Live EG"
    echo "17)i24 News IL        57)MNN HD NY USA    97)Mosaik TV FR      137)Canal 13 AR      177)AT5 NL            217)TGRT Haber TR             257)AFAQ TV IQ"
    echo "18)Press TV Iran      58)MNN 1 NY USA     98)La Vendee         138)CN23 AR          178)Euronews Russian  218)TVNET Canali TR           258)BBC Persian"
@@ -212,9 +212,9 @@ channel_matrix_0()
    echo "29)Free Speech TV     69)Temple U TUTV    109)RTL BE           149)Excelsior MX *   189)UA 5  UA          229)-------------             269)KSA Zikrayat SA"
    echo "30)Infowars Live      70)TWIT USA         110)RTL 2 BE         150)-------------    190)TV Publica Moldova230)-------------             270)KSA SBC SA"
    echo "31)American Journal   71)VOA USA          111)Europe 1 FR      151)-------------    191)RT Docs RU        231)-------------             271)KSA Saudi Radio SA"
-   echo "32)Infowars WarRoom   72)-------------    112)RTL BE           152)-------------    192)Thromadske UA *   232)-------------             272)KSA Jedha Radio SA"
-   echo "33)United Nations TV  73)-------------    113)France Inter FR  153)-------------    193)Espresso UA  *    233)-------------             273)KSA Rhiyad Radio SA"
-   echo "34)RT Documentary     74)-------------    114)RMC INFO FR      154)-------------    194)-------------     234)-------------             274)KSA Quaran Radio SA"
+   echo "32)Infowars WarRoom   72)Bloomberg AU     112)RTL BE           152)-------------    192)Thromadske UA *   232)-------------             272)KSA Jedha Radio SA"
+   echo "33)United Nations TV  73)Bloomberg EU     113)France Inter FR  153)-------------    193)Espresso UA  *    233)-------------             273)KSA Rhiyad Radio SA"
+   echo "34)RT Documentary     74)Bloomberg Charts 114)RMC INFO FR      154)-------------    194)-------------     234)-------------             274)KSA Quaran Radio SA"
    echo "35)CGTN Documentary   75)-------------    115)Azur TV Nice     155)-------------    195)-------------     235)-------------             275)------------"
    echo "36)CBC CA             76)-------------    116)Var Azur         156)-------------    196)-------------     236)-------------             276)------------"
    echo "37)CPAC 1 CA          77)-------------    117)MB TV Monte Blanc157)-------------    197)-------------     237)-------------             277)------------"
@@ -466,11 +466,19 @@ then
 #link="https://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8"
 
 
-glink="https://dai.google.com/linear/hls/event/BVlOmFGaTi6NpchccR14yA/master.m3u8"
-bandwidth="3000000.m3u8"
-# options = 600000.m3u8 3000000.m3u8 2400000.m3u8 1500000.m3u8 600000.m3u8 400000.m3u8
+## US With charts
+#glink="https://dai.google.com/linear/hls/event/BVlOmFGaTi6NpchccR14yA/master.m3u8"
+## US No Charts
+glink="https://dai.google.com/linear/hls/event/PwTJe4aZRvSBjbWY7_VSzA/master.m3u8"
+## Bloomberg Australia 
+#glink="https://dai.google.com/linear/hls/event/-0JiXPvoQCCx1Nbwgx9Xmw/master.m3u8"
+
+bandwidth="1200000.m3u8"
+# options = 1200000.m3u8 800000.m3u8 600000.m3u8 400000.m3u8 
+
 
 link=$( curl $( curl "$glink" |  cut -d \" -f 2 ) | grep "$bandwidth" | head -n 1) 
+
 
 fi
 #method="Tor"
@@ -700,9 +708,76 @@ chan_name="Telesur English" ;;
 
 ########################### EUROPE #############################################################
 
-################## GERMANY ########
-# 10) DW English
+################     UK    #################################
+
+# 10) RT UK
 10)
+if [ "$getlink" = 1 ]
+then
+#link=https://www.rt.com/on-air/rt-uk-air/
+
+link="https://rt-uk.rttv.com/live/rtuk/playlist.m3u8"
+
+#EXT-X-STREAM-INF:BANDWIDTH=7590839,AVERAGE-BANDWIDTH=5020400,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1920x1080,FRAME-RATE=29.970
+#link="https://rt-uk.rttv.com/live/rtuk/playlist_4500Kb.m3u8"
+#EXT-X-STREAM-INF:BANDWIDTH=4248421,AVERAGE-BANDWIDTH=2820400,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720,FRAME-RATE=29.970
+#link="https://rt-uk.rttv.com/live/rtuk/playlist_2500Kb.m3u8"
+#EXT-X-STREAM-INF:BANDWIDTH=2744332,AVERAGE-BANDWIDTH=1830400,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=960x540,FRAME-RATE=29.970
+#link="https://rt-uk.rttv.com/live/rtuk/playlist_1600Kb.m3u8"
+#EXT-X-STREAM-INF:BANDWIDTH=1407366,AVERAGE-BANDWIDTH=950400,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=640x360,FRAME-RATE=29.970
+#link="https://rt-uk.rttv.com/live/rtuk/playlist_800Kb.m3u8"
+#EXT-X-STREAM-INF:BANDWIDTH=70400,AVERAGE-BANDWIDTH=70400,CODECS="mp4a.40.2"
+#link="https://rt-uk.rttv.com/live/rtuk/playlist_64Kb.m3u8"
+########
+#link=https://www.filmon.com/tv/russia-today-2
+fi
+#method="Proxychains"
+#method="Tor"
+use_cookies="no"
+TAG="RTUK_______"
+chan_name="RT UK" ;;
+
+
+# 11) GB News
+11)
+
+if [ "$getlink" = 1 ]
+then
+
+keyword="Live"
+channelURL="https://www.youtube.com/c/GBNewsOnline/videos?view=2&live_view=501"
+youTubeGrab
+
+fi
+## method="Tor"
+use_cookies="no"
+chan_name="GB News" ;;
+
+############ FRANCE 
+# 12) France 24 Anglais
+12)
+
+if [ "$getlink" = 1 ]
+then
+
+#link=http://f24hls-i.akamaihd.net/hls/live/221147/F24_EN_HI_HLS/master.m3u8
+
+########################### YOUTUBE
+keyword="FRANCE 24"
+channelURL="https://www.youtube.com/c/FRANCE24English/videos?view=2&live_view=501"
+youTubeGrab
+
+fi
+
+#method="Tor"
+use_cookies="no"
+TAG=" FRANCE24___"
+chan_name="France 24 English" ;;
+
+
+################## GERMANY ########
+# 13) DW English
+13)
 keyword="DW"
 
 if [ "$getlink" = 1 ]
@@ -735,72 +810,6 @@ fi
 use_cookies="no"
 TAG=" DWENG______"
 chan_name="DW English" ;;
-
-################     UK    #################################
-
-# 11) RT UK
-11)
-if [ "$getlink" = 1 ]
-then
-#link=https://www.rt.com/on-air/rt-uk-air/
-
-link="https://rt-uk.rttv.com/live/rtuk/playlist.m3u8"
-
-#EXT-X-STREAM-INF:BANDWIDTH=7590839,AVERAGE-BANDWIDTH=5020400,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1920x1080,FRAME-RATE=29.970
-#link="https://rt-uk.rttv.com/live/rtuk/playlist_4500Kb.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=4248421,AVERAGE-BANDWIDTH=2820400,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720,FRAME-RATE=29.970
-#link="https://rt-uk.rttv.com/live/rtuk/playlist_2500Kb.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=2744332,AVERAGE-BANDWIDTH=1830400,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=960x540,FRAME-RATE=29.970
-#link="https://rt-uk.rttv.com/live/rtuk/playlist_1600Kb.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=1407366,AVERAGE-BANDWIDTH=950400,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=640x360,FRAME-RATE=29.970
-#link="https://rt-uk.rttv.com/live/rtuk/playlist_800Kb.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=70400,AVERAGE-BANDWIDTH=70400,CODECS="mp4a.40.2"
-#link="https://rt-uk.rttv.com/live/rtuk/playlist_64Kb.m3u8"
-########
-#link=https://www.filmon.com/tv/russia-today-2
-fi
-#method="Proxychains"
-#method="Tor"
-use_cookies="no"
-TAG="RTUK_______"
-chan_name="RT UK" ;;
-
-
-# 12) GB News
-12)
-
-if [ "$getlink" = 1 ]
-then
-
-keyword="Live"
-channelURL="https://www.youtube.com/c/GBNewsOnline/videos?view=2&live_view=501"
-youTubeGrab
-
-fi
-## method="Tor"
-use_cookies="no"
-chan_name="GB News" ;;
-
-############ FRANCE 
-# 13) France 24 Anglais
-13)
-
-if [ "$getlink" = 1 ]
-then
-
-#link=http://f24hls-i.akamaihd.net/hls/live/221147/F24_EN_HI_HLS/master.m3u8
-
-########################### YOUTUBE
-keyword="FRANCE 24"
-channelURL="https://www.youtube.com/c/FRANCE24English/videos?view=2&live_view=501"
-youTubeGrab
-
-fi
-
-#method="Tor"
-use_cookies="no"
-TAG=" FRANCE24___"
-chan_name="France 24 English" ;;
 
 
 #################### RUSSIA  ################################
@@ -2067,7 +2076,6 @@ use_cookies="no"
 TAG="TWIT_USA__"
 chan_name="TWiT USA" ;;
 
-
 # 71)VOA
 71)
 if [ "$getlink" = 1 ]
@@ -2085,6 +2093,114 @@ fi
 #use_cookies="no"
 TAG="VOA_______"
 chan_name="VOA" ;;
+
+# 72) Bloomberg Business Australia
+72)
+keyword="Bloomberg"
+if [ "$getlink" = 1 ]
+then
+#link=https://www.bloomberg.com/live/us
+#link="http://cdn3.videos.bloomberg.com/btv/us/master.m3u8?b?b*t$"
+#link=http://cdn-videos.akamaized.net/btv/desktop/akamai/europe/live/primary.m3u8
+#link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/Bloomberg/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
+
+#link="https://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8"
+
+## US With charts
+#glink="https://dai.google.com/linear/hls/event/BVlOmFGaTi6NpchccR14yA/master.m3u8"
+## US No Charts
+#glink="https://dai.google.com/linear/hls/event/PwTJe4aZRvSBjbWY7_VSzA/master.m3u8"
+## Bloomberg Australia 
+glink="https://dai.google.com/linear/hls/event/-0JiXPvoQCCx1Nbwgx9Xmw/master.m3u8"
+## Europe BTV
+#glink="https://dai.google.com/linear/hls/event/TPKhqf0BQn2_ijC-0rOJcA/master.m3u8"
+
+bandwidth="1200000.m3u8"
+# options = 1200000.m3u8 800000.m3u8 600000.m3u8 400000.m3u8 
+
+link=$( curl $( curl "$glink" |  cut -d \" -f 2 ) | grep "$bandwidth" | head -n 1) 
+
+fi
+#method="Tor"
+use_cookies="no"
+TAG=" BLMBRG_____"
+chan_name="Bloomberg Business AU";;
+
+# 73) Bloomberg Business Europe
+73)
+keyword="Bloomberg"
+if [ "$getlink" = 1 ]
+then
+#link=https://www.bloomberg.com/live/us
+#link="http://cdn3.videos.bloomberg.com/btv/us/master.m3u8?b?b*t$"
+#link=http://cdn-videos.akamaized.net/btv/desktop/akamai/europe/live/primary.m3u8
+#link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/Bloomberg/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
+
+#link="https://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8"
+
+## US With charts
+#glink="https://dai.google.com/linear/hls/event/BVlOmFGaTi6NpchccR14yA/master.m3u8"
+## US No Charts
+#glink="https://dai.google.com/linear/hls/event/PwTJe4aZRvSBjbWY7_VSzA/master.m3u8"
+## Bloomberg Australia 
+#glink="https://dai.google.com/linear/hls/event/-0JiXPvoQCCx1Nbwgx9Xmw/master.m3u8"
+## Europe BTV
+glink="https://dai.google.com/linear/hls/event/TPKhqf0BQn2_ijC-0rOJcA/master.m3u8"
+
+bandwidth="1200000.m3u8"
+# options = 1200000.m3u8 800000.m3u8 600000.m3u8 400000.m3u8 
+
+
+link=$( curl $( curl "$glink" |  cut -d \" -f 2 ) | grep "$bandwidth" | head -n 1) 
+
+## Bloomberg Radio
+## link="https://18363.live.streamtheworld.com/WBBRAMAAC48/HLS/6f8a015a-40a3-4681-9033-f7be7203ca8c/0/playlist.m3u8"
+
+
+fi
+#method="Tor"
+use_cookies="no"
+TAG=" BLMBRG_____"
+chan_name="Bloomberg Business EU";;
+
+# 74) Bloomberg Business USA + Charts
+74)
+keyword="Bloomberg"
+if [ "$getlink" = 1 ]
+then
+#link=https://www.bloomberg.com/live/us
+#link="http://cdn3.videos.bloomberg.com/btv/us/master.m3u8?b?b*t$"
+#link=http://cdn-videos.akamaized.net/btv/desktop/akamai/europe/live/primary.m3u8
+#link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/Bloomberg/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
+
+#link="https://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8"
+
+## US With charts
+glink="https://dai.google.com/linear/hls/event/BVlOmFGaTi6NpchccR14yA/master.m3u8"
+## US No Charts
+#glink="https://dai.google.com/linear/hls/event/PwTJe4aZRvSBjbWY7_VSzA/master.m3u8"
+## Bloomberg Australia 
+#glink="https://dai.google.com/linear/hls/event/-0JiXPvoQCCx1Nbwgx9Xmw/master.m3u8"
+## Europe BTV
+#glink="https://dai.google.com/linear/hls/event/TPKhqf0BQn2_ijC-0rOJcA/master.m3u8"
+
+bandwidth="3000000.m3u8"
+# options = 3000000.m3u8 2400000.m3u8 1500000.m3u8 600000.m3u8 400000.m3u8
+
+link=$( curl $( curl "$glink" |  cut -d \" -f 2 ) | grep "$bandwidth" | head -n 1) 
+
+## Bloomberg Radio
+## link="https://18363.live.streamtheworld.com/WBBRAMAAC48/HLS/6f8a015a-40a3-4681-9033-f7be7203ca8c/0/playlist.m3u8"
+
+
+fi
+#method="Tor"
+use_cookies="no"
+TAG=" BLMBRG_____"
+chan_name="Bloomberg Business USA Charts";;
+
+
+
 
 
 # 80) EuroNews English  BROKEN
