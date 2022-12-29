@@ -232,7 +232,7 @@ channel_matrix_0()
    echo "37)CBC CA             77)-------------    117)MB TV Monte Blanc157)-------------    197)-------------     237)-------------             277)------------"
    echo "38)CPAC 1 CA          78)-------------    118)OUATCH TV        158)-------------    198)-------------     238)-------------             278)------------"
    echo "39)CBC Here Now       79)Sky News UK      119)-------------    159)-------------    199)-------------     239)-------------             279)------------"
-   echo "40)----------------   80)RT America       120)Euronews FR*     160)Euronews ES *    200)Euronews DE *     240)-------------             280)------------"
+   echo "40)CBC Explorer       80)RT America       120)Euronews FR*     160)Euronews ES *    200)Euronews DE *     240)-------------             280)------------"
    echo "=========================================================================================================================================================="
   
 }              
@@ -630,17 +630,12 @@ chan_name="NBC News" ;;
 if [ "$getlink" = 1 ]
 then
 website="https://gem.cbc.ca/"
-#EXT-X-MEDIA:TYPE=CLOSED-CAPTIONS,GROUP-ID="CC",LANGUAGE="eng",NAME="English",INSTREAM-ID="CC1"
-#EXT-X-STREAM-INF:BANDWIDTH=2103200,AVERAGE-BANDWIDTH=2305600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=960x540,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master1.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=804760,AVERAGE-BANDWIDTH=875600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=640x360,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master2.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=1304160,AVERAGE-BANDWIDTH=1425600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=768x432,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master3.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=505120,AVERAGE-BANDWIDTH=545600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=480x270,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master4.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=3102000,AVERAGE-BANDWIDTH=3405600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master5.m3u8"
+
+website="https://gem.cbc.ca/"
+eventID="VV86w2GwS9GS0bcVn_Hwjw"
+ppid="da23187f46d43d7f884508784adf329a3b7788b1990df76bac572a4d1aee8b39"
+api_key="0A753C2A9BE994A75562DD9EAE366396307A3E2F489D692A561E2D3665AB1069"
+googleGrab2
 
 fi
 use_cookies="no"
@@ -1584,6 +1579,37 @@ chan_name="CBC Here and Now" ;;
 
 
 # 40)
+40)
+
+if [ "$getlink" = 1 ]
+then
+
+website="https://gem.cbc.ca/"
+eventID="_rLdLVACQsGnox8dV5pT-g"
+ppid="da23187f46d43d7f884508784adf329a3b7788b1990df76bac572a4d1aee8b39"
+api_key="0A753C2A9BE994A75562DD9EAE366396307A3E2F489D692A561E2D3665AB1069"
+googleGrab2
+
+## CBC NEWS EXPLORE  (Documentaries)
+# link="https://dai.google.com/linear/hls/pa/event/5PclQViSSK2sjs-F8dpm6Q/stream/0c27b3d9-a6b1-41b7-927d-a0e7ed3c8500:CHS/master.m3u8"
+# link="https://streamer.cbcrc.ca/prod/gem/cbc-news/hls/master.m3u8"
+##EXT-X-STREAM-INF:BANDWIDTH=2400000,AVERAGE-BANDWIDTH=1500000,RESOLUTION=768x432,FRAME-RATE=29.97,CODECS="avc1.640029,mp4a.40.2"
+#link="https://streamer.cbcrc.ca/prod/gem/cbc-news/hls/432p/master.m3u8"
+##EXT-X-STREAM-INF:BANDWIDTH=5550000,AVERAGE-BANDWIDTH=3350000,RESOLUTION=1280x720,FRAME-RATE=29.97,CODECS="avc1.640029,mp4a.40.2"
+# link="https://streamer.cbcrc.ca/prod/gem/cbc-news/hls/720p/master.m3u8"
+##EXT-X-STREAM-INF:BANDWIDTH=3800000,AVERAGE-BANDWIDTH=2300000,RESOLUTION=960x540,FRAME-RATE=29.97,CODECS="avc1.640029,mp4a.40.2"
+# link="https://streamer.cbcrc.ca/prod/gem/cbc-news/hls/540p/master.m3u8"
+##EXT-X-STREAM-INF:BANDWIDTH=1400000,AVERAGE-BANDWIDTH=900000,RESOLUTION=640x360,FRAME-RATE=29.97,CODECS="avc1.640029,mp4a.40.2"
+# link="https://streamer.cbcrc.ca/prod/gem/cbc-news/hls/360p/master.m3u8"
+##EXT-X-STREAM-INF:BANDWIDTH=750000,AVERAGE-BANDWIDTH=600000,RESOLUTION=480x270,FRAME-RATE=29.97,CODECS="avc1.640029,mp4a.40.2"
+# link="https://streamer.cbcrc.ca/prod/gem/cbc-news/hls/270p/master.m3u8"
+
+fi
+#####method="Tor"
+use_cookies="no"
+TAG="CBC_EXP_CA_"
+chan_name="CBC Explore Canada";;
+
 
 
 #############################  ENGLISH EXTRA #############################################
@@ -12226,7 +12252,7 @@ link=https:"$base"
 
 googleGrab2(){
 
-base="$(curl 'https://pubads.g.doubleclick.net/ssai/event/ZX-bVk6oQHyOaEJSRmxUlg/streams' -H 'authority: pubads.g.doubleclick.net' -H 'accept: */*' -H 'accept-language: en-US,en;q=0.9' -H 'content-type: application/x-www-form-urlencoded;charset=UTF-8' -H 'origin: "$website"' -H 'referer: "$website"' -H 'sec-ch-ua: "Chromium";v="104", "/Not)A;Brand";v="24", "Microsoft Edge";v="104"' -H 'sec-ch-ua-mobile: ?0' -H 'sec-ch-ua-platform: "Linux"' -H 'sec-fetch-dest: empty' -H 'sec-fetch-mode: cors' -H 'sec-fetch-site: cross-site' -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.20 Safari/537.36 Edg/104.0.1293.5' --data-raw "cust_params=ppid="$ppid"&api-key="$api_key"" --compressed | cut -d \: -f 6,7 | cut -d \" -f 1)" 
+base="$(curl "https://pubads.g.doubleclick.net/ssai/event/ZX-bVk6oQHyOaEJSRmxUlg/streams" -H 'authority: pubads.g.doubleclick.net' -H 'accept: */*' -H 'accept-language: en-US,en;q=0.9' -H 'content-type: application/x-www-form-urlencoded;charset=UTF-8' -H "origin: "$website"" -H "referer: "$website"" -H 'sec-ch-ua: "Chromium";v="104", "/Not)A;Brand";v="24", "Microsoft Edge";v="104"' -H 'sec-ch-ua-mobile: ?0' -H 'sec-ch-ua-platform: "Linux"' -H 'sec-fetch-dest: empty' -H 'sec-fetch-mode: cors' -H 'sec-fetch-site: cross-site' -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.20 Safari/537.36 Edg/104.0.1293.5' --data-raw "cust_params=ppid="$ppid"&api-key="$api_key"" --compressed | cut -d \: -f 6,7 | cut -d \" -f 1)" 
 link=https:"$base"
 
 }
