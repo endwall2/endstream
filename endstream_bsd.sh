@@ -214,7 +214,7 @@ channel_matrix_0()
    echo "34)Infowars WarRoom   74)Bloomberg Charts 114)RMC INFO FR      154)-------------    194)-------------     234)-------------             274)KSA Quaran Radio SA"
    echo "35)United Nations TV  75)CBC Here Now     115)Azur TV Nice     155)-------------    195)-------------     235)-------------             275)------------"
    echo "36)RT Documentary     76)Ticker News      116)Var Azur         156)-------------    196)-------------     236)-------------             276)------------"
-   echo "37)CGTN Documentary   77)Brighteon TV     117)MB TV Monte Blanc157)-------------    197)-------------     237)-------------             277)------------"
+   echo "37)CGTN Documentary   77)Brighteon RV     117)MB TV Monte Blanc157)-------------    197)-------------     237)-------------             277)------------"
    echo "38)CBC CA             78)Lindell TV 1     118)OUATCH TV        158)-------------    198)-------------     238)-------------             278)------------"
    echo "39)CBC Explore        79)Lindell TV 2     119)-------------    159)-------------    199)-------------     239)-------------             279)------------"
    echo "40)CPAC 1 CA          80)Lindell TV 3     120)-------------    160)-------------    200)-------------     240)-------------             280)------------"
@@ -600,8 +600,8 @@ chan_name="Cheddar News";;
 if [ "$getlink" = 1 ]
 then
 
-keyword="NBC News NOW"
-channelURL="https://www.youtube.com/c/NBCNews/videos?view=2&live_view=501"
+keyword="LIVE"
+channelURL="https://www.youtube.com/@NBCNews/streams"
 youTubeGrab
 
 fi
@@ -616,6 +616,7 @@ chan_name="NBC News" ;;
 7)
 if [ "$getlink" = 1 ]
 then
+
 website="https://gem.cbc.ca/"
 eventID="VV86w2GwS9GS0bcVn_Hwjw"
 ppid="da23187f46d43d7f884508784adf329a3b7788b1990df76bac572a4d1aee8b39"
@@ -755,8 +756,8 @@ chan_name="RT UK" ;;
 if [ "$getlink" = 1 ]
 then
 
-keyword="Live"
-channelURL="https://www.youtube.com/c/GBNewsOnline/videos?view=2&live_view=501"
+keyword="GB News Live"
+channelURL="https://www.youtube.com/@GBNewsOnline/featured"
 youTubeGrab
 
 fi
@@ -775,7 +776,7 @@ then
 
 ########################### YOUTUBE
 keyword="FRANCE 24"
-channelURL="https://www.youtube.com/c/FRANCE24English/videos?view=2&live_view=501"
+channelURL="https://www.youtube.com/@France24_en/featured"
 youTubeGrab
 
 fi
