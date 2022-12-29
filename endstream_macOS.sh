@@ -666,7 +666,6 @@ website="https://globalnews.ca/live/national/"
 eventID="cQOVg6jKSvusQAfYpTrUoQ"
 googleGrab
 
-#link="https://live.corusdigitaldev.com/groupd/live/49a91e7f-1023-430f-8d66-561055f3d0f7/live.isml/.m3u8"
 
 fi
 #method="Tor"
