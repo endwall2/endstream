@@ -198,11 +198,11 @@ channel_matrix_0()
    echo "18)Al Jazeera         58)MNN 1 NY USA     98)La Vendee         138)CN23 AR          178)Euronews Russian  218)TVNET Canali TR           258)BBC Persian"
    echo "19)i24 News IL        59)MNN 2 NY USA     99)8 Monte Blanc FR  139)Telemax AR       179)POCCNR 24 RU      219)Show TV TR                259)Iran Aryaee"
    echo "20)Press TV Iran      60)MNN 3 NY USA     100)TV7 Bordeaux FR  140)Vorterix AR      180)RBC TV RU         220)-------------             260)DidgahNew TV IR"
-   echo "21)WION IN            61)BronxNet NY USA  101)teleGrenoble     141)TV Publica AR *  181)CGTN Russian      221)-------------             261)PTN PARS TV USA"
-   echo "22)India Today        62)BronxNet Omni    102)LCP FR           142)Mega CL          182)Vesti FM RU       222)-------------             262)TOLO NEWS AF"
-   echo "23)CGTN Beijing       63)BronxNet Culture 103)Public Senate FR 143)Telemedeline CO  183)Perviy RU         223)-------------             263)KSA 1 SA"
-   echo "24)NHK World JP       64)BronxNet Life    104)CPAC 1 CA        144)Telecafe CO      184)Current Time VOA  224)-------------             264)KSA Sports SA"
-   echo "25)Arirang KR         65)NYXT Manhattan   105)Assemblee QC CA  145)Globovision VE   185)5 Live RU         225)-------------             265)KSA Sports 2 SA"
+   echo "21)WION IN            61)MNN 4 NY USA     101)teleGrenoble     141)TV Publica AR *  181)CGTN Russian      221)-------------             261)PTN PARS TV USA"
+   echo "22)India Today        62)BronxNet NY USA  102)LCP FR           142)Mega CL          182)Vesti FM RU       222)-------------             262)TOLO NEWS AF"
+   echo "23)CGTN Beijing       63)BronxNet Omni    103)Public Senate FR 143)Telemedeline CO  183)Perviy RU         223)-------------             263)KSA 1 SA"
+   echo "24)NHK World JP       64)BronxNet Culture 104)CPAC 1 CA        144)Telecafe CO      184)Current Time VOA  224)-------------             264)KSA Sports SA"
+   echo "25)Arirang KR         65)BronxNet Life    105)Assemblee QC CA  145)Globovision VE   185)5 Live RU         225)-------------             265)KSA Sports 2 SA"
    echo "26)CNA SG             66)LUTV             106)BX1 BE           146)VPItv VE         186)News 24 UA        226)-------------             266)KSA Quaran SA"
    echo "27)ABC AU             67)Southeastern TV  107)France Info      147)TeleDiario MX    187)UA TV UA          227)-------------             267)KSA Sunna SA"
    echo "28)Arise News NG      68)Texas State TV   108)CNEWS FR         148)Excelsior MX *   188)News 1 UA         228)-------------             268)KSA Al Ekhbariya SA"
@@ -264,7 +264,7 @@ channel_matrix_1()
    echo "315)Kaliagnar News   355)Atlanta AM790* 395)ITV ZA *          435)Speakfree Radio    475)Foxenkin           515)Word of God Greek 555)CBC News Ottawa"
    echo "316)Sangat UK        356)ANN24 JP       396)Parliament ZA*    436)AMI Radio          476)SharonQueen        516)Shalom America    556)CBC News Montreal"
    echo "317)-------------    357)Sol!ve 24 JP   397)D24   *           437)PeopleTV           477)RhinoSpiritX       517)Shalom India      557)CBC News Windsor"
-   echo "318)NTV Bangladesh   358)KBS 24 JP      398)Afrique Media     438)-------------      478)AbodeMX            518)Powervision TV    558)CBC News Igalaaq Nunavut"
+   echo "318)NTV Bangladesh   358)KBS 24 JP      398)Afrique Media     438)NYXT Manhattan     478)AbodeMX            518)Powervision TV    558)CBC News Igalaaq Nunavut"
    echo "319)ATN Bangladesh   359)QVC Japan      399)DMB               439)SkyNews            479)NASA Public Media  519)LLBN Arabic       559)CBC Olympic"
    echo "320)Channel 24 IN *  360)BSC 24 1 JP    400)--------------    440)RT America         480)NASA Education     520)LLBN SouthAsia    560)CBC Here and Now"
    echo "================================================================================================================================================================="
@@ -661,14 +661,6 @@ then
 
 eventID="NYoux6eGTkqmdrxc0P_biw"
 googleGrab
-
-#link="https://citynewsregional.akamaized.net/hls/live/1024052/Regional_Live_7/master.m3u8"
-#EXT-X-STREAM-INF:CODECS="avc1.4d4029,mp4a.40.2",BANDWIDTH=3974717,AVERAGE-BANDWIDTH=3109997
-#link="https://citynewsregional.akamaized.net/hls/live/1024052/Regional_Live_7/072000f1dfddc44c8bf7b45da8374f2f/1.m3u8"
-#EXT-X-STREAM-INF:CODECS="avc1.4d4020,mp4a.40.2",BANDWIDTH=2680999,AVERAGE-BANDWIDTH=2109919
-#link="https://citynewsregional.akamaized.net/hls/live/1024052/Regional_Live_7/072000f1dfddc44c8bf7b45da8374f2f/2.m3u8"
-#EXT-X-STREAM-INF:CODECS="avc1.4d4020,mp4a.40.2",BANDWIDTH=1387809,AVERAGE-BANDWIDTH=1110249
-#link="https://citynewsregional.akamaized.net/hls/live/1024052/Regional_Live_7/072000f1dfddc44c8bf7b45da8374f2f/3.m3u8"
 
 fi
 #method="Tor"
@@ -1860,7 +1852,7 @@ chan_name="District of Columbia DC Knowledge Network USA";;
 57)
 if [ "$getlink" = 1 ]
 then
-channelURL="https://livestream.com/accounts/17251372/events/4846282"
+channelURL="https://player-api.new.livestream.com/accounts/17251372/events/10721168/"
 liveStreamGrab
 fi
 use_cookies="no"
@@ -1873,7 +1865,7 @@ chan_name="MNN Channel HD New York USA" ;;
 if [ "$getlink" = 1 ]
 then
 ## MNN Community
-channelURL="https://player-api.new.livestream.com/accounts/6480540/events/9321159"
+channelURL="https://player-api.new.livestream.com/accounts/6480540/events/10721190/"
 liveStreamGrab
 fi
 # method="Tor"
@@ -1885,8 +1877,7 @@ chan_name="MNN Channel 1 New York, USA" ;;
 59)
 if [ "$getlink" = 1 ]
 then
-#https://player-api.new.livestream.com/accounts/6478976/events/2616018/
-channelURL="https://livestream.com/accounts/6478976/events/2616018"
+channelURL="https://player-api.new.livestream.com/accounts/6478976/events/10721188/"
 liveStreamGrab
 fi
 ##method="Tor"
@@ -1899,7 +1890,7 @@ chan_name="MNN Channel 2 New York, USA" ;;
 if [ "$getlink" = 1 ]
 then
 #https://player-api.new.livestream.com/accounts/6312590/events/2611503/
-channelURL="https://livestream.com/accounts/6312590/events/2611503"
+channelURL="https://player-api.new.livestream.com/accounts/6312590/events/10721313/"
 liveStreamGrab
 fi
 ## method="Tor"
@@ -1907,8 +1898,21 @@ use_cookies="no"
 TAG="MNN_3__________"
 chan_name="MNN Channel 3 New York, USA" ;;
 
-# 61) BronxNet NY USA
+# 61) MNN Channel 4 Culture New York, USA
 61)
+if [ "$getlink" = 1 ]
+then
+channelURL="https://player-api.new.livestream.com/accounts/6478935/events/10721179/"
+liveStreamGrab
+fi
+## method="Tor"
+use_cookies="no"
+TAG="MNN_4__________"
+chan_name="MNN Channel 4 New York, USA" ;;
+
+
+# 62) BronxNet NY USA
+62)
 if [ "$getlink" = 1 ]
 then
 #link="https://reflect-stream-bronxnet.cablecast.tv/live-16/live/live.m3u8"
@@ -1923,8 +1927,8 @@ use_cookies="no"
 TAG="BRONXNET_16"
 chan_name="BronxNet NY USA";;
 
-# 62) BronxNet Omni NY USA
-62)
+# 63) BronxNet Omni NY USA
+63)
 if [ "$getlink" = 1 ]
 then
 
@@ -1940,8 +1944,8 @@ use_cookies="no"
 TAG="BRONXNET_19"
 chan_name="BronxNet Omni NY USA";;
 
-# 63) BronxNet Culture NY USA
-63)
+# 64) BronxNet Culture NY USA
+64)
 if [ "$getlink" = 1 ]
 then
 #link="https://reflect-stream-bronxnet.cablecast.tv/live-7/live/live.m3u8"
@@ -1956,8 +1960,8 @@ use_cookies="no"
 TAG="BRONXNET_7"
 chan_name="BronxNet Culture NY USA";;
 
-# 64) BronxNet Life NY USA
-64)
+# 65) BronxNet Life NY USA
+65)
 if [ "$getlink" = 1 ]
 then
 #link="https://reflect-stream-bronxnet.cablecast.tv/live-8/live/live.m3u8"
@@ -1972,12 +1976,6 @@ use_cookies="no"
 TAG="BRONXNET_8"
 chan_name="BronxNet Life NY USA";;
 
-# 65) NYXT Manhattan NYC New York USA
-65)
-#link="https://livestream.com/accounts/19770665/events/5522162"
-link="$( curl "https://livestream.com/accounts/19770665/events/5522162"| grep "secure_play_url" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /secure_m3u8_url/ && $(i+2) ~ /broadcasts/  )  print $(i+2) } ' | cut -d \? -f 1  | head -n 1  )"
-use_cookies="no"
-chan_name="NYXT Manhattan NYC New York USA" ;;
 
 ################## UNIVERSITY TV ######################################
 #############################################################
@@ -6398,6 +6396,14 @@ chan_name="AMI AUDIO";;
 ### PEOPLE TV 
 link="https://peopletv-oando.akamaized.net/midroll/deviceid=b3805cf8-9883-4060-9fe4-b689794972a0/amagi_hls_data_peopletvA-peopletvoando/CDN/playlist.m3u8"
 chan_name="PeopleTV";;
+
+# 438) NYXT Manhattan NYC New York USA
+438)
+channelURL="https://player-api.new.livestream.com/accounts/19770665/events/10721160/"
+liveStreamGrab
+use_cookies="no"
+chan_name="NYXT Manhattan NYC New York USA" ;;
+
 
 # 439) Sky News
 439)
