@@ -7,8 +7,8 @@
 # Copyright: 2017-2019, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63575
-# Revision Date: December 30, 2022
+# Version: 0.6356
+# Revision Date: January 5, 2023
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63575"
-rev_date="30/12/2022"
+version="0.63576"
+rev_date="05/01/2022"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##################################################..
@@ -389,10 +389,10 @@ channel_matrix_4()
    echo "1132)CNEWS FR         1172)------------      1212)------------      1252)Cat Like Meow    1292)PaulTown          1332)------------     1372)Naman Seoul "
    echo "1133)SYTRAL Rhone FR  1173)------------      1213)------------      1253)DizzyKitten      1293)politicallyprov   1333)------------     1373)Shizuoka Japan"
    echo "1134)Vedia BE         1174)------------      1214)------------      1254)keelyvalentine   1294)veyta             1334)------------     1374)Yokohama Japan "
-   echo "1135)MABI CA          1175)------------      1215)------------      1255)Devon Jenelle    1295)nick              1335)------------     1375)Mount Fuji Japan"
-   echo "1136)Vatican Media FR 1176)------------      1216)------------      1256)Cristina Scabbia 1296)aff               1336)------------     1376)Hart Beach NL"
+   echo "1135)MABI CA          1175)------------      1215)------------      1255)Devon Jenelle    1295)NickFuentes       1335)------------     1375)Mount Fuji Japan"
+   echo "1136)Vatican Media FR 1176)------------      1216)------------      1256)Cristina Scabbia 1296)AmericaFirstFound 1336)------------     1376)Hart Beach NL"
    echo "1137)TVM Paris FR     1177)------------      1217)------------      1257)taylor_jevaux    1297)emichaeljones     1337)------------     1377)Port Du Quebec "
-   echo "1138)C-Star           1178)------------      1218)------------      1258)kneecoleslaw     1298)vince             1338)------------     1378)Durango Colorado"
+   echo "1138)C-Star           1178)------------      1218)------------      1258)kneecoleslaw     1298)Vince             1338)------------     1378)Durango Colorado"
    echo "1139)Journal TVLandes 1179)------------      1219)------------      1259)courtneyysmoke   1299)bakedalaska       1339)------------     1379)StarDot 1"
    echo "1140)TV 7 FR          1180)------------      1220)------------      1260)ninjastarasmr    1300)NPTV PL           1340)------------     1380)Youing Japan "
    echo "1141)------------     1181)------------      1221)------------      1261)jadethejaguar    1301)Resistance Chicks 1341)------------     1381)StarDot 4  "
@@ -402,7 +402,7 @@ channel_matrix_4()
    echo "1145)------------     1185)------------      1225)------------      1265)------------     1305)AdamDunnShow      1345)------------     1385)London 2"
    echo "1146)------------     1186)-------------     1226)------------      1266)------------     1306)TLAVagabond       1346)------------     1386)London 3  "
    echo "1147)------------     1187)------------      1227)------------      1267)------------     1307)ThinkFreely       1347)------------     1387)Berlin Airport "
-   echo "1148)------------     1188)------------      1228)------------      1268)------------     1308)Vince             1348)------------     1388)Los Angeles Port"
+   echo "1148)------------     1188)------------      1228)------------      1268)------------     1308)CanelProof        1348)------------     1388)Los Angeles Port"
    echo "1149)------------     1189)------------      1229)------------      1269)------------     1309)WuzzleRoot        1349)------------     1389)ITS COM Japan"
    echo "1150)------------     1190)------------      1230)------------      1270)------------     1310)HW                1350)------------     1390)China Shoreline"
    echo "1151)------------     1191)------------      1231)------------      1271)------------     1311)------------      1351)------------     1391)------------"
@@ -603,7 +603,7 @@ if [ "$getlink" = 1 ]
 then
 
 keyword="NBC News NOW"
-channelURL="https://www.youtube.com/c/NBCNews/videos?view=2&live_view=501"
+channelURL="https://www.youtube.com/NBCNews/featured"
 youTubeGrab
 
 fi
@@ -768,7 +768,13 @@ then
 
 keyword="Live"
 channelURL="https://www.youtube.com/@GBNewsOnline/featured"
-youTubeGrab
+#youTubeGrab
+
+link="https://live-gbnews-ssai.simplestreamcdn.com/v1/master/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/live.m3u8"
+#link="https://live-gbnews-ssai.simplestreamcdn.com/v1/manifest/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/b0e75cb0-799f-408b-ab90-139ecbbe453c/0.m3u8"
+#link="https://live-gbnews-ssai.simplestreamcdn.com/v1/manifest/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/726642ac-3f5e-4e1e-a6f8-c06174099d68/1.m3u8"
+#link="https://live-gbnews-ssai.simplestreamcdn.com/v1/manifest/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/726642ac-3f5e-4e1e-a6f8-c06174099d68/2.m3u8"
+#link="https://live-gbnews-ssai.simplestreamcdn.com/v1/manifest/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/726642ac-3f5e-4e1e-a6f8-c06174099d68/3.m3u8"
 
 fi
 ## method="Tor"
@@ -3042,11 +3048,9 @@ keyword="HispanTV"
 
 if [ "$getlink" = 1 ]
 then
-link="https://live.presstv.ir/live/smil:live.smil/playlist.m3u8"
-#link="https://live.presstv.ir/live/smil:live.smil/chunklist_w4281029_b644100_slen.m3u8"
-#link="https://live.presstv.ir/live/smil:live.smil/chunklist_w30180340_b644100_slen.m3u8"
-#link=http://178.32.255.199:1935/live/hispantv/playlist.m3u8
-#link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/hispantv/videos?view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
+link="https://cdnlive.presstv.ir/cdnlive/smil:live.smil/playlist.m3u8"
+#channelURL="https://www.youtube.com/user/hispantv/featured"
+#youtubeGrab
 fi
 use_cookies="no"
 chan_name="HispanTV Iran" ;;
@@ -3054,11 +3058,11 @@ chan_name="HispanTV Iran" ;;
 ############## ESPANIA ######################################
 # 127) Malaga TV Spain  Malaga,Andalusia,Spain
 127)
-keyword="live TV en vivo"
+keyword="en vivo"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/c/Malaga24h/videos?view=2&live_view=501"
+channelURL="https://www.youtube.com/Malaga24h/featured"
 youTubeGrab
 
 fi
@@ -3066,28 +3070,15 @@ use_cookies="no"
 chan_name="Malaga TV Spain" ;;
 
 
-# 128) GRANADA TV ES
-#128)
-#keyword="GRANADA"
-#if [ "$getlink" = 1 ]
-#then
-#
-#channelURL="https://www.youtube.com/user/Steadycamline/videos?&view=2&live_view=501"
-#youTubeGrab
-
-#fi
-#use_cookies="no"
-#chan_name="GRANADA TV ES" ;;
-
 ######################### ARGENTINA ##############################################
 # 128) c5n Argentina
 128)
-keyword="C5N"
+keyword="C5N EN VIVO"
 
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/c5n/videos?&view=2&live_view=501"
+channelURL="https://www.youtube.com/user/c5n/featured"
 youTubeGrab
 
 # link=http://www.c5n.com/
@@ -3100,7 +3091,6 @@ chan_name="c5n Argentina" ;;
 
 if [ "$getlink" = 1 ]
 then
-#link="https://livestream.com/accounts/6450028/events/5813077"
 
 channelURL="https://livestream.com/accounts/6450028/events/5813077"
 liveStreamGrab
@@ -3130,7 +3120,7 @@ keyword="LN+"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/LaNacionTV/videos?&view=2&live_view=501"
+channelURL="https://www.youtube.com/user/LaNacionTV/featured"
 youTubeGrab
 
 fi
