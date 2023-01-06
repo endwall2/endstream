@@ -600,8 +600,8 @@ chan_name="Cheddar News";;
 if [ "$getlink" = 1 ]
 then
 
-keyword="LIVE"
-channelURL="https://www.youtube.com/@NBCNews/streams"
+keyword="NBC News NOW"
+channelURL="https://www.youtube.com/NBCNews/featured"
 youTubeGrab
 
 fi
