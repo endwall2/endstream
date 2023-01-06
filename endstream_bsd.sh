@@ -7,8 +7,8 @@
 # Copyright: 2017-2019, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63567
-# Revision Date: December 28, 2022
+# Version: 0.63568
+# Revision Date: January 5, 2023
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63567"
-rev_date="28/12/2022"
+version="0.63568"
+rev_date="05/01/2023"
 branch="BSD"
 product="ENDSTREAM"
 ##################################################
@@ -750,7 +750,13 @@ then
 
 keyword="GB News Live"
 channelURL="https://www.youtube.com/@GBNewsOnline/featured"
-youTubeGrab
+#youTubeGrab
+
+link="https://live-gbnews-ssai.simplestreamcdn.com/v1/master/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/live.m3u8"
+#link="https://live-gbnews-ssai.simplestreamcdn.com/v1/manifest/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/b0e75cb0-799f-408b-ab90-139ecbbe453c/0.m3u8"
+#link="https://live-gbnews-ssai.simplestreamcdn.com/v1/manifest/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/726642ac-3f5e-4e1e-a6f8-c06174099d68/1.m3u8"
+#link="https://live-gbnews-ssai.simplestreamcdn.com/v1/manifest/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/726642ac-3f5e-4e1e-a6f8-c06174099d68/2.m3u8"
+#link="https://live-gbnews-ssai.simplestreamcdn.com/v1/manifest/82267e84b9e5053b3fd0ade12cb1a146df74169a/gbnews-live/726642ac-3f5e-4e1e-a6f8-c06174099d68/3.m3u8"
 
 fi
 ## method="Tor"
@@ -2262,7 +2268,7 @@ then
 #link=http://static.france24.com/live/F24_FR_HI_HLS/live_tv.m3u8
 
 keyword="DIRECT"
-channelURL="https://www.youtube.com/c/FRANCE24/videos?view=2&live_view=501"
+channelURL="https://www.youtube.com/FRANCE24/featured"
 youTubeGrab
 
 fi
@@ -2382,7 +2388,7 @@ chan_name="France Info TV" ;;
 
 if [ "$getlink" = 1 ]
 then
-#link=https://tv5infohls-i.akamaihd.net/hls/live/631613/tv5infohls/master.m3u8
+link=https://tv5infohls-i.akamaihd.net/hls/live/631613/tv5infohls/master.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=362435,RESOLUTION=640x360,CODECS="mp4a.40.2,avc1.4d401f"
 #link="https://tv5infohls-i.akamaihd.net/hls/live/631613/tv5infohls/v3plusinfo247hls_1_6.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=362435,RESOLUTION=640x360,CODECS="mp4a.40.2,avc1.4d401f"
@@ -2404,7 +2410,7 @@ then
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1378624,RESOLUTION=1280x720,CODECS="mp4a.40.2,avc1.4d401f"
 #link="https://v3plusinfo247hls-i.akamaihd.net/hls/live/218877/v3plusinfo247hls/v3plusinfo247hls_1_2.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2196150,RESOLUTION=1920x1080,CODECS="mp4a.40.2,avc1.4d4029"
-link="https://tv5infohls-i.akamaihd.net/hls/live/631613/tv5infohls/v3plusinfo247hls_1_1.m3u8"
+#link="https://tv5infohls-i.akamaihd.net/hls/live/631613/tv5infohls/v3plusinfo247hls_1_1.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2196150,RESOLUTION=1920x1080,CODECS="mp4a.40.2,avc1.4d4029"
 #link="https://v3plusinfo247hls-i.akamaihd.net/hls/live/218877/v3plusinfo247hls/v3plusinfo247hls_1_1.m3u8"
 fi
@@ -2947,9 +2953,7 @@ keyword="HispanTV"
 
 if [ "$getlink" = 1 ]
 then
-link="https://live.presstv.ir/live/smil:live.smil/playlist.m3u8"
-#link="https://live.presstv.ir/live/smil:live.smil/chunklist_w4281029_b644100_slen.m3u8"
-#link="https://live.presstv.ir/live/smil:live.smil/chunklist_w30180340_b644100_slen.m3u8"
+link="https://cdnlive.presstv.ir/cdnlive/smil:live.smil/playlist.m3u8"
 #link=http://178.32.255.199:1935/live/hispantv/playlist.m3u8
 #link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/hispantv/videos?view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
 fi
