@@ -2,13 +2,13 @@
 ######################################################################
 # Title: endstream.sh
 # Description:  Clearnet streaming from youtube of selected news
-#               stations using mpv and youtube-dl
+#               stations using mpv and yr-dlp
 # Author: The Endware Development Team
-# Copyright: 2017-2019, The Endware Development Team,
+# Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63577
-# Revision Date: February 11, 2023
+# Version: 0.63578
+# Revision Date: April 13, 2023
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63577"
-rev_date="02/11/2023"
+version="0.63578"
+rev_date="13/04/2023"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##################################################..
@@ -169,10 +169,10 @@ uamode="off"
 headmode="off"
 
 #http_proxy_port=3128
-#http_proxy_ip=192.168.100.103
+#http_proxy_ip=192.168.2.5
 
 torsocks_ip=127.0.0.1
-#torsocks_ip=192.168.100.103
+#torsocks_ip=192.168.2.5
 torsocks_port=9050
 
 screen_num=1
@@ -265,14 +265,14 @@ channel_matrix_1()
    echo "310)Jaya Plus        350)KBS World24 KR*390)Bukedde TV GH     430)ROGERS TV Kitchner 470)PJ Masks           510)LLBN His Light    550)-------------"
    echo "311)TEZ TV           351)YTN 27 KR      391)EBC ET   *        431)OMNI TV East       471)TYT                511)LLBN Latino TV    551)-------------"
    echo "312)Dili Aaj Tak     352)CGNTV *        392)Walf SN           432)OMNI TV West       472)Amouranth          512)Salt and Light    552)-------------"
-   echo "313)Derana LK  *     353)LLBN Korean TV*393)EriTV ER  *       433)OMNI TV Praries    473)CopyKat            513)Harbor Light      553)CBC News Yellowknife"
+   echo "313)Derana LK  *     353)LLBN Korean TV*393)EriTV ER  *       433)OMNI TV Praries    473)Katrine            513)Harbor Light      553)CBC News Yellowknife"
    echo "314)Swarnavahini LK  354)YTV USA        394)SABC ZA *         434)OMNI TV Quebec     474)Foxenkin           514)St. Mary's Coptic 554)CBC News Toronto"
    echo "315)Kaliagnar News   355)Atlanta AM790* 395)ITV ZA *          435)Brigtheon Radio    475)SharonQueen        515)Word of God Greek 555)CBC News Ottawa"
    echo "316)Sangat UK        356)ANN24 JP       396)Parliament ZA*    436)Speakfree Radio    476)Leynainu           516)Shalom America    556)CBC News Montreal"
    echo "317)-------------    357)Sol!ve 24 JP   397)D24   *           437)AMI Radio          477)IJenz              517)Shalom India      557)CBC News Windsor"
    echo "318)NTV Bangladesh   358)KBS 24 JP      398)Afrique Media     438)VOA Radio          478)RhinoSpiritX       518)Powervision TV    558)CBC News Igalaaq Nunavut"
-   echo "319)ATN Bangladesh   359)QVC Japan      399)DMB               439)NYXT Manhattan     479)NASA Public Media  519)LLBN Arabic       559)CBC Olympic"
-   echo "320)Channel 24 IN *  360)BSC 24 1 JP    400)--------------    440)--------------     480)NASA Education     520)LLBN SouthAsia    560)CBC Here and Now"
+   echo "319)ATN Bangladesh   359)QVC Japan      399)DMB               439)NYXT Manhattan     479)Violletta_PurPur   519)LLBN Arabic       559)CBC Olympic"
+   echo "320)Channel 24 IN *  360)BSC 24 1 JP    400)--------------    440)--------------     480)Gonsabella         520)LLBN SouthAsia    560)CBC Here and Now"
    echo "================================================================================================================================================================="
 }
 #       
@@ -408,9 +408,9 @@ channel_matrix_4()
    echo "1148)------------     1188)------------      1228)------------      1268)------------     1308)CanelProof        1348)------------     1388)Los Angeles Port"
    echo "1149)------------     1189)------------      1229)------------      1269)------------     1309)WuzzleRoot        1349)------------     1389)ITS COM Japan"
    echo "1150)------------     1190)------------      1230)------------      1270)------------     1310)HW                1350)------------     1390)China Shoreline"
-   echo "1151)------------     1191)------------      1231)------------      1271)------------     1311)------------      1351)------------     1391)------------"
-   echo "1152)------------     1192)------------      1232)------------      1272)------------     1312)------------      1352)------------     1392)------------"
-   echo "1153)------------     1193)------------      1233)------------      1273)------------     1313)------------      1353)------------     1393)------------"
+   echo "1151)------------     1191)------------      1231)------------      1271)------------     1311)keithwoods        1351)------------     1391)------------"
+   echo "1152)------------     1192)------------      1232)------------      1272)------------     1312)stewpeters        1352)------------     1392)------------"
+   echo "1153)------------     1193)------------      1233)------------      1273)------------     1313)joetheboomer      1353)------------     1393)------------"
    echo "1154)------------     1194)------------      1234)------------      1274)------------     1314)------------      1354)------------     1394)------------"
    echo "1155)------------     1195)------------      1235)------------      1275)------------     1315)------------      1355)------------     1395)------------"
    echo "1156)------------     1196)------------      1236)------------      1276)------------     1316)------------      1356)------------     1396)------------"
@@ -606,13 +606,15 @@ chan_name="Cheddar News";;
 if [ "$getlink" = 1 ]
 then
 
-#keyword="NBC News NOW"
-#channelURL="https://www.youtube.com/NBCNews/featured"
-#youTubeGrab
+keyword="NBC News NOW"
+channelURL="https://www.youtube.com/NBCNews/featured"
+youTubeGrab
 
-base="https://nbcnews3.akamaized.net/hls/live/723429/NBCNewsNowa418c506/clear/master.m3u8?"
 
-playMaker
+#link="https://mt.ssai-oneapp.nbcuni.com/Content/CMAF_OL1-CTR-4s/Live/channel(nnn)/master.mpd?mt.config=nbcnews-dash-linear-4s-generic"
+
+#base="https://nbcnews3.akamaized.net/hls/live/723429/NBCNewsNowa418c506/clear/master.m3u8?"
+#playMaker
 
 
 fi
@@ -628,17 +630,12 @@ chan_name="NBC News" ;;
 if [ "$getlink" = 1 ]
 then
 website="https://gem.cbc.ca/"
-#EXT-X-MEDIA:TYPE=CLOSED-CAPTIONS,GROUP-ID="CC",LANGUAGE="eng",NAME="English",INSTREAM-ID="CC1"
-#EXT-X-STREAM-INF:BANDWIDTH=2103200,AVERAGE-BANDWIDTH=2305600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=960x540,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master1.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=804760,AVERAGE-BANDWIDTH=875600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=640x360,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master2.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=1304160,AVERAGE-BANDWIDTH=1425600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=768x432,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master3.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=505120,AVERAGE-BANDWIDTH=545600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=480x270,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master4.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=3102000,AVERAGE-BANDWIDTH=3405600,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-link="https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master5.m3u8"
+eventID="VV86w2GwS9GS0bcVn_Hwjw"
+api_key="0A753C2A9BE994A75562DD9EAE366396307A3E2F489D692A561E2D3665AB1069"
+ppid="da23187f46d43d7f884508784adf329a3b7788b1990df76bac572a4d1aee8b39"
+
+googleGrab2
+
 
 fi
 use_cookies="no"
@@ -786,8 +783,8 @@ then
 #link=http://f24hls-i.akamaihd.net/hls/live/221147/F24_EN_HI_HLS/master.m3u8
 
 ########################### YOUTUBE
-keyword="FRANCE 24"
-channelURL="https://www.youtube.com/@France24_en/featured"
+keyword="LIVE"
+channelURL="https://www.youtube.com/@France24_en"
 youTubeGrab
 
 fi
@@ -806,7 +803,7 @@ then
 
 ########################### YOUTUBE
 keyword="Euronews English Live"
-channelURL="https://www.youtube.com/@euronews/featured"
+channelURL="https://www.youtube.com/@euronews"
 youTubeGrab
 
 fi
@@ -893,8 +890,8 @@ then
 #https://api.trtworld.com/livestream/v1/WcM3Oa2LHD9iUjWDSRUI335NkMWVTUV351H56dqC/master.m3u8?secondary=1
 
 #link="https://tv-trtworld.live.trt.com.tr/master.m3u8"
-#link="https://tv-trtworld.live.trt.com.tr/master_1080.m3u8"
-link="https://tv-trtworld.live.trt.com.tr/master_720.m3u8"
+link="https://tv-trtworld.live.trt.com.tr/master_1080.m3u8"
+#link="https://tv-trtworld.live.trt.com.tr/master_720.m3u8"
 #link="https://tv-trtworld.live.trt.com.tr/master_480.m3u8"
 #link="https://tv-trtworld.live.trt.com.tr/master_360.m3u8"
 #link=https://trtcanlitv-lh.akamaihd.net/master.m3u8
@@ -913,8 +910,8 @@ keyword="Al Jazeera English - Live"
 if [ "$getlink" = 1 ]
 then
 #  link="https://live-hls-web-aje.getaj.net/AJE/index.m3u8"
-#  link="https://live-hls-web-aje.getaj.net/AJE/01.m3u8"
-   link="https://live-hls-web-aje.getaj.net/AJE/02.m3u8"
+   link="https://live-hls-web-aje.getaj.net/AJE/01.m3u8"
+#  link="https://live-hls-web-aje.getaj.net/AJE/02.m3u8"
 #  link="https://live-hls-web-aje.getaj.net/AJE/03.m3u8"
 #  link="https://live-hls-web-aje.getaj.net/AJE/04.m3u8"
 
@@ -1273,6 +1270,7 @@ keyword="Arise"
 #link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/channel/UCyEJX-kSj0kOOCS7Qlq2G7g/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
 
 link="https://liveedge-arisenews.visioncdn.com/live-hls/arisenews/arisenews/arisenews_web/master.m3u8"
+#link="https://liveedge-arisenews.visioncdn.com/live-hls/arisenews/arisenews/arisenews_web/master.m3u8"
 #link="https://liveedge-arisenews.visioncdn.com/live-hls/arisenews/arisenews/arisenews_web/media_1.m3u8"
 #link="https://liveedge-arisenews.visioncdn.com/live-hls/arisenews/arisenews/arisenews_web/media_2.m3u8"
 #link="https://liveedge-arisenews.visioncdn.com/live-hls/arisenews/arisenews/arisenews_web/media_0.m3u8"
@@ -7034,39 +7032,65 @@ fi
 TAG="rhinospirit"
 chan_name="rhinospirit" ;;
 
+# 479) Violetta Pur Pur 
+479)
+if [ "$getlink" = 1 ]
+then
+link="https://www.twitch.tv/violetta_purpur"
+use_cookies="no"
+fi
+##method="Tor"
+TAG="violetta_pur_pur"
+chan_name="Violetta Pur Pur" ;; 
+
+
+# 480) Gonsabellla
+480)
+if [ "$getlink" = 1 ]
+then
+link="https://www.twitch.tv/gonsabellla"
+use_cookies="no"
+fi
+##method="Tor"
+TAG="Gonsabellla"
+chan_name="Gonsabellla" ;; 
+
+
 
 ############################### USTREAM  ##################################################
 # 479) NASA TV Media
-479)
-keyword="Media"
+#479)
+#keyword="Media"
 ## https://www.nasa.gov/multimedia/nasatv/#media
 #link="https://nasa-i.akamaihd.net/hls/live/253565/NASA-NTV1-Public/master.m3u8"
 #link="https://nasa-i.akamaihd.net/hls/live/253565/NASA-NTV1-Public/master_2000.m3u8"
 #link="http://hls.ums.ustream.tv/playlist/directhls/channel/6540154/playlist.m3u8"
-link="http://iphone-streaming.ustream.tv/uhls/6540154/streams/live/iphone/playlist.m3u8"
+#link="http://iphone-streaming.ustream.tv/uhls/6540154/streams/live/iphone/playlist.m3u8"
 #link=http://www.ustream.tv/channel/nasa-media-channel
 # method="Streamlink"
 #format="720p"
 #252p (worst), 360p, 486p, 720p (best)
 ### YOUTUBE LINK ###
 #link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/NASAtelevision/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
-use_cookies="no"
-chan_name="NASA TV Media" ;;
+#use_cookies="no"
+#chan_name="NASA TV Media" ;;
+
+
 # 480) NASA TV Public Education
-480)
-keyword="NASA TV Public-Education"
+#480)
+#keyword="NASA TV Public-Education"
 ## https://www.nasa.gov/multimedia/nasatv/#public
 #link=http://www.ustream.tv/nasahdtv
 #link="https://nasa-i.akamaihd.net/hls/live/253566/NASA-NTV2-Media/master.m3u8"
 #link="https://nasa-i.akamaihd.net/hls/live/253566/NASA-NTV2-Media/master_2000.m3u8"
-link="http://iphone-streaming.ustream.tv/uhls/10414700/streams/live/iphone/playlist.m3u8"
+#link="http://iphone-streaming.ustream.tv/uhls/10414700/streams/live/iphone/playlist.m3u8"
 #method="Streamlink"
 #format="720p"
 #252p (worst), 360p, 486p, 720p (best)
 ### YOUTUBE LINK ###
 #link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/NASAtelevision/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
-use_cookies="no"
-chan_name="NASA TV Public-Education" ;;
+#use_cookies="no"
+#chan_name="NASA TV Public-Education" ;;
 ##################################################
 
 ######################################  RELIGIOUS PROGRAMMING   ###################################################
@@ -12232,6 +12256,17 @@ chan_name="wuzleroot";;
 link="https://cozycdn.foxtrotstream.xyz/live/hw/index.m3u8"
 chan_name="HW";;
 
+1311)
+link="https://cozycdn.foxtrotstream.xyz/live/keithwoods/index.m3u8"
+chan_name="keithwoods";;
+
+1312)
+link="https://cozycdn.foxtrotstream.xyz/live/stewpeters/index.m3u8"
+chan_name="stewpeters";;
+
+1313)
+link="https://cozycdn.foxtrotstream.xyz/live/joetheboomer/index.m3u8"
+chan_name="joetheboomer";;
 
 
 
