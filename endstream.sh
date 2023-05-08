@@ -2,7 +2,7 @@
 ######################################################################
 # Title: endstream.sh
 # Description:  Clearnet streaming from youtube of selected news
-#               stations using mpv and yr-dlp
+#               stations using mpv and youtube-dl
 # Author: The Endware Development Team
 # Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
@@ -251,16 +251,16 @@ channel_matrix_1()
    echo "296)ABN Telugu       336)CTS 2 TW  *    376)--------------    416)TSC CA             456)RED BULL TV        496)CBN               536)Shalom Kids "
    echo "297)Vanitha TV       337)SJTV TW        377)--------------    417)QVC 2 USA          457)CBS Sports HQ      497)CBN News          537)VTNTV Arkansas"
    echo "298)HMT Telugu *     338)LLBN Chinese*  378)Africa News *     418)QVC 3 USA          458)11 Sports          498)NRB               538)St Patrick Dumbarton"
-   echo "299)India TV IN      339)SDTV TW   *    379)Africa24          419)QVC 4 USA          459)Sorgatronmedia     499)Trinity Channel   539)------------"
+   echo "299)India TV IN      339)SDTV TW   *    379)Africa24          419)QVC 4 USA          459)Sorgatronmedia     499)Trinity Channel   539)Providence TV"
    echo "300)Survana News *   340)FANS TV TW     380)SIKKA Afrique*    420)HSN                460)Adult Swim         500)IHOP              540)------------"
    echo "301)i News Telugu    341)Hong Kong TV*  381)Channels 24 NG    421)HSN 2              461)Geek and Sundry    501)Amazing Facts     541)------------"
    echo "302)PTTV Tamil IN    342)OnTV HK CN     382)TVC News NG       422)QVC5               462)Toku Shout Su      502)It's Supernatural 542)-------------"
    echo "303)DD News          343)GET TV USA *   383)NTV Uganda UG     423)QVC6               463)Shout Factory      503)Shepherd's Chapel 543)-------------"
    echo "304)REPORTER LIVE    344)KCTV KP        384)SPARK UG  *       424)Sky News UK        464)RetroTV            504)BVOVN             544)------------"
-   echo "305)AsiaNet News     345)Arirang Korea  385)EbruTV KE  *      425)-------------      465)RobotChicken       505)3ABN              545)------------"
-   echo "306)V6 News          346)TBS KR   *     386)KTN Kenya KE *    426)PeopleTV           466)POP TV             506)3ABN Latino       546)------------"
-   echo "307)Aaj Tak IN       347)YTN DMB KR     387)KTN Home KE *     427)Bloomberg BNN      467)ET Live            507)3ABN Francais     547)------------"
-   echo "308)ETV AndhraPradesh348)YTN Sci KR     388)Joy News GH  *    428)--------------     468)Talking Tom        508)LLBN SmartLife    548)------------"
+   echo "305)AsiaNet News     345)Arirang Korea  385)EbruTV KE  *      425)Bloomberg BNN      465)RobotChicken       505)3ABN              545)------------"
+   echo "306)V6 News          346)TBS KR   *     386)KTN Kenya KE *    426)SimulTV 2A         466)POP TV             506)3ABN Latino       546)------------"
+   echo "307)Aaj Tak IN       347)YTN DMB KR     387)KTN Home KE *     427)CowboyTheater      467)ET Live            507)3ABN Francais     547)------------"
+   echo "308)ETV AndhraPradesh348)YTN Sci KR     388)Joy News GH  *    428)Overcomers TV      468)Talking Tom        508)LLBN SmartLife    548)------------"
    echo "309)News 18 Tamil    349)Channel 23 KR  389)ADOM GH           429)ROGERS TV Ottawa   469)Talking Tom Mini   509)LLBN His Word     549)------------"
    echo "310)Jaya Plus        350)KBS World24 KR*390)Bukedde TV GH     430)ROGERS TV Kitchner 470)PJ Masks           510)LLBN His Light    550)-------------"
    echo "311)TEZ TV           351)YTN 27 KR      391)EBC ET   *        431)OMNI TV East       471)TYT                511)LLBN Latino TV    551)-------------"
@@ -1261,7 +1261,7 @@ link="https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01486-tickernews-tickernewswe
 
 chan_name="TickerNews";;
 ########################### AFRICA ############################################
-# 29) Arise News Nigeria/London
+# 29) Arise News Nigeria
 29)
 if [ "$getlink" = 1 ]
 then
@@ -1280,7 +1280,7 @@ fi
 #method="Tor"
 use_cookies="no"
 TAG="ARISE_NG__"
-chan_name="Arise News Nigeria/London";;
+chan_name="Arise News Nigeria";;
 
 # 30) Africa News Live
 30)
@@ -1579,23 +1579,30 @@ chan_name="CBC Canada";;
 
 42)
 ## Lindell TV1
-link="https://frnksocial.mmdlive.lldns.net/frnksocial/bb457320325b4676930a00ef6f8b0407/chunklist_b1128000.m3u8"
+
+link="https://watchb.frankspeech.com/hls/frank1/mainchannel1/playlist.m3u8"
+#link="https://watchb.frankspeech.com/hls/frank1/mainchannel1/chunklist_b2928000.m3u8"
+#link="https://watch.frankspeech.com/hls/frank1/mainchannel1/playlist.m3u8"
+#link="https://watch.frankspeech.com/hls/frank1/mainchannel1/combinedmanifest.m3u8"
 chan_name="LindellTV1";;
 
 43)
 ## Lindell TV2
-link="https://frnksocial.mmdlive.lldns.net/frnksocial/fdc4ddd878764582aa2d72dad787c4ab/chunklist_b1128000.m3u8"
+#link="https://watch.frankspeech.com/hls/frank2/mainchannel2/combinedmanifest.m3u8"
+link="https://watch.frankspeech.com/hls/frank2/mainchannel2/playlist.m3u8"
 chan_name="LindellTV2";;
 
 44)
 ## Lindell TV3
-link="https://frnksocial.mmdlive.lldns.net/frnksocial/61016efa7eea46cb99bbd84dfc442720/chunklist_b1128000.m3u8"
+link="https://watchb.frankspeech.com/hls/frank3/mainchannel3/playlist.m3u8"
 chan_name="LindellTV3";;
 
 45)
 #Brighteon TV
+#link="https://rtmp-edge.brighteon.com/hls/brighteon-live/index_480p/index.m3u8"
 link="https://rtmp-edge.brighteon.com/hls/brighteon-live/index_720p/index.m3u8"
 chan_name="BrighteonTV";;
+
 
 ########################## CANADIAN GOVERNMENT #########################
 # 46) CPAC 1 Canada
@@ -6427,7 +6434,6 @@ fi
 TAG="QVC6______"
 chan_name="QVC6" ;;
 
-
 # 424) Sky News
 424)
 if [ "$getlink" = 1 ]
@@ -6441,23 +6447,34 @@ fi
 use_cookies="no"
 chan_name="Sky News" ;;
 
-# 425
-
-426)
-### PEOPLE TV 
-link="https://peopletv-oando.akamaized.net/midroll/deviceid=b3805cf8-9883-4060-9fe4-b689794972a0/amagi_hls_data_peopletvA-peopletvoando/CDN/playlist.m3u8"
-chan_name="PeopleTV";;
-
-
-
-# 427) Bloomberg BNN 
-427)
+# 425) Bloomberg BNN 
+425)
 link="https://pe-ak-lp01a-9c9media.akamaized.net/live/News1BNNDigi/p/dash/00000001/1bba52dc66e4c68e/manifest.mpd"
 #####method="Tor"
 use_cookies="no"
 chan_name="Bloomberg BNN";;
 
-#428
+# 426) SimulTV 2A Network 
+426)
+## SimulTV 2A Network
+link="https://ltv-simul.frankspeech.com/n4s4/FrankS/2A/2ANetwork/interlink.m3u8"
+#####method="Tor"
+use_cookies="no"
+chan_name="SimulTV 2A Network";;
+
+# 427) SimulTV Cowboy Theater
+427)
+link="https://ltv-simul.frankspeech.com/n4s4/FrankS/CowT/interlink.m3u8"
+#####method="Tor"
+use_cookies="no"
+chan_name="SimulTV Cowboy Theater";;
+
+# 428) Overcomers TV Live
+428)
+link="https://frnksocial.mmdlive.lldns.net/frnksocial/a5e6157524ce49e3a0653d5841619ac3/manifest.m3u8"
+#####method="Tor"
+use_cookies="no"
+chan_name="Overcomers TV Live";;
 
 429)
 #ROGERS TV Ottawa
@@ -7817,6 +7834,15 @@ channelURL="https://livestream.com/accounts/10499782/events/7601596"
 liveStreamGrab
 use_cookies="no"
 chan_name="St Patrick's Dumbarton" ;;
+
+
+# 539) Providence Christian Network
+539)
+link="https://ltv-simul.frankspeech.com/n4s4/FrankS/CT/interlink.m3u8"
+#####method="Tor"
+use_cookies="no"
+chan_name="Providence Christian Network";;
+
 
 
 # 539) BYUTV
