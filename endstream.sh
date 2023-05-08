@@ -7,8 +7,8 @@
 # Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63578
-# Revision Date: April 13, 2023
+# Version: 0.63579
+# Revision Date: May 08, 2023
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63578"
-rev_date="13/04/2023"
+version="0.63579"
+rev_date="08/05/2023"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##################################################..
