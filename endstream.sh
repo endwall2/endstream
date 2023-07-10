@@ -7,7 +7,7 @@
 # Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63579
+# Version: 0.63580
 # Revision Date: July 9, 2023
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
@@ -145,7 +145,7 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63579"
+version="0.63580"
 rev_date="09/07/2023"
 branch="gnu/linux"
 product="ENDSTREAM"
@@ -189,41 +189,41 @@ channel_matrix_0()
    echo "3)Newsy USA           43)Lindell TV 2     83)BFM Business FR   123)CGTN Espanol     163)ZDK InfoKanal     203)Radio TV Rome IT          243)BBC Arabic"
    echo "4)ABC News USA        44)Lindell TV 3     84)RT France         124)France24 Espanol 164)Tagesschau/MOMA DE204)RTM Arcevia IT            244)DW Arabic"
    echo "5)Cheddar News        45)Brighteon TV     85)France Info TV    125)TeleSUR VE       165)RT DE             205)Udinese IT                245)CGTN Arabic"
-   echo "6)NBC News US         46)CPAC 1 CA        86)CGTN Francais     126)Hispan TV IR     166)QVC DE            206)50NewsVersiliaViareggio IT246)Al Jazeera QA"
-   echo "7)CBC NewsNet CA      47)DC Network       87)Africa News       127)Malaga TV ES     167)ADR Alpha DE      207)50 Canale Pisa IT         247)Al Jazeera Mubasher QA"
-   echo "8)Global News CA      48)DC Capitol       88)RDI ICI CA        128)C5N AR           168)Radio 21 DE       208)Teleliberta Piacenza IT   248)Al Arabiya AE"
-   echo "9)CityNews East CA    49)DC Knowledge     89)ICI Tele AB CA    129)AcequiaMendozaAR 169)DW Deutsch + DE   209)Top News Albania          249)Al Mayadeen LB"
-   echo "10)CityNews West CA   50)MNN HD NY USA    90)TVA CA            130)Todo Noticias AR 170)Baden TV DE       210)Star Lamia GR             250)Belqees TV YE"
-   echo "11)TeleSUR Eng VE     51)MNN 1 NY USA     91)France 2          131)La Nacion AR     171)W24 Wein AT       211)Action 24 GR              251)Sky Arabic AE"
-   echo "12)GB News UK         52)MNN 2 NY USA     92)France 3          132)A24 AR           172)Tirol TV AT       212)TRT Haber TR              252)Alghad EG"
-   echo "13)France 24 EN       53)MNN 3 NY USA     93)ARTE Francais     133)KZO AR           173)Musig24 CH        213)NTV TR                    253)Extra News EG"
-   echo "14)Euronews EU        54)MNN 4 NY USA     94)IL TV FR          134)Canal 2 AR       174)RTL LU            214)HaberTurk TV              254)CBC Sofra EG"
-   echo "15)DW English         55)BronxNet NY USA  95)BFM Paris FR      135)TV5 AR           175)TV OOST BE        215)Star TV TR                255)CBC Drama EG"
-   echo "16)Russia Today       56)BronxNet Omni    96)Alsace 20 FR      136)Canal 7 AR       176)RTV OOST NL       216)KRT Kulture TR            256)DMC Live EG"
-   echo "17)TRT World TK       57)BronxNet Culture 97)Mosaik TV FR      137)Canal 13 AR      177)AT5 NL            217)TGRT Haber TR             257)AFAQ TV IQ"
-   echo "18)Al Jazeera         58)BronxNet Life    98)La Vendee         138)CN23 AR          178)Euronews Russian  218)TVNET Canali TR           258)BBC Persian"
-   echo "19)i24 News IL        59)LUTV             99)8 Monte Blanc FR  139)Telemax AR       179)POCCNR 24 RU      219)Show TV TR                259)Iran Aryaee"
-   echo "20)Press TV Iran      60)Southeastern TV  100)TV7 Bordeaux FR  140)Vorterix AR      180)RBC TV RU         220)-------------             260)DidgahNew TV IR"
-   echo "21)WION IN            61)Texas State TV   101)teleGrenoble     141)TV Publica AR *  181)CGTN Russian      221)-------------             261)PTN PARS TV USA"
-   echo "22)India Today        62)Temple U TUTV    102)LCP FR           142)Mega CL          182)Vesti FM RU       222)-------------             262)TOLO NEWS AF"
-   echo "23)CGTN Beijing       63)TWIT USA         103)Public Senate FR 143)Telemedeline CO  183)Perviy RU         223)-------------             263)KSA 1 SA"
-   echo "24)NHK World JP       64)Bloomberg AU     104)CPAC 1 CA        144)Telecafe CO      184)Current Time VOA  224)-------------             264)KSA Sports SA"
-   echo "25)Arirang KR         65)Bloomberg EU     105)Assemblee QC CA  145)Globovision VE   185)5 Live RU         225)-------------             265)KSA Sports 2 SA"
-   echo "26)CNA SG             66)Bloomberg Charts 106)BX1 BE           146)VPItv VE         186)News 24 UA        226)-------------             266)KSA Quaran SA"
-   echo "27)ABC AU             67)CBSN NY USA      107)France Info      147)TeleDiario MX    187)UA TV UA          227)-------------             267)KSA Sunna SA"
-   echo "28)Ticker News AU     68)CBSN LA USA      108)CNEWS FR         148)Excelsior MX *   188)News 1 UA         228)-------------             268)KSA Al Ekhbariya SA"
-   echo "29)Arise News NG      69)CBSN Bay Area    109)RTL BE           149)Brighteon ES     189)UA 5  UA          229)-------------             269)KSA Zikrayat SA"
-   echo "30)Africa News Eng    70)CBSN Boston      110)RTL 2 BE         150)-------------    190)TV Publica Moldova230)-------------             270)KSA SBC SA"
-   echo "31)NEWSMAX USA        71)CBSN Chicago     111)Europe 1 FR      151)-------------    191)RT Docs RU        231)-------------             271)KSA Saudi Radio SA"
-   echo "32)Free Speech TV     72)CBSN Dallas      112)RTL BE           152)-------------    192)Thromadske UA *   232)-------------             272)KSA Jedha Radio SA"
-   echo "33)Infowars Live      73)CBSN Denver      113)France Inter FR  153)-------------    193)Espresso UA  *    233)-------------             273)KSA Rhiyad Radio SA"
-   echo "34)American Journal   74)CBSN Minnesota   114)RMC INFO FR      154)-------------    194)-------------     234)-------------             274)KSA Quaran Radio SA"
-   echo "35)Infowars WarRoom   75)CBSN Philadelphia115)Azur TV Nice     155)-------------    195)-------------     235)-------------             275)------------"
-   echo "36)United Nations TV  76)CBSN Pittsburgh  116)Press TV FR      156)-------------    196)-------------     236)-------------             276)------------"
-   echo "37)VOA USA            77)CBSN Sacramento  117)MB TV Monte Blanc157)-------------    197)-------------     237)-------------             277)------------"
-   echo "38)CBC Explore        78)CBSN Baltimore   118)OUATCH TV        158)-------------    198)-------------     238)-------------             278)------------"
-   echo "39)RT Documentary     79)CBSN Miami       119)--------------   159)-------------    199)-------------     239)-------------             279)------------"
-   echo "40)CGTN Documentary   80)CBC Here Now     120)--------------   160)Euronews ES *    200)Euronews DE *     240)-------------             280)------------"
+   echo "6)NBC News US         46)1stAmendment     86)CGTN Francais     126)Hispan TV IR     166)QVC DE            206)50NewsVersiliaViareggio IT246)Al Jazeera QA"
+   echo "7)CBC NewsNet CA      47)CPAC 1 CA        87)Africa News       127)Malaga TV ES     167)ADR Alpha DE      207)50 Canale Pisa IT         247)Al Jazeera Mubasher QA"
+   echo "8)Global News CA      48)DC Network       88)RDI ICI CA        128)C5N AR           168)Radio 21 DE       208)Teleliberta Piacenza IT   248)Al Arabiya AE"
+   echo "9)CityNews East CA    49)DC Capitol       89)ICI Tele AB CA    129)AcequiaMendozaAR 169)DW Deutsch + DE   209)Top News Albania          249)Al Mayadeen LB"
+   echo "10)CityNews West CA   50)DC Knowledgd     90)TVA CA            130)Todo Noticias AR 170)Baden TV DE       210)Star Lamia GR             250)Belqees TV YE"
+   echo "11)TeleSUR Eng VE     51)MNN HD NY USA    91)France 2          131)La Nacion AR     171)W24 Wein AT       211)Action 24 GR              251)Sky Arabic AE"
+   echo "12)Sky News UK        52)MNN 1 NY USA     92)France 3          132)A24 AR           172)Tirol TV AT       212)TRT Haber TR              252)Alghad EG"
+   echo "13)GB News UK         53)MNN 2 NY USA     93)ARTE Francais     133)KZO AR           173)Musig24 CH        213)NTV TR                    253)Extra News EG"
+   echo "14)France 24 EN       54)MNN 3 NY USA     94)IL TV FR          134)Canal 2 AR       174)RTL LU            214)HaberTurk TV              254)CBC Sofra EG"
+   echo "15)Euronews EU        55)MNN 4 NY USA     95)BFM Paris FR      135)TV5 AR           175)TV OOST BE        215)Star TV TR                255)CBC Drama EG"
+   echo "16)DW English         56)BronxNet NY USA  96)Alsace 20 FR      136)Canal 7 AR       176)RTV OOST NL       216)KRT Kulture TR            256)DMC Live EG"
+   echo "17)Russia Today       57)BronxNet Omni    97)Mosaik TV FR      137)Canal 13 AR      177)AT5 NL            217)TGRT Haber TR             257)AFAQ TV IQ"
+   echo "18)TRT World TK       58)BronxNet Culture 98)La Vendee         138)CN23 AR          178)Euronews Russian  218)TVNET Canali TR           258)BBC Persian"
+   echo "19)Al Jazeera         59)BronxNet Life    99)8 Monte Blanc FR  139)Telemax AR       179)POCCNR 24 RU      219)Show TV TR                259)Iran Aryaee"
+   echo "20)Press TV Iran      60)LUTV             100)TV7 Bordeaux FR  140)Vorterix AR      180)RBC TV RU         220)-------------             260)DidgahNew TV IR"
+   echo "21)WION IN            61)Southeastern TV  101)teleGrenoble     141)TV Publica AR *  181)CGTN Russian      221)-------------             261)PTN PARS TV USA"
+   echo "22)India Today        62)Texas State TV   102)LCP FR           142)Mega CL          182)Vesti FM RU       222)-------------             262)TOLO NEWS AF"
+   echo "23)CGTN Beijing       63)Temple U TUTV    103)Public Senate FR 143)Telemedeline CO  183)Perviy RU         223)-------------             263)KSA 1 SA"
+   echo "24)NHK World JP       64)TWIT USA         104)CPAC 1 CA        144)Telecafe CO      184)Current Time VOA  224)-------------             264)KSA Sports SA"
+   echo "25)Arirang KR         65)Bloomberg AU     105)Assemblee QC CA  145)Globovision VE   185)5 Live RU         225)-------------             265)KSA Sports 2 SA"
+   echo "26)CNA SG             66)Bloomberg EU     106)BX1 BE           146)VPItv VE         186)News 24 UA        226)-------------             266)KSA Quaran SA"
+   echo "27)ABC AU             67)Bloomberg Charts 107)France Info      147)TeleDiario MX    187)UA TV UA          227)-------------             267)KSA Sunna SA"
+   echo "28)Ticker News AU     68)CBSN NY USA      108)CNEWS FR         148)Excelsior MX *   188)News 1 UA         228)-------------             268)KSA Al Ekhbariya SA"
+   echo "29)Arise News NG      69)CBSN LA USA      109)RTL BE           149)Brighteon ES     189)UA 5  UA          229)-------------             269)KSA Zikrayat SA"
+   echo "30)Africa News Eng    70)CBSN Bay Area    110)RTL 2 BE         150)-------------    190)TV Publica Moldova230)-------------             270)KSA SBC SA"
+   echo "31)NEWSMAX USA        71)CBSN Boston      111)Europe 1 FR      151)-------------    191)RT Docs RU        231)-------------             271)KSA Saudi Radio SA"
+   echo "32)Free Speech TV     72)CBSN Chicago     112)RTL BE           152)-------------    192)Thromadske UA *   232)-------------             272)KSA Jedha Radio SA"
+   echo "33)Infowars Live      73)CBSN Dallas      113)France Inter FR  153)-------------    193)Espresso UA  *    233)-------------             273)KSA Rhiyad Radio SA"
+   echo "34)American Journal   74)CBSN Denver      114)RMC INFO FR      154)-------------    194)-------------     234)-------------             274)KSA Quaran Radio SA"
+   echo "35)Infowars WarRoom   75)CBSN Minnesota   115)Azur TV Nice     155)-------------    195)-------------     235)-------------             275)------------"
+   echo "36)United Nations TV  76)CBSN Philadelphia116)Press TV FR      156)-------------    196)-------------     236)-------------             276)------------"
+   echo "37)VOA USA            77)CBSN Pittsburgh  117)MB TV Monte Blanc157)-------------    197)-------------     237)-------------             277)------------"
+   echo "38)CBC Explore        78)CBSN Sacramento  118)OUATCH TV        158)-------------    198)-------------     238)-------------             278)------------"
+   echo "39)RT Documentary     79)CBSN Baltimore   119)--------------   159)-------------    199)-------------     239)-------------             279)------------"
+   echo "40)CGTN Documentary   80)CBSN Miami       120)--------------   160)Euronews ES *    200)Euronews DE *     240)-------------             280)------------"
    echo "=========================================================================================================================================================="
   
 }                    
@@ -241,10 +241,10 @@ channel_matrix_1()
    echo "286)NDTV Profit      326)FTV TW         366)--------------    406)Democracy Now      446)BritAsia TV        486)Salt&Light TV     526)TBN UK "
    echo "287)Shaski India     327)CTS World TW*  367)VietTV VN  *      407)Reuters TV         447)H!T Music          487)EWTN Canada       527)Hillsong TV "
    echo "288)SunNews          328)SET News TW*   368)VietSky USA       408)NDTV IN            448)California Music   488)Catholic TV       528)TCI Italian   "
-   echo "289)TV9 India        329)CTI TW         369)--------------    409)Times IN           449)Country Network    489)Shalom USA        529)Enlace Latino "
-   echo "290)Rajya Sabha      330)SET iNews TW*  370)Earthquake 24 JP  410)ET Now IN          450)Ditty TV           490)Shalom World      530)Salsa "
-   echo "291)TV9 Gujarat      331)Formosa TW     371)Arirang News TV * 411)NewsX IN           451)Rockland Radio     491)Shalom Europe     531)SMILE  "
-   echo "292)-------------    332)TzuChi DaAi TW 372)Arirang TV KR     412)TV Rerun MGM       452)Classic ARTS       492)EWTN Espanol      532)JUCE TV  "
+   echo "289)TV9 India        329)CTI TW         369)--------------    409)--------------     449)Country Network    489)Shalom USA        529)Enlace Latino "
+   echo "290)Rajya Sabha      330)SET iNews TW*  370)Earthquake 24 JP  410)--------------     450)Ditty TV           490)Shalom World      530)Salsa "
+   echo "291)TV9 Gujarat      331)Formosa TW     371)Arirang News TV * 411)--------------     451)Rockland Radio     491)Shalom Europe     531)SMILE  "
+   echo "292)-------------    332)TzuChi DaAi TW 372)Arirang TV KR     412)--------------     452)Classic ARTS       492)EWTN Espanol      532)JUCE TV  "
    echo "293)-------------    333)DaAiVideo TW   373)BSC 24 2 JP       413)CBC Olympic        453)Fashion Europe     493)EWTN Deutsch      533)Nejat "
    echo "294)Aaj Tak          334)DaAi Live TW   374)--------------    414)QVC UK             454)Jasmin TV USA      494)KtO Catholique    534)Al Horreya "
    echo "295)NTV Telugu       335)Sinda TV  *    375)--------------    415)QVC 1 USA          455)MLB Network        495)TRWAM PL          535)EJTV "
@@ -256,10 +256,10 @@ channel_matrix_1()
    echo "301)i News Telugu    341)Hong Kong TV*  381)Channels 24 NG    421)HSN 2              461)Geek and Sundry    501)Amazing Facts     541)------------"
    echo "302)-------------    342)OnTV HK CN     382)TVC News NG       422)QVC5               462)Toku Shout Su      502)It's Supernatural 542)-------------"
    echo "303)DD News          343)GET TV USA *   383)NTV Uganda UG     423)QVC6               463)Shout Factory      503)Shepherd's Chapel 543)-------------"
-   echo "304)REPORTER LIVE    344)KCTV KP        384)SPARK UG  *       424)Sky News UK        464)RetroTV            504)BVOVN             544)------------"
-   echo "305)AsiaNet News     345)Arirang Korea  385)EbruTV KE  *      425)Bloomberg BNN      465)RobotChicken       505)3ABN              545)------------"
-   echo "306)-------------    346)TBS KR   *     386)KTN Kenya KE *    426)SimulTV 2A         466)POP TV             506)3ABN Latino       546)------------"
-   echo "307)Aaj Tak IN       347)YTN DMB KR     387)KTN Home KE *     427)CowboyTheater      467)ET Live            507)3ABN Francais     547)------------"
+   echo "304)REPORTER LIVE    344)KCTV KP        384)SPARK UG  *       424)--------------     464)RetroTV            504)BVOVN             544)------------"
+   echo "305)AsiaNet News     345)Arirang Korea  385)EbruTV KE  *      425)--------------     465)RobotChicken       505)3ABN              545)------------"
+   echo "306)-------------    346)TBS KR   *     386)KTN Kenya KE *    426)--------------     466)POP TV             506)3ABN Latino       546)------------"
+   echo "307)Aaj Tak IN       347)YTN DMB KR     387)KTN Home KE *     427)Bloomberg BNN      467)ET Live            507)3ABN Francais     547)------------"
    echo "308)ETV AndhraPradesh348)YTN Sci KR     388)Joy News GH  *    428)Overcomers TV      468)Talking Tom        508)LLBN SmartLife    548)------------"
    echo "309)News 18 Tamil    349)Channel 23 KR  389)ADOM GH           429)ROGERS TV Ottawa   469)Talking Tom Mini   509)LLBN His Word     549)------------"
    echo "310)Jaya Plus        350)KBS World24 KR*390)Bukedde TV GH     430)ROGERS TV Kitchner 470)PJ Masks           510)LLBN His Light    550)-------------"
@@ -271,11 +271,10 @@ channel_matrix_1()
    echo "316)Sangat UK        356)ANN24 JP       396)Parliament ZA*    436)Speakfree Radio    476)Leynainu           516)Shalom America    556)CBC News Montreal"
    echo "317)-------------    357)Sol!ve 24 JP   397)D24   *           437)AMI Radio          477)IJenz              517)Shalom India      557)CBC News Windsor"
    echo "318)NTV Bangladesh   358)KBS 24 JP      398)Afrique Media     438)VOA Radio          478)Akuasmr            518)Powervision TV    558)CBC News Igalaaq Nunavut"
-   echo "319)ATN Bangladesh   359)QVC Japan      399)DMB               439)NYXT Manhattan     479)Violletta_PurPur   519)LLBN Arabic       559)CBC Olympic"
-   echo "320)-------------    360)BSC 24 1 JP    400)--------------    440)--------------     480)PekeASMR           520)LLBN SouthAsia    560)CBC Here and Now"
+   echo "319)ATN Bangladesh   359)QVC Japan      399)DMB               439)i24 News IL        479)Violletta_PurPur   519)LLBN Arabic       559)CBC Olympic"
+   echo "320)-------------    360)BSC 24 1 JP    400)--------------    440)NYXT Manhattan     480)PekeASMR           520)LLBN SouthAsia    560)CBC Here and Now"
    echo "================================================================================================================================================================="
 }
-#       
 
 channel_matrix_2()
 {
@@ -374,16 +373,16 @@ channel_matrix_3()
 }
 
 channel_matrix_4()
-{ #hasanabi smidjen intraventus  blondiewondie Alinity  My Kinky Dope
+{ 
    echo "============================================================    "$product"  "$version"   ==================================================================="
    echo "||     FRANCAIS II     ||     GOVERNMENT     ||     AUS/NZ          ||   TWITCH           ||  DLIVE/COZY        ||    Column 6        ||   Locations    ||"
    echo "============================================================================================================================================================"
-   echo "1121)Generations TV   1161)EBS EU            1201)2UE Sydney        1241)hasanabi         1281)1stAmendment      1321)------------     1361)------------"
-   echo "1122)Telesud          1162)EBS Plus EU       1202)3AW Melbourne     1242)smidjen          1282)PatriotSoapBox    1322)------------     1362)------------"
-   echo "1123)VL               1163)Dail Eireann IE   1203)4BC Brisbane      1243)blondiewondie    1283)PreperSurplus     1323)------------     1363)------------"
-   echo "1124)BFM TV           1164)Senad Eireann IE  1204)3 News NZ         1244)Alinity          1284)alexjones         1324)------------     1364)------------"
-   echo "1125)TV 7 Bordeaux    1165)Oireachtas CR 1 IE1205)------------      1245)My Kinky Dope    1285)WTC-7             1325)------------     1365)------------"
-   echo "1126)8 Monte Blacnc 2 1166)Oireachtas CR 2 IE1206)------------      1246)ShyPhoebe        1286)CozyTV LoFi       1326)------------     1366)------------"
+   echo "1121)Generations TV   1161)EBS EU            1201)2UE Sydney        1241)hasanabi         1281)CozyTV LoFi       1321)------------     1361)------------"
+   echo "1122)Telesud          1162)EBS Plus EU       1202)3AW Melbourne     1242)smidjen          1282)Alexjones         1322)------------     1362)------------"
+   echo "1123)VL               1163)Dail Eireann IE   1203)4BC Brisbane      1243)blondiewondie    1283)PatriotSoapBox    1323)------------     1363)------------"
+   echo "1124)BFM TV           1164)Senad Eireann IE  1204)3 News NZ         1244)Alinity          1284)SloanTV           1324)------------     1364)------------"
+   echo "1125)TV 7 Bordeaux    1165)Oireachtas CR 1 IE1205)------------      1245)My Kinky Dope    1285)PreperSurplus     1325)------------     1365)------------"
+   echo "1126)8 Monte Blacnc 2 1166)Oireachtas CR 2 IE1206)------------      1246)ShyPhoebe        1286)WTC-7             1326)------------     1366)------------"
    echo "1127)RTL 2            1167)Oireachtas CR 3 IE1207)------------      1247)loserfruit       1287)chieftrumpster    1327)------------     1367)------------"
    echo "1128)OUI FM           1168)Oireachtas CR 4 IE1208)------------      1248)staryuuki        1288)Red Ice TV        1328)------------     1368)------------"
    echo "1129)D24TV            1169)------------      1209)------------      1249)Loraveee         1289)MarfoggleNews     1329)------------     1369)------------"
@@ -414,10 +413,57 @@ channel_matrix_4()
    echo "1154)------------     1194)------------      1234)------------      1274)------------     1314)beardson          1354)------------     1394)------------"
    echo "1155)------------     1195)------------      1235)------------      1275)------------     1315)loulz             1355)------------     1395)------------"
    echo "1156)------------     1196)------------      1236)------------      1276)------------     1316)trsartor          1356)------------     1396)------------"
-   echo "1157)------------     1197)------------      1237)------------      1277)------------     1317)SloanTV           1357)------------     1397)------------"
-   echo "1158)------------     1198)------------      1238)------------      1278)------------     1318)RealPersonPolitik 1358)------------     1398)------------"
-   echo "1159)------------     1199)------------      1239)------------      1279)-----------      1319)SourD             1359)------------     1399)------------"
-   echo "1160)------------     1200)------------      1240)------------      1280)-----------      1320)------------      1360)------------     1400)------------"
+   echo "1157)------------     1197)------------      1237)------------      1277)------------     1317)TylerRussell      1357)------------     1397)------------"
+   echo "1158)------------     1198)------------      1238)------------      1278)------------     1318)BigTech           1358)------------     1398)------------"
+   echo "1159)------------     1199)------------      1239)------------      1279)-----------      1319)JimboZoomer       1359)------------     1399)------------"
+   echo "1160)------------     1200)------------      1240)------------      1280)-----------      1320)DudeMan76         1360)------------     1400)------------"
+   echo "==================================================================================================================================================="
+}
+channel_matrix_5()
+{ 
+   echo "============================================================    "$product"  "$version"   ==================================================================="
+   echo "||  ------------   ||     ------------   ||     ------------   ||   ------------   ||  ------------    ||    ------------   ||   ------------  ||"
+   echo "============================================================================================================================================================"
+   echo "1401)------------   1431)------------    1471)------------     1511)------------   1551)------------      1591)------------     1631)------------"
+   echo "1402)------------   1432)------------    1472)------------     1512)------------   1552)------------      1592)------------     1632)------------"
+   echo "1403)------------   1433)------------    1473)------------     1513)------------   1553)------------      1593)------------     1633)------------"
+   echo "1404)------------   1434)------------    1474)------------     1514)------------   1554)------------      1594)------------     1634)------------"
+   echo "1405)------------   1435)------------    1475)------------     1515)------------   1555)------------      1595)------------     1635)------------"
+   echo "1406)------------   1436)------------    1476)------------     1516)------------   1556)------------      1596)------------     1636)------------"
+   echo "1407)------------   1437)------------    1477)------------     1517)------------   1557)------------      1597)------------     1637)------------"
+   echo "1408)------------   1438)------------    1478)------------     1518)------------   1558)------------      1598)------------     1638)------------"
+   echo "1409)------------   1439)------------    1479)------------     1519)------------   1559)------------      1599)------------     1639)------------"
+   echo "1410)------------   1440)------------    1480)------------     1520)------------   1560)------------      1600)------------     1640)------------"
+   echo "1411)------------   1441)------------    1481)------------     1521)------------   1561)------------      1601)------------     1641)------------"
+   echo "1412)------------   1442)------------    1482)------------     1522)------------   1562)------------      1602)------------     1642)------------"
+   echo "1413)------------   1443)------------    1483)------------     1523)------------   1563)------------      1603)------------     1643)------------"
+   echo "1414)------------   1444)------------    1484)------------     1524)------------   1564)------------      1604)------------     1644)------------"
+   echo "1415)------------   1445)------------    1485)------------     1525)------------   1565)------------      1605)------------     1645)------------"
+   echo "1416)------------   1446)------------    1486)------------     1526)------------   1566)------------      1606)------------     1646)------------"
+   echo "1417)------------   1447)------------    1487)------------     1527)------------   1567)------------      1607)------------     1647)------------"
+   echo "1418)------------   1448)------------    1488)------------     1528)------------   1568)------------      1608)------------     1648)------------"
+   echo "1419)------------   1449)------------    1489)------------     1529)------------   1569)------------      1609)------------     1649)------------"
+   echo "1410)------------   1450)------------    1490)------------     1530)------------   1570)------------      1610)------------     1640)------------"
+   echo "1411)------------   1451)------------    1491)------------     1531)------------   1571)------------      1611)------------     1641)------------"
+   echo "1412)------------   1452)------------    1492)------------     1532)------------   1572)------------      1612)------------     1642)------------"
+   echo "1413)------------   1453)------------    1493)------------     1533)------------   1573)------------      1613)------------     1643)------------"
+   echo "1414)------------   1454)------------    1494)------------     1534)------------   1574)------------      1614)------------     1644)------------"
+   echo "1415)------------   1455)------------    1495)------------     1535)------------   1575)------------      1615)------------     1645)------------"
+   echo "1416)------------   1456)-------------   1496)------------     1536)------------   1576)------------      1616)------------     1646)------------"
+   echo "1417)------------   1457)------------    1497)------------     1537)------------   1577)------------      1617)------------     1647)------------"
+   echo "1418)------------   1458)------------    1498)------------     1538)------------   1578)------------      1618)------------     1648)------------"
+   echo "1419)------------   1459)------------    1499)------------     1539)------------   1579)------------      1619)------------     1649)------------"
+   echo "1420)------------   1460)------------    1500)------------     1540)------------   1580)------------      1620)------------     1650)------------"
+   echo "1421)------------   1461)------------    1501)------------     1541)------------   1581)------------      1621)------------     1651)------------"
+   echo "1422)------------   1462)------------    1502)------------     1542)------------   1582)------------      1622)------------     1652)------------"
+   echo "1423)------------   1463)------------    1503)------------     1543)------------   1583)------------      1623)------------     1653)------------"
+   echo "1424)------------   1464)------------    1504)------------     1544)------------   1584)------------      1624)------------     1654)------------"
+   echo "1425)------------   1465)------------    1505)------------     1545)------------   1585)------------      1625)------------     1655)------------"
+   echo "1426)------------   1466)------------    1506)------------     1546)------------   1586)------------      1626)------------     1656)------------"
+   echo "1427)------------   1467)------------    1507)------------     1547)------------   1587)------------      1627)------------     1657)------------"
+   echo "1428)------------   1468)------------    1508)------------     1548)------------   1588)------------      1628)------------     1658)------------"
+   echo "1429)------------   1469)------------    1509)------------     1549)-----------    1589)------------      1629)------------     1659)------------"
+   echo "1430)------------   1470)------------    1510)------------     1550)-----------    1590)------------      1630)------------     1660)------------"
    echo "==================================================================================================================================================="
 }
 
@@ -753,24 +799,34 @@ chan_name="Telesur English" ;;
 ########################### EUROPE #############################################################
 
 ################     UK    #################################
-
-# 12) GB News
+# 12) Sky News
 12)
+if [ "$getlink" = 1 ]
+then
+keyword="Sky News"
+channelURL="https://www.youtube.com/@SkyNews/featured"
+youTubeGrab 
+fi
+#method="Tor"
+#method="Proxychains"
+use_cookies="no"
+chan_name="Sky News" ;;
+
+# 13) GB News
+13)
 
 if [ "$getlink" = 1 ]
 then
 
 keyword="Live"
 channelURL="https://www.youtube.com/@GBNewsOnline/featured"
-#youTubeGrab
+youTubeGrab
 
-
+#####################
 website="https://www.gbnews.com/watch/live"
 eventID="jmaFa38nQVOgNYdMhUMl8g"
-api_key="0A753C2A9BE994A75562DD9EAE366396307A3E2F489D692A561E2D3665AB1069"
-ppid="da23187f46d43d7f884508784adf329a3b7788b1990df76bac572a4d1aee8b39"
 
-googleGBNews
+#googleGBNews
 
 fi
 ## method="Tor"
@@ -778,8 +834,8 @@ use_cookies="no"
 chan_name="GB News" ;;
 
 ############ FRANCE 
-# 13) France 24 Anglais
-13)
+# 14) France 24 Anglais
+14)
 
 if [ "$getlink" = 1 ]
 then
@@ -799,8 +855,8 @@ TAG=" FRANCE24___"
 chan_name="France 24 English" ;;
 
 
-# 14) Euronews EU English
-14)
+# 15) Euronews EU English
+15)
 
 if [ "$getlink" = 1 ]
 then
@@ -819,8 +875,8 @@ chan_name="Euronews English" ;;
 
 
 ################## GERMANY ########
-# 15) DW English
-15)
+# 16) DW English
+16)
 keyword="DW"
 
 if [ "$getlink" = 1 ]
@@ -854,8 +910,8 @@ chan_name="DW English" ;;
 
 
 #################### RUSSIA  ################################
-# 16) Russia Today
-16)
+# 17) Russia Today
+17)
 
 if [ "$getlink" = 1 ]
 then
@@ -883,8 +939,8 @@ TAG=" RT_________"
 chan_name="Russia Today" ;;
 
 ############################# MIDDLE EAST ##############################################################
-# 17) TRT World
-17)
+# 18) TRT World
+18)
 keyword="TRT"
 
 if [ "$getlink" = 1 ]
@@ -907,8 +963,8 @@ use_cookies="no"
 TAG="TRTWORLD--"
 chan_name="TRT World";;
 
-# 18) Al Jazeera
-18)
+# 19) Al Jazeera
+19)
 keyword="Al Jazeera English - Live"
 
 if [ "$getlink" = 1 ]
@@ -919,31 +975,10 @@ then
 #  link="https://live-hls-web-aje.getaj.net/AJE/03.m3u8"
 #  link="https://live-hls-web-aje.getaj.net/AJE/04.m3u8"
 
-#link=https://players.brightcove.net/665003303001/SkrZHHcl_default/index.html?videoId=4865263685001
-#link=https://english.streaming.aljazeera.net/aljazeera/english2/index4147.m3u8
-#link="https://english.streaming.aljazeera.net/aljazeera/english2/index2073.m3u8"
-#link=https://english.streaming.aljazeera.net/aljazeera/english2/index1296.m3u8
-#link=https://english.streaming.aljazeera.net/aljazeera/english2/index783.m3u8
-#link=https://english.streaming.aljazeera.net/aljazeera/english2/index576.m3u8
-#link=https://english.streaming.aljazeera.net/aljazeera/english2/index255.m3u8
-#########################
-#link=https://english.streaming.aljazeera.net/aljazeera/english1/index4147.m3u8
-#link=https://english.streaming.aljazeera.net/aljazeera/english1/index2073.m3u8
-#link=https://english.streaming.aljazeera.net/aljazeera/english1/index1296.m3u8
-#link=https://english.streaming.aljazeera.net/aljazeera/english1/index783.m3u8
-#link=https://english.streaming.aljazeera.net/aljazeera/english1/index576.m3u8
-#link=https://english.streaming.aljazeera.net/aljazeera/english1/index255.m3u8
-##############################
-#link=http://aljazeera-eng-apple-live.adaptive.level3.net/apple/aljazeera/english/160audio.m3u8
-#link=http://aljazeera-eng-apple-live.adaptive.level3.net/apple/aljazeera/english/800.m3u8
-#link=https://www.youtube.com/watch?v="$(curl "https://www.youtube.com/user/AlJazeeraEnglish/videos?view=2" | grep "$keyword"  | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
-
-
 ##################### YOUTUBE
 #keyword="Live"
 #channelURL="https://www.youtube.com/c/aljazeeraenglish/videos?view=2&live_view=501"
 #youTubeGrab
-
 
 fi
 ##method="Tor"
@@ -951,31 +986,6 @@ use_cookies="no"
 TAG="ALJAZ_ENG_"
 chan_name="Al Jazeera English" ;;
 
-############################## ISRAEL ########################################
-# 19) i24 News IL
-19)
-
-if [ "$getlink" = 1 ]
-then
-#link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_radio.m3u8"
-#link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master.m3u8"
-
-#link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino3.m3u8"
-# link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino2.m3u8"
-# link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino1.m3u8"
-
-
-#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_0/chunklist.m3u8"
-#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_1/chunklist.m3u8"
-#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_2/chunklist.m3u8"
-link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_3/chunklist.m3u8"
-#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_4/chunklist.m3u8"
-
-fi
-#method="Tor"
-use_cookies="no"
-TAG="I24NEWS_IL--"
-chan_name="i24 News IL";;
 
 ############################## IRAN ##########################################
 # 20) Press TV
@@ -1009,20 +1019,18 @@ chan_name="Press TV" ;;
 if [ "$getlink" = 1 ]
 then
 
-tokenURL="https://03nwj0csy5.execute-api.ap-south-1.amazonaws.com/prod/cf-token?cb=137466"
-token=$(curl  -A "$UA"  "$tokenURL" | cut -d \" -f 4)
+#tokenURL="https://03nwj0csy5.execute-api.ap-south-1.amazonaws.com/prod/cf-token?cb=137466"
+#token=$(curl  -A "$UA"  "$tokenURL" | cut -d \" -f 4)
 
 #echo "$token"
 
-link="https://d3neuepii3rf1i.cloudfront.net/v1/master/8fe6b38eb3580727128fa5d6759fbc48b3ec1c7e/Zee_News_MT_POC/out/v1/15b8393e9a9240b8bedd4c79ccefb301/index.m3u8?""$token"
+#link="https://d3neuepii3rf1i.cloudfront.net/v1/master/8fe6b38eb3580727128fa5d6759fbc48b3ec1c7e/Zee_News_MT_POC/out/v1/15b8393e9a9240b8bedd4c79ccefb301/index.m3u8?""$token"
 
-# link="https://d3neuepii3rf1i.cloudfront.net/v1/manifest/8fe6b38eb3580727128fa5d6759fbc48b3ec1c7e/Zee_News_MT_POC/3b6428ae-0fa4-41c3-9a12-f666c28eb053//0.m3u8"
-# link="https://d3neuepii3rf1i.cloudfront.net/v1/manifest/8fe6b38eb3580727128fa5d6759fbc48b3ec1c7e/Zee_News_MT_POC/3b6428ae-0fa4-41c3-9a12-f666c28eb053//1.m3u8"
-# link="https://d3neuepii3rf1i.cloudfront.net/v1/manifest/8fe6b38eb3580727128fa5d6759fbc48b3ec1c7e/Zee_News_MT_POC/3b6428ae-0fa4-41c3-9a12-f666c28eb053/2.m3u8"
-# link="https://d3neuepii3rf1i.cloudfront.net/v1/manifest/8fe6b38eb3580727128fa5d6759fbc48b3ec1c7e/Zee_News_MT_POC/3b6428ae-0fa4-41c3-9a12-f666c28eb053//3.m3u8"
-# link="https://d3neuepii3rf1i.cloudfront.net/v1/manifest/8fe6b38eb3580727128fa5d6759fbc48b3ec1c7e/Zee_News_MT_POC/3b6428ae-0fa4-41c3-9a12-f666c28eb053//4.m3u8"
-# link="https://d3neuepii3rf1i.cloudfront.net/v1/manifest/8fe6b38eb3580727128fa5d6759fbc48b3ec1c7e/Zee_News_MT_POC/3b6428ae-0fa4-41c3-9a12-f666c28eb053/5.m3u8"
-
+link="https://d7x8z4yuq42qn.cloudfront.net/index_1.m3u8"
+#link="https://d7x8z4yuq42qn.cloudfront.net/index_2.m3u8"
+#link="https://d7x8z4yuq42qn.cloudfront.net/index_3.m3u8"
+#link="https://d7x8z4yuq42qn.cloudfront.net/index_4.m3u8"
+#link="https://d7x8z4yuq42qn.cloudfront.net/index_5.m3u8"
 fi
 
 #method="Tor"
@@ -1605,10 +1613,15 @@ chan_name="LindellTV3";;
 link="https://rtmp-edge.brighteon.com/hls/brighteon-live/index_720p/index.m3u8"
 chan_name="BrighteonTV";;
 
+## 46) First Amendment Radio
+46)
+#link="https://b7i4j3n3.stackpathcdn.com/dlive/transcode-64-95/firstamendmentradio/1671738329/src/live.m3u8"
+link="https://live.prd.dlive.tv/hls/live/firstamendmentradio.m3u8"
+chan_name="FirstAmendmentRadio";;
 
 ########################## CANADIAN GOVERNMENT #########################
-# 46) CPAC 1 Canada
-46)
+# 47) CPAC 1 Canada
+47)
 
 if [ "$getlink" = 1 ]
 then
@@ -1653,8 +1666,8 @@ chan_name="CPAC 1 Canada" ;;
 
 
 ############# WASHINGTON DC #################################
-# 47) District of Columbia Network
-47)
+# 48) District of Columbia Network
+48)
 if [ "$getlink" = 1 ]
 then
 #link=https://video.oct.dc.gov/out/u/DCN.m3u8
@@ -1672,8 +1685,8 @@ use_cookies="no"
 TAG="DC_NETWORK_____"
 chan_name="District of Columbia Network" ;;
 
-# 48) District of Columnbia
-48)
+# 49) District of Columnbia
+49)
 
 if [ "$getlink" = 1 ]
 then
@@ -1692,12 +1705,12 @@ use_cookies="no"
 TAG="DCC___________"
 chan_name="District of Columbia" ;;
 
-# 49) DC Knowledge Network
-49)
+# 50) DC Knowledge Network
+50)
 
 if [ "$getlink" = 1 ]
 then
-#link=https://video.oct.dc.gov/out/u/DKN.m3u8
+link=https://video.oct.dc.gov/out/u/DKN.m3u8
 #link="http://video.oct.dc.gov/out/u/119_8.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=427875,RESOLUTION=416x234,CODECS="avc1.4D401E,mp4a.40.2"
 #link="http://video.oct.dc.gov/out/u/119_5.m3u8"
@@ -1706,7 +1719,7 @@ then
 #EXT-X-STREAM-INF:BANDWIDTH=928015,RESOLUTION=640x360,CODECS="avc1.4D401F,mp4a.40.2"
 #link="http://video.oct.dc.gov/out/u/119_7.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=1128034,RESOLUTION=1920x1080,CODECS="avc1.4D402A,mp4a.40.2"
-link="http://video.oct.dc.gov/out/u/119_8.m3u8"
+#link="http://video.oct.dc.gov/out/u/119_8.m3u8"
 fi
 #method="Tor"
 use_cookies="no"
@@ -1716,8 +1729,8 @@ chan_name="District of Columbia DC Knowledge Network USA";;
 
 ################################## MNN ###########################################
 ################## MANHATTAN NEIGHBOURHOOD NETWORK HD
-# 50)MNN Channel 5 Manhattan Neighbourhood Network HD New York USA
-50)
+# 51)MNN Channel 5 Manhattan Neighbourhood Network HD New York USA
+51)
 if [ "$getlink" = 1 ]
 then
 channelURL="https://player-api.new.livestream.com/accounts/17251372/events/10721168/"
@@ -1728,8 +1741,8 @@ use_cookies="no"
 TAG="MNN_5__HD_"
 chan_name="MNN Channel HD New York USA" ;;
 
-# 51) MNN Channel 1 Community New York USA
-51)
+# 52) MNN Channel 1 Community New York USA
+52)
 if [ "$getlink" = 1 ]
 then
 ## MNN Community
@@ -1741,8 +1754,8 @@ use_cookies="no"
 TAG="MNN_1__________"
 chan_name="MNN Channel 1 New York, USA" ;;
 
-# 52) MNN 2 Lifestyle New York, USA
-52)
+# 53) MNN 2 Lifestyle New York, USA
+53)
 if [ "$getlink" = 1 ]
 then
 channelURL="https://player-api.new.livestream.com/accounts/6478976/events/10721188/"
@@ -1753,8 +1766,8 @@ use_cookies="no"
 TAG="MNN_2__________"
 chan_name="MNN Channel 2 New York, USA" ;;
 
-# 53) MNN Channel 3 Spirit New York, USA
-53)
+# 54) MNN Channel 3 Spirit New York, USA
+54)
 if [ "$getlink" = 1 ]
 then
 #https://player-api.new.livestream.com/accounts/6312590/events/2611503/
@@ -1766,9 +1779,8 @@ use_cookies="no"
 TAG="MNN_3__________"
 chan_name="MNN Channel 3 New York, USA" ;;
 
-
-# 54) MNN Channel 4 Culture New York, USA
-54)
+# 55) MNN Channel 4 Culture New York, USA
+55)
 if [ "$getlink" = 1 ]
 then
 channelURL="https://player-api.new.livestream.com/accounts/6478935/events/10721179/"
@@ -1780,8 +1792,8 @@ TAG="MNN_4__________"
 chan_name="MNN Channel 4 New York, USA" ;;
 
 
-# 55) BronxNet NY USA
-55)
+# 56) BronxNet NY USA
+56)
 if [ "$getlink" = 1 ]
 then
 #link="https://reflect-stream-bronxnet.cablecast.tv/live-16/live/live.m3u8"
@@ -1796,8 +1808,8 @@ use_cookies="no"
 TAG="BRONXNET_16"
 chan_name="BronxNet NY USA";;
 
-# 56) BronxNet Omni NY USA
-56)
+# 57) BronxNet Omni NY USA
+57)
 if [ "$getlink" = 1 ]
 then
 
@@ -1813,8 +1825,8 @@ use_cookies="no"
 TAG="BRONXNET_19"
 chan_name="BronxNet Omni NY USA";;
 
-# 57) BronxNet Culture NY USA
-57)
+# 58) BronxNet Culture NY USA
+58)
 if [ "$getlink" = 1 ]
 then
 #link="https://reflect-stream-bronxnet.cablecast.tv/live-7/live/live.m3u8"
@@ -1829,8 +1841,8 @@ use_cookies="no"
 TAG="BRONXNET_7"
 chan_name="BronxNet Culture NY USA";;
 
-# 58) BronxNet Life NY USA
-58)
+# 59) BronxNet Life NY USA
+59)
 if [ "$getlink" = 1 ]
 then
 #link="https://reflect-stream-bronxnet.cablecast.tv/live-8/live/live.m3u8"
@@ -1845,13 +1857,11 @@ use_cookies="no"
 TAG="BRONXNET_8"
 chan_name="BronxNet Life NY USA";;
 
-
-
 ################## UNIVERSITY TV ######################################
 #############################################################
 
-# 59) Lindenwood University LUTV
-59)
+# 60) Lindenwood University LUTV
+60)
 if [ "$getlink" = 1 ]
 then
 #link="https://lutv-vod.lindenwood.edu/live-4/live/live.m3u8"
@@ -1870,8 +1880,8 @@ TAG="LUTV_______"
 chan_name="Lindenwood University LUTV" ;;
 
 #####################
-# 60) Southeastern Channel
-60)
+# 61) Southeastern Channel
+61)
 if [ "$getlink" = 1 ]
 then
 #https://thesoutheasternchannel.com/live-stream/
@@ -1882,8 +1892,8 @@ use_cookies="no"
 TAG="SOUTHEASTERN___"
 chan_name="Southeastern Channel" ;;
 
-# 61) TSTV  Texas State University TV
-61)
+# 62) TSTV  Texas State University TV
+62)
 
 if [ "$getlink" = 1 ]
 then
@@ -1895,8 +1905,8 @@ use_cookies="no"
 TAG="TSTV_TEXAS_____"
 chan_name="TSTV Texas State University TV" ;;
 
-# 62) Temple University TV
-62)
+# 63) Temple University TV
+63)
 if [ "$getlink" = 1 ]
 then
 link="https://templeuni.secure.footprint.net/egress/bhandler/templeuni/streama/manifest.m3u8"
@@ -1906,8 +1916,8 @@ TAG="TEMPLE_TV____"
 chan_name="Temple University TV" ;;
 
 ################################## TECHNOLOGY ##############################
-# 63)  TWiT USA
-63)
+# 64)  TWiT USA
+64)
 keyword="TWiT Live"
 
 if [ "$getlink" = 1 ]
@@ -1932,8 +1942,8 @@ use_cookies="no"
 TAG="TWIT_USA__"
 chan_name="TWiT USA" ;;
 
-# 64) Bloomberg Business Australia
-64)
+# 65) Bloomberg Business Australia
+65)
 keyword="Bloomberg"
 if [ "$getlink" = 1 ]
 then
@@ -1964,8 +1974,8 @@ use_cookies="no"
 TAG=" BLMBRG_____"
 chan_name="Bloomberg Business AU";;
 
-# 65) Bloomberg Business Europe
-65)
+# 66) Bloomberg Business Europe
+66)
 keyword="Bloomberg"
 if [ "$getlink" = 1 ]
 then
@@ -2001,8 +2011,8 @@ use_cookies="no"
 TAG=" BLMBRG_____"
 chan_name="Bloomberg Business EU";;
 
-# 66) Bloomberg Business USA + Charts
-66)
+# 67) Bloomberg Business USA + Charts
+67)
 keyword="Bloomberg"
 if [ "$getlink" = 1 ]
 then
@@ -2038,8 +2048,8 @@ chan_name="Bloomberg Business USA Charts";;
 
 ####################### LOCAL USA NEWS ##################################################
 
-# 67) CBSN New York
-67)
+# 68) CBSN New York
+68)
 if [ "$getlink" = 1 ]
 then
 
@@ -2059,8 +2069,8 @@ use_cookies="no"
 TAG="CBSN_NY_______"
 chan_name="CBSN NY" ;;
 
-# 68) CBSN LA
-68)
+# 69) CBSN LA
+69)
 if [ "$getlink" = 1 ]
 then
 #link="https://dai.google.com/linear/hls/pa/event/TxSbNMu4R5anKrjV02VOBg/stream/7fece08f-0ca5-4cbe-9545-0e1d733a9661:DLS/master.m3u8"
@@ -2076,8 +2086,8 @@ use_cookies="no"
 TAG="CBSN_LA_______"
 chan_name="CBSN LA" ;;
 
-# 69) CBSN Bay Area
-69)
+# 70) CBSN Bay Area
+70)
 if [ "$getlink" = 1 ]
 then
 #link="https://cbsn-sf-cedexis.cbsnstream.cbsnews.com/out/v1/dac63c1abb3f4a2dac9f508f44bb072a/master.m3u8"
@@ -2091,8 +2101,8 @@ use_cookies="no"
 TAG="CBSN_BAY_______"
 chan_name="CBSN BAY AREA" ;;
 
-# 70) CBSN Boston
-70)
+# 71) CBSN Boston
+71)
 if [ "$getlink" = 1 ]
 then
 #link="https://dai.google.com/linear/hls/pa/event/26FJK7wRSo6RhPsK70XS_w/master.m3u8"
@@ -2109,8 +2119,8 @@ use_cookies="no"
 TAG="CBSN_Boston_______"
 chan_name="CBSN Boston" ;;
 
-# 71) CBSN Chicago
-71)
+# 72) CBSN Chicago
+72)
 if [ "$getlink" = 1 ]
 then
 
@@ -2129,8 +2139,8 @@ use_cookies="no"
 TAG="CBSN_Chicago_______"
 chan_name="CBSN Chicago" ;;
 
-# 72) CBSN Dallas Texas
-72)
+# 73) CBSN Dallas Texas
+73)
 if [ "$getlink" = 1 ]
 then
 
@@ -2149,8 +2159,8 @@ use_cookies="no"
 TAG="CBSN_DAL______"
 chan_name="CBSN DALLAS" ;;
 
-# 73) CBSN Denver Colorado
-73)
+# 74) CBSN Denver Colorado
+74)
 if [ "$getlink" = 1 ]
 then
 #link="https://dai.google.com/linear/hls/pa/event/EUo67MWSRh6toPi0heJKnQ/master.m3u8"
@@ -2165,8 +2175,8 @@ use_cookies="no"
 TAG="CBSN_DEN___"
 chan_name="CBSN DENVER" ;;
 
-# 74) CBSN Minnesota
-74)
+# 75) CBSN Minnesota
+75)
 if [ "$getlink" = 1 ]
 then
   #link="https://dai.google.com/linear/hls/pa/event/zcWPVCfURNSPxeidcckQLA/master.m3u8"
@@ -2181,8 +2191,8 @@ use_cookies="no"
 TAG="CBSN_MIN__"
 chan_name="CBSN Minnesota" ;;
 
-# 75) CBSN Philadelphia
-75)
+# 76) CBSN Philadelphia
+76)
 if [ "$getlink" = 1 ]
 then
 #link="https://cbsn-phi-cedexis.cbsnstream.cbsnews.com/out/v1/5c9ad3e215984b0e9ad845b335216b72/master.m3u8"
@@ -2195,8 +2205,8 @@ use_cookies="no"
 TAG="CBSN_PHIL__"
 chan_name="CBSN Philadelphia" ;;
 
-# 76) CBSN Pittsburgh
-76)
+# 77) CBSN Pittsburgh
+77)
 if [ "$getlink" = 1 ]
 then
 #link="https://cbsn-pit-cedexis.cbsnstream.cbsnews.com/out/v1/6966dabf8150405ab26f854e3cd6a2b8/master.m3u8"
@@ -2209,8 +2219,8 @@ use_cookies="no"
 TAG="CBSN_PITT__"
 chan_name="CBSN Pittsburgh" ;;
 
-# 77)CBSN Sacramento
-77)
+# 78)CBSN Sacramento
+78)
 if [ "$getlink" = 1 ]
 then
 link="https://dai.google.com/linear/hls/event/e7mp4YVGS7O_e7rqRNjKow/master.m3u8"
@@ -2222,8 +2232,8 @@ use_cookies="no"
 TAG="CBSN_SACRA__"
 chan_name="CBSN Sacramento" ;;
 
-# 78)CBSN Baltimore
-78)
+# 79)CBSN Baltimore
+79)
 if [ "$getlink" = 1 ]
 then
 link="https://dai.google.com/linear/hls/event/TMUt418sQMeu1QtneYJ9ag/master.m3u8"
@@ -2235,8 +2245,8 @@ use_cookies="no"
 TAG="CBSN_BALTIM__"
 chan_name="CBSN Baltimore" ;;
 
-# 79)CBSN Miami
-79)
+# 80)CBSN Miami
+80)
 if [ "$getlink" = 1 ]
 then
 link="https://dai.google.com/linear/hls/event/_yODrBHESGSzPe3dqW4gGg/master.m3u8"
@@ -2247,31 +2257,6 @@ fi
 use_cookies="no"
 TAG="CBSN_MIAMI__"
 chan_name="CBSN Miami" ;;
-
-# 80) CBC Here and Now
-80)
-website="https://gem.cbc.ca/"
-
-link="https://cbcrclive-tor.akamaized.net/hls/live/2040313/geo_allow_global/ES_REGIONS_1/master.m3u8"
-#EXT-X-MEDIA:TYPE=CLOSED-CAPTIONS,GROUP-ID="CC",LANGUAGE="eng",NAME="English",INSTREAM-ID="CC1"
-#EXT-X-STREAM-INF:BANDWIDTH=2197800,AVERAGE-BANDWIDTH=2340800,CODECS="avc1.64001f,mp4a.40.2",RESOLUTION=960x540,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclive-tor.akamaized.net/hls/live/2040313/geo_allow_global/ES_REGIONS_1/master_2000.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=1375000,AVERAGE-BANDWIDTH=1460800,CODECS="avc1.64001e,mp4a.40.2",RESOLUTION=768x432,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclive-tor.akamaized.net/hls/live/2040313/geo_allow_global/ES_REGIONS_1/master_1200.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=3226300,AVERAGE-BANDWIDTH=3440800,CODECS="avc1.64001f,mp4a.40.2",RESOLUTION=1280x720,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclive-tor.akamaized.net/hls/live/2040313/geo_allow_global/ES_REGIONS_1/master_3000.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=860750,AVERAGE-BANDWIDTH=910800,CODECS="avc1.64001e,mp4a.40.2",RESOLUTION=640x360,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclive-tor.akamaized.net/hls/live/2040313/geo_allow_global/ES_REGIONS_1/master_700.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=552200,AVERAGE-BANDWIDTH=580800,CODECS="avc1.640015,mp4a.40.2",RESOLUTION=480x270,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclive-tor.akamaized.net/hls/live/2040313/geo_allow_global/ES_REGIONS_1/master_400.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=395780,AVERAGE-BANDWIDTH=422400,CODECS="avc1.64000d,mp4a.40.2",RESOLUTION=416x234,FRAME-RATE=30.000,CLOSED-CAPTIONS="CC"
-#link="https://cbcrclive-tor.akamaized.net/hls/live/2040313/geo_allow_global/ES_REGIONS_1/master_256.m3u8"
-
-use_cookies="no"
-chan_name="CBC Here and Now" ;;
-
-
-
 
 #80)
 
@@ -2316,8 +2301,6 @@ chan_name="CBC Here and Now" ;;
 #chan_name="Euronews English Live" ;;
 
 ####################################################################
-
-
 
 ####################################################################
 #80)
@@ -5949,24 +5932,6 @@ done
 
 link="https://ajo.prod.reuters.tv/rest/v2/playlist/assets/"$assetNum"/master.m3u8"
 
-#EXT-X-STREAM-INF:BANDWIDTH=658121,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=320x180,SUBTITLES="subs"
-#link="https://ajo.prod.reuters.tv/rest/v2/playlist/assets/"$assetNum"/rendered/resolution/320x180/codecs/ignored.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=844572,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=512x288,SUBTITLES="subs"
-#link="https://ajo.prod.reuters.tv/rest/v2/playlist/assets/"$assetNum"/rendered/resolution/512x288/codecs/ignored.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=1435026,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=640x360,SUBTITLES="subs"
-#link="https://ajo.prod.reuters.tv/rest/v2/playlist/assets/"$assetNum"/rendered/resolution/640x360/codecs/ignored.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=2022504,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=854x480,SUBTITLES="subs"
-#link="https://ajo.prod.reuters.tv/rest/v2/playlist/assets/"$assetNum"/rendered/resolution/854x480/codecs/ignored.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=2617426,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=960x540,SUBTITLES="subs"
-#link="https://ajo.prod.reuters.tv/rest/v2/playlist/assets/"$assetNum"/rendered/resolution/960x540/codecs/ignored.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=3976351,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1024x576,SUBTITLES="subs"
-#link="https://ajo.prod.reuters.tv/rest/v2/playlist/assets/"$assetNum"/rendered/resolution/1024x576/codecs/ignored.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=5006380,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1280x720,SUBTITLES="subs"
-#link="https://ajo.prod.reuters.tv/rest/v2/playlist/assets/"$assetNum"/rendered/resolution/1280x720/codecs/ignored.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=6227493,CODECS="avc1.640029,mp4a.40.2",RESOLUTION=1920x1080,SUBTITLES="subs"
-#link="https://ajo.prod.reuters.tv/rest/v2/playlist/assets/$assetNum/rendered/resolution/1920x1080/codecs/ignored.m3u8"
-
-
 fi
 ## method="Tor"
 use_cookies="no"
@@ -5993,13 +5958,13 @@ then
 #EXT-X-STREAM-INF:BANDWIDTH=105600,AVERAGE-BANDWIDTH=105600,CODECS="mp4a.40.2"
 #link="https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678/ndtv24x7/masterp_480p@6.m3u8"
 
-#link="https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/master.m3u8"
+link="https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/master.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=274560,AVERAGE-BANDWIDTH=246400,CODECS="avc1.66.30,mp4a.40.2",RESOLUTION=640x480,FRAME-RATE=25.000
 #link="https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/masterb_480p@1.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=397056,AVERAGE-BANDWIDTH=352000,CODECS="avc1.66.30,mp4a.40.2",RESOLUTION=640x480,FRAME-RATE=25.000
 #link="https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/masterb_480p@2.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=560384,AVERAGE-BANDWIDTH=492800,CODECS="avc1.66.30,mp4a.40.2",RESOLUTION=640x480,FRAME-RATE=25.000
-link="https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/masterb_480p@3.m3u8"
+#link="https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/masterb_480p@3.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=723712,AVERAGE-BANDWIDTH=633600,CODECS="avc1.66.30,mp4a.40.2",RESOLUTION=640x480,FRAME-RATE=25.000
 #link="https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/masterb_480p@4.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=1085568,AVERAGE-BANDWIDTH=950400,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=640x480,FRAME-RATE=25.000
@@ -6012,96 +5977,16 @@ use_cookies="no"
 TAG="NDTV_IN______"
 chan_name="NDTV India" ;;
 
-# 409)  Times of India
-409)
-if [ "$getlink" = 1 ]
-then
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/master.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=262000,RESOLUTION=256x144,CODECS="avc1.66.30, mp4a.40.2"
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_144_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=262000,RESOLUTION=256x144,CODECS="avc1.66.30, mp4a.40.2"
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_144_av-b.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=396000,RESOLUTION=424x240,CODECS="avc1.66.30, mp4a.40.2"
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_240_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=396000,RESOLUTION=424x240,CODECS="avc1.66.30, mp4a.40.2"
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_240_av-b.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=893000,RESOLUTION=640x360,CODECS="avc1.66.30, mp4a.40.2"
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_360_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=693000,RESOLUTION=640x360,CODECS="avc1.66.30, mp4a.40.2"
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_360_av-b.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1325000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_480_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1025000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_480_av-b.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2125000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_720_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3125000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
-#link="https://timesnow-lh.akamaihd.net/i/TNHD_1@129288/index_720_av-b.m3u8?sd=10&rebase=on"
 
+# 409)
 
-fi
-#method="livestreamer"
-#format="best"
-####method="Tor"
-use_cookies="no"
-TAG="TIMES_IN__________"
-chan_name="Times of India" ;;
+# 410)
 
-##################################
+# 411) 
 
-############################
+# 412)
 
-# 410) NewsX India
-410)
-if [ "$getlink" = 1 ]
-then
-link="https://itvoign.multitvsolution.com/hls/newsx_480p/index.m3u8"
-fi
-use_cookies="no"
-TAG="NEWSX_IN_____"
-chan_name="NewsX India" ;;
-
-# 411) Economic Times India Finance
-411)
-if [ "$getlink" = 1 ]
-then
-#link="https://etnowweblive-lh.akamaihd.net/i/ETN_1@348070/master.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=446000,RESOLUTION=360x288,CODECS="avc1.77.30, mp4a.40.2"
-#link="https://etnowweblive-lh.akamaihd.net/i/ETN_1@348070/index_288_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=446000,RESOLUTION=360x288,CODECS="avc1.77.30, mp4a.40.2"
-#link="https://etnowweblive-lh.akamaihd.net/i/ETN_1@348070/index_288_av-b.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=793000,RESOLUTION=544x432,CODECS="avc1.77.30, mp4a.40.2"
-#link="https://etnowweblive-lh.akamaihd.net/i/ETN_1@348070/index_432_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=793000,RESOLUTION=544x432,CODECS="avc1.77.30, mp4a.40.2"
-#link="https://etnowweblive-lh.akamaihd.net/i/ETN_1@348070/index_432_av-b.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1325000,RESOLUTION=720x576,CODECS="avc1.77.30, mp4a.40.2"
-#link="https://etnowweblive-lh.akamaihd.net/i/ETN_1@348070/index_576_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1325000,RESOLUTION=720x576,CODECS="avc1.77.30, mp4a.40.2"
-link="https://etnowweblive-lh.akamaihd.net/i/ETN_1@348070/index_576_av-b.m3u8?sd=10&rebase=on"
-fi
-#method="livestreamer"
-#format="best"
-####method="Tor"
-use_cookies="no"
-TAG="ET_IN__________"
-chan_name="Economic Times India" ;;
-
-# 412) MGM TV Rerun
-412)
-if [ "$getlink" = 1 ]
-then
-
-keyword="LIVE"
-channelURL="https://www.youtube.com/channel/UC3ndD2cB161KQjeMbUXNbQg/videos?view=2&live_view=501"
-youTubeGrab 
-
-fi
-
-#method="Tor"
-#method="Proxychains"
-
-use_cookies="no"
-chan_name="MGM Rerun TV" ;;
+##########################################
 
 # 413) CBC Olympic Channel
 413)
@@ -6353,40 +6238,16 @@ fi
 TAG="QVC6______"
 chan_name="QVC6" ;;
 
-# 424) Sky News
-424)
-if [ "$getlink" = 1 ]
-then
-keyword="Sky News"
-channelURL="https://www.youtube.com/@SkyNews/featured"
-youTubeGrab 
-fi
-#method="Tor"
-#method="Proxychains"
-use_cookies="no"
-chan_name="Sky News" ;;
+# 425)
 
-# 425) Bloomberg BNN 
-425)
+# 426)
+
+# 427) Bloomberg BNN 
+427)
 link="https://pe-ak-lp01a-9c9media.akamaized.net/live/News1BNNDigi/p/dash/00000001/1bba52dc66e4c68e/manifest.mpd"
 #####method="Tor"
 use_cookies="no"
 chan_name="Bloomberg BNN";;
-
-# 426) SimulTV 2A Network 
-426)
-## SimulTV 2A Network
-link="https://ltv-simul.frankspeech.com/n4s4/FrankS/2A/2ANetwork/interlink.m3u8"
-#####method="Tor"
-use_cookies="no"
-chan_name="SimulTV 2A Network";;
-
-# 427) SimulTV Cowboy Theater
-427)
-link="https://ltv-simul.frankspeech.com/n4s4/FrankS/CowT/interlink.m3u8"
-#####method="Tor"
-use_cookies="no"
-chan_name="SimulTV Cowboy Theater";;
 
 # 428) Overcomers TV Live
 428)
@@ -6473,8 +6334,36 @@ fi
 TAG="VOA_______"
 chan_name="VOA Radio" ;;
 
-# 439) NYXT Manhattan NYC New York USA
+
+############################## ISRAEL ########################################
+# 439) i24 News IL
 439)
+
+if [ "$getlink" = 1 ]
+then
+#link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_radio.m3u8"
+#link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master.m3u8"
+
+#link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino3.m3u8"
+# link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino2.m3u8"
+# link="https://bcsecurelivehls-i.akamaihd.net/hls/live/1008862/207397166001/master_netino1.m3u8"
+
+
+#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_0/chunklist.m3u8"
+#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_1/chunklist.m3u8"
+#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_2/chunklist.m3u8"
+link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_3/chunklist.m3u8"
+#link="https://bcovlive-a.akamaihd.net/fc76656c412d494cb5858a1152df4bb7/eu-central-1/5377161796001/profile_4/chunklist.m3u8"
+
+fi
+#method="Tor"
+use_cookies="no"
+TAG="I24NEWS_IL--"
+chan_name="i24 News IL";;
+
+
+# 440) NYXT Manhattan NYC New York USA
+440)
 channelURL="https://player-api.new.livestream.com/accounts/19770665/events/10721160/"
 liveStreamGrab
 use_cookies="no"
@@ -6527,7 +6416,6 @@ chan_name="NYXT Manhattan NYC New York USA" ;;
 #chan_name="CTV NEWS CA";;
 
 
-# 440) 
 ################################# Entertainment ############################################################
 # 441) Music Choice Play HD
 441)
@@ -12036,171 +11924,215 @@ chan_name="The Young Turks TYT" ;;
 
 ############## COZY /DLIVE ########################
 
+## 1281)
 1281)
-#link="https://b7i4j3n3.stackpathcdn.com/dlive/transcode-64-95/firstamendmentradio/1671738329/src/live.m3u8"
-link="https://live.prd.dlive.tv/hls/live/firstamendmentradio.m3u8"
-chan_name="FirstAmendmentRadio";;
-
-1282)
-link="https://b7i4j3n3.stackpathcdn.com/dlive/transcode-83-243/patriotsoapbox/1671718122/src/live.m3u8"
-link="https://live.prd.dlive.tv/hls/live/dlive-05900794.m3u8"
-chan_name="PatriotSoapBox" ;;
-
-1283)
-link="https://live.prd.dlive.tv/hls/live/surplusprepper.m3u8"
-chan_name="PreperSurplus";;
-
-1284)
-link="https://cozycdn.foxtrotstream.xyz/live/alexjones/index.m3u8"
-chan_name="alexjones";;
-
-1285)
-link="https://live.prd.dlive.tv/hls/live/jtea.m3u8"
-chan_name="WTC-7";;
-
-1286)
 link="https://cozycdn.foxtrotstream.xyz/live/lofi/index.m3u8"
 chan_name="CozyTV LoFi";;
 
+###
+1282)
+link="https://cozycdn.foxtrotstream.xyz/live/alexjones/index.m3u8"
+chan_name="alexjones";;
+
+###
+1283)
+#link="https://live.prd.dlive.tv/hls/live/dlive-05900794.m3u8"
+link="https://b7i4j3n3.stackpathcdn.com/dlive-05900794/1688965557/src/live.m3u8"
+#link="https://b7i4j3n3.stackpathcdn.com/dlive-05900794/1688965557/360p/live.m3u8"
+#link="https://b7i4j3n3.stackpathcdn.com/dlive-05900794/1688965557/480p/live.m3u8"
+chan_name="PatriotSoapBox" ;;
+
+### SloanTV
+1284)
+#link="https://live.prd.dlive.tv/hls/live/dlive-05900794.m3u8"
+link="https://b7i4j3n3.stackpathcdn.com/tcue/1688965355/src/live.m3u8"
+chan_name="SloanTV" ;;
+
+###
+1285)
+link="https://live.prd.dlive.tv/hls/live/surplusprepper.m3u8"
+chan_name="PreperSurplus";;
+
+###
+1286)
+link="https://live.prd.dlive.tv/hls/live/jtea.m3u8"
+chan_name="WTC-7";;
+
+#####
 1287)
 link="https://cozycdn.foxtrotstream.xyz/live/chieftrumpster/index.m3u8"
 chan_name="chieftrumpster";;
 
+####
 1288)
 link="https://live.prd.dlive.tv/hls/live/dlive-11213965.m3u8"
 chan_name="Red Ice TV";;
 
+#####
 1289)
-#link="https://b7i4j3n3.stackpathcdn.com/dlive/transcode-89-110/dlive-83056406/1671768277/src/live.m3u8"
 link="https://live.prd.dlive.tv/hls/live/dlive-83056406.m3u8"
 chan_name="MarfoggleNews";;
 
+######
 1290)
 link="https://live.prd.dlive.tv/hls/live/hatebus.m3u8"
 chan_name="HateBus";;
 
+#####
 1291)
 link="https://cozycdn.foxtrotstream.xyz/live/ethanralph/index.m3u8"
 chan_name="EthanRalph";;
 
+#####
 1292)
 link="https://cozycdn.foxtrotstream.xyz/live/paultown/index.m3u8"
 chan_name="PaulTown";;
 
+######
 1293)
 link="https://cozycdn.foxtrotstream.xyz/live/politicallyprovoked/index.m3u8"
 chan_name="politicallyprovoked";;
 
+######
 1294)
 link="https://cozycdn.foxtrotstream.xyz/live/veyta/index.m3u8"
 chan_name="veyta";;
 
+######
 1295)
 link="https://cozycdn.foxtrotstream.xyz/live/nick/index.m3u8"
 chan_name="nick";;
 
+#######
 1296)
 link="https://cozycdn.foxtrotstream.xyz/live/aff/index.m3u8"
 chan_name="aff" ;;
 
+#######
 1297)
 link="https://cozycdn.foxtrotstream.xyz/live/emichaeljones/index.m3u8"
 chan_name="emichaeljones" ;;
 
+#######
 1298)
 link="https://cozycdn.foxtrotstream.xyz/live/vince/index.m3u8"
 chan_name="vince" ;;
 
+######
 1299)
 link="https://cozycdn.foxtrotstream.xyz/live/bakedalaska/index.m3u8"
 chan_name="bakedalaska";;
 
+#######
 1300)
 link="https://live.prd.dlive.tv/hls/live/nptvpl.m3u8"
 chan_name="NPTV PL" ;;
 
+######
 1301)
 link="https://live.prd.dlive.tv/hls/live/resistancechicks.m3u8"
 chan_name="Resistance Chicks";;
 
+#######
 1302)
 link="https://live.prd.dlive.tv/hls/live/vlynnq.m3u8"
 chan_name="Patriot Pool Party";;
 
+#######
 1303) 
 link="https://live.prd.dlive.tv/hls/live/knightsofthestorm.m3u8"
 chan_name="Knights of The Storm";;
 
+#######
 1304)
 link="https://live.prd.dlive.tv/hls/live/dlive-42299268.m3u8"
 chan_name="Free Talk Live" ;;
 
+######
 1305)
 link="https://live.prd.dlive.tv/hls/live/adamdunnshow.m3u8"
 chan_name="Adamdunshow";;
 
+######
 1306)
 link="https://live.prd.dlive.tv/hls/live/dlive-36788915.m3u8"
 chan_name="TLAVagabond" ;;
 
+#######
 1307)
 link="https://live.prd.dlive.tv/hls/live/wtfr.m3u8"
 chan_name="We Think Freely Radio";;
 
+#######
 1308)
 link="https://cozycdn.foxtrotstream.xyz/live/cancelproof/index.m3u8"
 chan_name="CancelProof" ;;
 
+########
 1309)
 link="https://cozycdn.foxtrotstream.xyz/live/wurzelroot/index.m3u8"
 chan_name="wuzleroot";;
 
+#######
 1310)
 link="https://cozycdn.foxtrotstream.xyz/live/hw/index.m3u8"
 chan_name="HW";;
 
+#######
 1311)
 link="https://cozycdn.foxtrotstream.xyz/live/keithwoods/index.m3u8"
 chan_name="keithwoods";;
 
+######
 1312)
 link="https://cozycdn.foxtrotstream.xyz/live/stewpeters/index.m3u8"
 chan_name="stewpeters";;
 
+#######
 1313)
 link="https://cozycdn.foxtrotstream.xyz/live/joetheboomer/index.m3u8"
 chan_name="joetheboomer";;
 
+#######
 1314)
 link="https://cozycdn.foxtrotstream.xyz/live/beardson/index.m3u8"
 chan_name="beardson";;
 
+######
 1315)
 link="https://cozycdn.foxtrotstream.xyz/live/loulz/index.m3u8"
 chan_name="loulz";;
 
+######
 1316)
 link="https://cozycdn.foxtrotstream.xyz/live/trsartor/index.m3u8"
 chan_name="trsartor";;
 
+#######
 1317)
-link="https://live.prd.dlive.tv/hls/live/Sloan-TV.m3u8"
-chan_name="SloanTV";;
+link="https://cozycdn.foxtrotstream.xyz/live/tylerrussell/index.m3u8"
+chan_name="tylerrussell";;
 
+#######
 1318)
-link="https://live.prd.dlive.tv/hls/live/RealPersonPltcs.m3u8"
-chan_name="RealPersonPltcs";;
+link="https://cozycdn.foxtrotstream.xyz/live/bigtech/index.m3u8"
+chan_name="bigtech";;
 
+#######
 1319)
-link="https://live.prd.dlive.tv/hls/live/sourd.m3u8"
-chan_name="SourD";;
+link="https://cozycdn.foxtrotstream.xyz/live/jimbozoomer/index.m3u8"
+chan_name="JimboZoomer";;
 
+#######
+#1320
+1320)
+link="https://b7i4j3n3.stackpathcdn.com/dudeman76/1688801908/src/live.m3u8"
+#link="https://b7i4j3n3.stackpathcdn.com/dudeman76/1688801908/360p/live.m3u8"
+#link="https://b7i4j3n3.stackpathcdn.com/dudeman76/1688801908/480p/live.m3u8"
+#link="https://b7i4j3n3.stackpathcdn.com/dudeman76/1688801908/720p/live.m3u8"
+chan_name="DudeMan76";;
 
-###############    SPACE       #########################
-
-################## LOCATIONS #############################
-
-
+############################################################
 esac
 }
 
@@ -12415,7 +12347,7 @@ elif [ "$input" = "---" ]
 then
 menstat="no"
 chan_state="-"
-elif [ "$input" -lt 1401 ]
+elif [ "$input" -lt 1661 ]
 then
 menstat="no"
 chan_state="numeric"
@@ -12444,7 +12376,7 @@ menu="s"
 echo "Please Select a Number corresponding to a Media Stream, press + or ] to increment, - or [ to decrement, n for the next menu, or q to quit:" ;;
 n)
 men_num=$(expr "$men_num" + 1)
-men_num=$(expr "$men_num" % 5)
+men_num=$(expr "$men_num" % 6)
 channel_matrix_"$men_num"
 menu="s"
 echo "Please Select a Number corresponding to a Media Stream, press + or ] to increment, - or [ to decrement, m for the main menu, n for the next menu, or q to quit:" ;;
@@ -12633,6 +12565,9 @@ do
    sleep 2
    clear
    channel_matrix_4
+   sleep 2
+   clear
+   channel_matrix_5
    exit 0
    elif [ "$arg" = "--list-all" ]
    then
