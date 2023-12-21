@@ -7,8 +7,8 @@
 # Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63583
-# Revision Date: October 16, 2023
+# Version: 0.63584
+# Revision Date: December 21, 2023
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63583"
-rev_date="16/10/2023"
+version="0.63584"
+rev_date="21/12/2023"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##################################################..
@@ -266,8 +266,8 @@ channel_matrix_1()
    echo "307)Aaj Tak IN       347)YTN DMB KR     387)KTN Home KE *     427)Bloomberg BNN      467)--------------     507)3ABN Francais     547)------------"
    echo "308)ETV AndhraPradesh348)YTN Sci KR     388)Joy News GH  *    428)Overcomers TV      468)--------------     508)LLBN SmartLife    548)------------"
    echo "309)News 18 Tamil    349)Channel 23 KR  389)ADOM GH           429)ROGERS TV Ottawa   469)--------------     509)LLBN His Word     549)------------"
-   echo "310)Jaya Plus        350)KBS World24 KR*390)Bukedde TV GH     430)ROGERS TV Kitchner 470)--------------     510)LLBN His Light    550)-------------"
-   echo "311)TEZ TV           351)YTN 27 KR      391)EBC ET   *        431)OMNI TV East       471)--------------     511)LLBN Latino TV    551)-------------"
+   echo "310)Jaya Plus        350)KBS World24 KR*390)Bukedde TV GH     430)ROGERS TV Kitchner 470)Amouranth Twitch   510)LLBN His Light    550)-------------"
+   echo "311)TEZ TV           351)YTN 27 KR      391)EBC ET   *        431)OMNI TV East       471)Amouranth Kick     511)LLBN Latino TV    551)-------------"
    echo "312)Dili Aaj Tak     352)CGNTV *        392)Walf SN           432)OMNI TV West       472)Mirys              512)Salt and Light    552)-------------"
    echo "313)Derana LK        353)LLBN Korean TV*393)EriTV ER  *       433)OMNI TV Praries    473)Leynainu           513)Harbor Light      553)CBC News Yellowknife"
    echo "314)Swarnavahini LK  354)YTV USA        394)SABC ZA *         434)OMNI TV Quebec     474)Katrine            514)St. Mary's Coptic 554)CBC News Toronto"
@@ -283,48 +283,48 @@ channel_matrix_1()
 channel_matrix_2()
 {
    echo "============================================================    "$product"  "$version"   ====================================================================="
-   echo "||     CANADA        ||      NEWS EXTRAS     ||     LATINO II     ||      Portugues        ||     USA Local 2     ||     USA Local 3   ||   LiveStream 1   ||"
+   echo "||     CANADA        ||    CANADA EXTRAS     ||     LATINO II     ||      Portugues        ||     USA Local 2     ||     USA Local 3   ||   LiveStream 1   ||"
    echo "============================================================================================================================================================"
-   echo "561)CBC News Net CA  601)Global Kingston     641)Nuevolaredo MX    681)Euronews PT         721)FOX News Preview   761)News 12 KTVZ7     801)------------"
+   echo "561)CBC News Net CA  601)Global Kingston     641)Cali TV +         681)Euronews PT         721)FOX News Preview   761)News 12 KTVZ7     801)------------"
    echo "562)CBC Vancouver    602)Global Montreal     642)Sinart CR         682)TV Assemblelia BR   722)Beach TV           762)NewsWest 9 KWES DC802)------------"
    echo "563)CBC Yellowknife  603)Global Halifax      643)Bethel Panama     683)TV Canaco Nova      723)Daytona Beach      763)Orange TV         803)Dashmesh  "
-   echo "564)CBC Edmonton     604)CTV 1               644)Poder de Dios BO  684)Igreja de Graca     724)Shepard Smith      764)PGCPS             804)Iberia TV  "
-   echo "565)CBC Calgary      605)CTV 2               645)GUATEVISION GT    685)Assemblelia Ales    725)WUSA9 Breaking     765)RyeTV             805)Obieqtivi TV +  "
-   echo "566)CBC Regina       606)CTV 3               646)RTV ES            686)Boas Nova           726)WCNC Breaking      766)Seattle Channel   806)ortonville +  "
-   echo "567)CBC Winnepeg     607)CTV 4               647)Medios Publicos   687)Fundacao Nazzare    727)WCCB News          767)Atlanta TV        807)Holiday & Cruise  "
-   echo "568)CBC Windsor      608)CTV 5               648)Tele Bahia DR     688)STF Brazil          728)UGA TV             768)----------        808)Vision Cruise AU "
-   echo "569)CBC Toronto      609)CTV 6               649)Iglesia Advent USA689)TV Estudio Brasil   729)TVW2 Washington    769)Vienna HQ         809)Vision Cruise UK"
-   echo "570)CBC Ottawa       610)CTV 7               650)Expande Puebla MX 690)Radio Justica       730)Action News KNVN   770)Escambia          810)102.3 NOW! TV CA "
-   echo "571)CBC Montreal     611)RUPTLY 1            651)Ayuda Universal MX691)EXA FM Brasil       731)Alaska ASD         771)----------        811)TourbusTV USA "
-   echo "572)CBC Frederickton 612)RUPTLY 2            652)Canal 27 Esperanza692)RIT TV BR           732)Bowie TV           772)WYCW Carolinas    812)Ezekiel TV"
-   echo "573)CBC Charlottetown613)RUPTLY 3            653)TELEAMIGA         693)Gott24.TV           733)Escambia TV        773)FOX 10 News       813)Emmanuel TV "
-   echo "574)CBC Halifax      614)RUPTLY 4            654)Poli tv Bogota CO 694)TV Fatima Paroquia  734)FOX 5 DC (WTTG)    774)WHO 13            814)Shalom World +"
-   echo "575)CBC St. John's   615)RUPTLY 5            655)UNTREF UN3 AR     695)You Content 98      735)Garland TV         775)Erie News         815)KIFI ABC 8 Idaho Falls"
-   echo "576)ICI CB-Yukon Tele616)RUPTLY 6            656)RUAV Univalle CO  696)Rede Genesis PT     736)Greenbelt TV       776)WISTV             816)ESPN Seattle "
-   echo "577)ICI Alberta      617)RUPTLY 7            657)JesusTV GT        697)MEIO Teresina BR    737)House Represent    777)Gem Shopping USA  817)King County TV Preston +"
-   echo "578)ICI Saskatchewan 618)RUPTLY 8            658)FGTV USA          698)Medalhao Persa BR   738)KRBC-TV            778)C-SPAN 1 USA      818)KIRO Radio Seattle"
-   echo "579)ICI Manitoba     619)Venevision VE       659)Evangelio Eterno  699)Talenu TV TPA       739)New Orleans TV     779)C-SPAN 2 USA      819)KOIN CBS 6 Portland"
-   echo "580)ICI Ontario      620)Telediario AR       660)Cosmovision TV    700)TV Miramar BR       740)KTVB               780)C-SPAN 3 USA      820)KPTV FOX 12 Portland"
-   echo "581)ICI Ottawa       621)TVeo Cordoba AR     661)Libre Cali CO     701)TV Zimbo AO         741)Key TV             781)Fox News Talk     821)KTVZ 21 Bend Oregon"
-   echo "582)ICI Acadie       622)PSN Tijuana MX      662)Yuma CO           702)TV RAIAR AO         742)KOB4 News          782)KNBC 4 LA USA     822)KEZI ABC 9 Eugene"
-   echo "583)ICI Estrie       623)CNN Espanol         663)Dominio MX        703)SescTV SaoPaulo BR  743)KPNX Breaking      783)ABC News 1        823)KOIN 6 Extra Portland"
-   echo "584)ICI Maurice      624)Paraguay Noticias   664)Senal UNTREF      704)Rede Super BeloBR   744)KXAN News          784)ABC News 2        824)KSL NOW Salt Lake "
-   echo "585)ICI Montreal     625)Canal Tr3ce CO      665)NRT 4 monclova    705)Talenu Luanda AO    745)Miami TV           785)ABC News 3        825)KUSI San Diego"
-   echo "586)ICI Saguenay     626)Cali TV             666)TVUNAM 20         706)Vatican Media PT    746)KNTV-TV            786)ABC News 4        826)KEYT ABC 3 Santa Barbara"
-   echo "587)ICI Quebec       627)Canal 12 CO         667)EVTV Miami        707)ABC Paraguay        747)KNTV Telemundo     787)ABC News 5        827)KHSL CBS 12 Redding"
-   echo "588)ICI Est-Quebec   628)Imagen Radio MX     668)Cosmovision TV BO 708)Abya Yala BO        748)NBC2 News KTUU     788)ABC News 6        828)KRCR ABC 7 Redding "
-   echo "589)CityLine         629)Euronews ES         669)VIVE VE           709)UFROVision CL       749)News2 WCBD         789)ABC News 7        829)KION CBS 5/46 Salinas"
-   echo "590)CBC News Montreal630)Teleamazonas        670)Vatican Media ES  710)Campo Abierto CL    750)News4 WRC Wash D.C.790)ABC News 8        830)KSBY NBC 6 Santa Barbara"
-   echo "591)Global BC        631)TV Camara PY        671)Televen VE        711)UNITV AR            751)News4 White House  791)ABC News 9        831)KESQ ABC 3 Palm Springs  "
-   echo "592)Global Okanagan  632)Tu Canal Panama     672)Impacto USA       712)TelePacifico CO     752)News5 WCYB         792)ABC News 10       832)KCOY CBS 12 Santa Maria "
-   echo "593)Global Edmonton  633)Colosal TV 1        673)UCVTV CL          713)-------------       753)NewsWest 9 KWES    793)ABC News 11       833)MCAET Salinas "
-   echo "594)Global Calgary   634)Canal 8 AR          674)UCVTV 2 CL        714)-------------       754)NBC4 WNBC          794)------------      834)KVVB CH.33 Victorville"
-   echo "595)Global Lethbridge635)CanalShowsport AR   675)Univision MX      715)-------------       755)NBC4 WNBC Traffic  795)------------      835)KOAA NBC 5 Colorado"
-   echo "596)Global Saskatoon 636)WIPR Puerto Rico    676)Cablenet AR       716)-------------       756)NBC5 WMAQ          796)------------      836)KRDO ABC 13 Colorado"
-   echo "597)Global Regina    637)La Mega Bogota CO   677)Telpintv AR       717)-------------       757)NBC 10 KTEN        797)------------      837)Freedom Solar TV Kersey"
-   echo "598)Global Winepeg   638)TV UNAM MX          678)Canal8 MarPlataAR 718)-------------       758)NBC 12 WWBT        798)------------      838)KTVK 3 TV Arizona"
-   echo "599)Global Toronto   639)Azteca 7 MX         679)Univision USA     719)-------------       759)NBC 29 WVIR        799)------------      839)KMVP 24/7 Phoenix"
-   echo "600)Global Peterbor  640)Cinevision DR       680)Canal 2 AR        720)-------------       760)NBC 13 WNYT        800)------------      840)KTAR News Phoenix"
+   echo "564)CBC Edmonton     604)ROGERS Kitchener    644)Poder de Dios BO  684)Igreja de Graca     724)Shepard Smith      764)PGCPS             804)Iberia TV  "
+   echo "565)CBC Calgary      605)ROGERS Ottawa F     645)GUATEVISION GT    685)Assemblelia Ales    725)WUSA9 Breaking     765)RyeTV             805)Obieqtivi TV +  "
+   echo "566)CBC Regina       606)ROGERS Ottawa       646)RTV ES            686)Boas Nova           726)WCNC Breaking      766)Seattle Channel   806)ortonville +  "
+   echo "567)CBC Winnepeg     607)ROGERS BARRIE       647)Medios Publicos   687)Fundacao Nazzare    727)WCCB News          767)Atlanta TV        807)Holiday & Cruise  "
+   echo "568)CBC Windsor      608)ROGERS BORDEN       648)Tele Bahia DR     688)STF Brazil          728)UGA TV             768)----------        808)Vision Cruise AU "
+   echo "569)CBC Toronto      609)ROGERS Branftord    649)Iglesia Advent USA689)TV Estudio Brasil   729)TVW2 Washington    769)Vienna HQ         809)Vision Cruise UK"
+   echo "570)CBC Ottawa       610)ROGERS Cambridge    650)Expande Puebla MX 690)Radio Justica       730)Action News KNVN   770)Escambia          810)102.3 NOW! TV CA "
+   echo "571)CBC Montreal     611)ROGERS Collingwood  651)Ayuda Universal MX691)EXA FM Brasil       731)Alaska ASD         771)----------        811)TourbusTV USA "
+   echo "572)CBC Frederickton 612)ROGERS Dufferin     652)Canal 27 Esperanza692)RIT TV BR           732)Bowie TV           772)WYCW Carolinas    812)Ezekiel TV"
+   echo "573)CBC Charlottetown613)ROGERS Durham       653)TELEAMIGA         693)Gott24.TV           733)Escambia TV        773)FOX 10 News       813)Emmanuel TV "
+   echo "574)CBC Halifax      614)ROGERS Georgina     654)Poli tv Bogota CO 694)TV Fatima Paroquia  734)FOX 5 DC (WTTG)    774)WHO 13            814)Shalom World +"
+   echo "575)CBC St. John's   615)ROGERS Grey County  655)UNTREF UN3 AR     695)You Content 98      735)Garland TV         775)Erie News         815)KIFI ABC 8 Idaho Falls"
+   echo "576)ICI CB-Yukon Tele616)ROGERS Geulph       656)RUAV Univalle CO  696)Rede Genesis PT     736)Greenbelt TV       776)WISTV             816)ESPN Seattle "
+   echo "577)ICI Alberta      617)ROGERS Kawartha     657)JesusTV GT        697)MEIO Teresina BR    737)House Represent    777)Gem Shopping USA  817)King County TV Preston +"
+   echo "578)ICI Saskatchewan 618)ROGERS Kincardine   658)FGTV USA          698)Medalhao Persa BR   738)KRBC-TV            778)C-SPAN 1 USA      818)KIRO Radio Seattle"
+   echo "579)ICI Manitoba     619)ROGERS Kitchener    659)Evangelio Eterno  699)Talenu TV TPA       739)New Orleans TV     779)C-SPAN 2 USA      819)KOIN CBS 6 Portland"
+   echo "580)ICI Ontario      620)ROGERS London       660)Cosmovision TV    700)TV Miramar BR       740)KTVB               780)C-SPAN 3 USA      820)KPTV FOX 12 Portland"
+   echo "581)ICI Ottawa       621)ROGERS Midland      661)Libre Cali CO     701)TV Zimbo AO         741)Key TV             781)Fox News Talk     821)KTVZ 21 Bend Oregon"
+   echo "582)ICI Acadie       622)ROGERS North Durham 662)Yuma CO           702)TV RAIAR AO         742)KOB4 News          782)KNBC 4 LA USA     822)KEZI ABC 9 Eugene"
+   echo "583)ICI Estrie       623)ROGERS Orillia      663)Dominio MX        703)SescTV SaoPaulo BR  743)KPNX Breaking      783)ABC News 1        823)KOIN 6 Extra Portland"
+   echo "584)ICI Maurice      624)ROGERS St.Thomas    664)Senal UNTREF      704)Rede Super BeloBR   744)KXAN News          784)ABC News 2        824)KSL NOW Salt Lake "
+   echo "585)ICI Montreal     625)ROGERS Stratford    665)NRT 4 monclova    705)Talenu Luanda AO    745)Miami TV           785)ABC News 3        825)KUSI San Diego"
+   echo "586)ICI Saguenay     626)ROGERS Strathory    666)TVUNAM 20         706)Vatican Media PT    746)KNTV-TV            786)ABC News 4        826)KEYT ABC 3 Santa Barbara"
+   echo "587)ICI Quebec       627)ROGERS Grey County  667)EVTV Miami        707)ABC Paraguay        747)KNTV Telemundo     787)ABC News 5        827)KHSL CBS 12 Redding"
+   echo "588)ICI Est-Quebec   628)ROGERS Tilsonburg   668)Cosmovision TV BO 708)Abya Yala BO        748)NBC2 News KTUU     788)ABC News 6        828)KRCR ABC 7 Redding "
+   echo "589)CityLine         629)ROGERS Woodstocky   669)VIVE VE           709)UFROVision CL       749)News2 WCBD         789)ABC News 7        829)KION CBS 5/46 Salinas"
+   echo "590)CBC News Montreal630)ROGERS Cornerbrook  670)Vatican Media ES  710)Campo Abierto CL    750)News4 WRC Wash D.C.790)ABC News 8        830)KSBY NBC 6 Santa Barbara"
+   echo "591)Global BC        631)ROGERS Grey Gander  671)Televen VE        711)UNITV AR            751)News4 White House  791)ABC News 9        831)KESQ ABC 3 Palm Springs  "
+   echo "592)Global Okanagan  632)ROGERS St. John's   672)Impacto USA       712)TelePacifico CO     752)News5 WCYB         792)ABC News 10       832)KCOY CBS 12 Santa Maria "
+   echo "593)Global Edmonton  633)ROGERS Edmunston    673)UCVTV CL          713)-------------       753)NewsWest 9 KWES    793)ABC News 11       833)MCAET Salinas "
+   echo "594)Global Calgary   634)ROGERS Fredericton  674)UCVTV 2 CL        714)-------------       754)NBC4 WNBC          794)------------      834)KVVB CH.33 Victorville"
+   echo "595)Global Lethbridge635)ROGERS Miramichi NB 675)Univision MX      715)-------------       755)NBC4 WNBC Traffic  795)------------      835)KOAA NBC 5 Colorado"
+   echo "596)Global Saskatoon 636)ROGERS Moncton NB   676)Cablenet AR       716)-------------       756)NBC5 WMAQ          796)------------      836)KRDO ABC 13 Colorado"
+   echo "597)Global Regina    637)ROGERS TV Moncton F 677)Telpintv AR       717)-------------       757)NBC 10 KTEN        797)------------      837)Freedom Solar TV Kersey"
+   echo "598)Global Winepeg   638)--------------      678)Canal8 MarPlataAR 718)-------------       758)NBC 12 WWBT        798)------------      838)KTVK 3 TV Arizona"
+   echo "599)Global Toronto   639)--------------      679)Univision USA     719)-------------       759)NBC 29 WVIR        799)------------      839)KMVP 24/7 Phoenix"
+   echo "600)Global Peterbor  640)--------------      680)Canal 2 AR        720)-------------       760)NBC 13 WNYT        800)------------      840)KTAR News Phoenix"
    echo "============================================================================================================================================================="
 }
 
@@ -404,10 +404,10 @@ channel_matrix_4()
    echo "1141)------------     1181)------------      1221)------------      1261)jadethejaguar    1301)Resistance Chicks 1341)------------     1381)------------"
    echo "1142)------------     1182)------------      1222)------------      1262)intraventus      1302)PPP               1342)------------     1382)------------"
    echo "1143)------------     1183)------------      1223)------------      1263)anncramling      1303)KOTS              1343)------------     1383)------------"
-   echo "1144)------------     1184)------------      1224)------------      1264)Amouranth        1304)FreeTalkLive      1344)------------     1384)------------"
-   echo "1145)------------     1185)------------      1225)------------      1265)TYT              1305)AdamDunnShow      1345)------------     1385)------------"
-   echo "1146)------------     1186)-------------     1226)------------      1266)PekeASMR         1306)TLAVagabond       1346)------------     1386)------------"
-   echo "1147)------------     1187)------------      1227)------------      1267)Geekandsundry    1307)ThinkFreely       1347)------------     1387)------------"
+   echo "1144)------------     1184)------------      1224)------------      1264)TYT              1304)FreeTalkLive      1344)------------     1384)------------"
+   echo "1145)------------     1185)------------      1225)------------      1265)PekeASMR         1305)AdamDunnShow      1345)------------     1385)------------"
+   echo "1146)------------     1186)-------------     1226)------------      1266)Geekandsundry    1306)TLAVagabond       1346)------------     1386)------------"
+   echo "1147)------------     1187)------------      1227)------------      1267)------------     1307)ThinkFreely       1347)------------     1387)------------"
    echo "1148)------------     1188)------------      1228)------------      1268)------------     1308)CanelProof        1348)------------     1388)------------"
    echo "1149)------------     1189)------------      1229)------------      1269)------------     1309)WuzzleRoot        1349)------------     1389)------------"
    echo "1150)------------     1190)------------      1230)------------      1270)------------     1310)HW                1350)------------     1390)------------"
@@ -921,6 +921,8 @@ if [ "$getlink" = 1 ]
 then
 #link=https://www.filmon.com/tv/press-tv
 
+#link="https://cdnlive.presstv.ir/cdnlive/smil:cdnlive.smil/playlist.m3u8"
+
 link="https://cdnlive.presstv.ir/cdnlive/smil:cdnlive.smil/playlist.m3u8"
 
 ##EXT-X-STREAM-INF:BANDWIDTH=944100,CODECS="avc1.77.31,mp4a.40.2",RESOLUTION=1280x720
@@ -1403,8 +1405,7 @@ chan_name="United Nations UN Web TV" ;;
 if [ "$getlink" = 1 ]
 then
 ### VOA TV
-link="https://voa-ingest.akamaized.net/dash/live/2033875/tvmc06/manifest.mpd"
-
+link="https://voa-ingest.akamaized.net/hls/live/2037660/tvmc13/playlist.m3u8"
 ## VOA RADIO
 #link="https://voa-ingest.akamaized.net/dash/live/2035100/161_352R/manifest.mpd"
 # link=https://voa-ingest.akamaized.net/dash/live/2035100/161_352R/manifest.mpd
@@ -1522,23 +1523,19 @@ use_cookies="no"
 TAG="CBC_CA____"
 chan_name="CBC Canada";;
 
-
 42)
 ## Lindell TV1
-#link="https://watchb.frankspeech.com/hls/frank1/mainchannel1/chunklist_b896000.m3u8"
-link="https://watchb.frankspeech.com/hls/frank1/mainchannel1/playlist.m3u8"
-#link="https://watch.frankspeech.com/hls/frank1/mainchannel1/combinedmanifest.m3u8"
+link="https://watch.frankspeech.io/hls/cf4e6ec7-2e3d-42bb-8787-7973293f610d.m3u8"
 chan_name="LindellTV1";;
 
 43)
 ## Lindell TV2
-#link="https://watch.frankspeech.com/hls/frank2/mainchannel2/combinedmanifest.m3u8"
-link="https://watch.frankspeech.com/hls/frank2/mainchannel2/playlist.m3u8"
+link="https://watch.frankspeech.io/hls/d1d579a5-59fa-4451-907b-2178e0efedcd.m3u8"
 chan_name="LindellTV2";;
 
 44)
 ## Lindell TV3
-link="https://watchb.frankspeech.com/hls/frank3/mainchannel3/playlist.m3u8"
+link="https://watch.frankspeech.io/hls/ddbf636a-4c99-4032-b9ff-475d80f9c2c3_480.m3u8"
 chan_name="LindellTV3";;
 
 45)
@@ -2765,7 +2762,8 @@ chan_name="Azur TV Nice" ;;
 
 # 116) PressTV FR
 116)
-link="https://live1.presstv.ir/live/presstvfr/index.m3u8"
+#link="https://live1.presstv.ir/live/presstvfr/index.m3u8"
+link="https://live4.presstv.ir/live/smil:presstvfr.smil/playlist.m3u8"
 #####method="Tor"
 use_cookies="no"
 chan_name="PressTV FR";;
@@ -6501,6 +6499,22 @@ chan_name="PJ Masks" ;;
 ###############################################################################################################
 
 
+# 470) Amouranth Twitch
+470)
+link="https://kick.com/amouranth"
+#link="https://www.twitch.tv/amouranth"
+use_cookies="no"
+####method="Tor"
+chan_name="Amouranth";;
+
+# 471) Amouranth Kick
+471)
+#link="https://kick.com/amouranth"
+link="https://www.twitch.tv/amouranth"
+use_cookies="no"
+####method="Tor"
+chan_name="Amouranth";;
+
 # 472) Mirys
 472)
 if [ "$getlink" = 1 ]
@@ -8206,322 +8220,223 @@ googleGrab
 use_cookies="no"
 chan_name="Global News Halifax NB";;
 
-#################### CTV ################################
-
-# 604) CTV News Live Feed 1 CA
+# 604) ROGERS TV Kitchener
 604)
-link="https://pe-ak-lp01a-9c9media.akamaized.net/live/News1Digi/p/dash/00000001/8e377c581da8df4e/manifest.mpd"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m40_card8/playlist.m3u8"
 use_cookies="no"
-chan_name="CTV News Live Feed 1 CA";;
+chan_name="ROGERS TV Kitchener";;
 
-# 605) CTV News Live Feed 2 CA
+# 605) ROGERS TV Ottawa Francais
 605)
-link="https://pe-ak-lp01a-9c9media.akamaized.net/live/News2Digi/p/dash/00000001/7989457f94a2b42c/manifest.mpd"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card7/playlist.m3u8"
 use_cookies="no"
-chan_name="CTV News Live Feed 2 CA";;
+chan_name="ROGERS TV Ottawa Francais";;
 
-# 606) CTV News Live Feed 3 CA
+# 606) ROGERS TV Ottawa
 606)
-link="https://pe-ak-lp01a-9c9media.akamaized.net/live/News3Digi/p/dash/00000001/531849b5c6d55eff/manifest.mpd"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card3/playlist.m3u8"
 use_cookies="no"
-chan_name="CTV News Live Feed 3 CA";;
+chan_name="ROGERS TV Ottawa";;
 
-# 607) CTV News Live Feed 4 CA
+# 607) ROGERS TV  BARRIE ON CA
 607)
-link="https://pe-ak-lp02a-9c9media.akamaized.net/live/News4Digi/p/dash/00000001/4b36d011b438df10/manifest.mpd"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m42_card4/playlist.m3u8"
 use_cookies="no"
-chan_name="CTV News Live Feed 4 CA";;
+chan_name="ROGERS BARRIE ON CA";;
 
-# 608) CTV News Live Feed 5 CA
+# 608) ROGERS TV BORDEN/ALISTON ON CA
 608)
-link="https://pe-ak-lp02a-9c9media.akamaized.net/live/News6Digi/p/dash/00000001/dcbf2cb5b9217dcd/manifest.mpd"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card6/playlist.m3u8"
 use_cookies="no"
-chan_name="CTV News Live Feed 5 CA";;
+chan_name="ROGERS BORDEN/ALISTON ON CA";;
 
-# 609) CTV News Live Feed 6 CA
+# 609) ROGERS TV Brantford ON CA
 609)
-link="https://pe-ak-lp02a-9c9media.akamaized.net/live/News6Digi/p/dash/00000001/dcbf2cb5b9217dcd/manifest.mpd"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m40_card8/playlist.m3u8"
 use_cookies="no"
-chan_name="CTV News Live Feed 6 CA";;
+chan_name="ROGERS Brantford ON CA";;
 
-# 610) CTV News Live Feed 8 CA
+# 610) ROGERS TV Cambridge ON CA
 610)
-link="https://pe-ak-lp02a-9c9media.akamaized.net/live/DMCDigi10/p/dash/00000001/97e8aec38092a6e9/manifest.mpd"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m40_card8/playlist.m3u8"
 use_cookies="no"
-chan_name="CTV News Live Feed 8 CA";;
+chan_name="ROGERS Cambridge ON CA";;
 
-# 611) CTV News Live Feed 9 CA
+# 611) ROGERS TV Collingwood CA
 611)
-link="https://pe-ak-lp02a-9c9media.akamaized.net/live/DMCDigi11/p/dash/00000001/7b79214a8d4b915c/manifest.mpd"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m42_card8/playlist.m3u8"
 use_cookies="no"
-chan_name="CTV News Live Feed 9 CA";;
+chan_name="ROGERS Collingwood ON CA";;
 
-####################### RUPTLY #################################
-
-# 612) RUPTLY LIVE 1
+# 612) ROGERS TV Dufferin-Calderon ON CA
 612)
-#link="https://streamb.gcdn.co/Encoder1/Enc1_Ch1_360p_logo.stream/playlist.m3u8"
-link="https://streamb.gcdn.co/Encoder1/Enc1_Ch2_360p_logo.stream/playlist.m3u8"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m42_card3/playlist.m3u8"
 use_cookies="no"
-chan_name="RUPTLY LIVE 1";;
+chan_name="ROGERS Dufferin-Calderon ON CA";;
 
-# 613) RUPTLY LIVE 2
+# 613) ROGERS TV Durham ON CA
 613)
-#link="https://streamb.gcdn.co/Encoder2/Enc2_Ch1_360p_logo.stream/playlist.m3u8"
-#link="https://streamb.gcdn.co/Encoder2/Enc2_Ch1_480p_logo.stream/playlist.m3u8"
-link="https://streamb.gcdn.co/Encoder2/Enc2_Ch1_720p_logo.stream/playlist.m3u8"
-#link="https://streamb.gcdn.co/Encoder2/Enc2_Ch1_1080p_logo.stream/playlist.m3u8"
-#link="https://streamb.gcdn.co/Encoder2/Enc2_Ch2_360p_logo.stream/playlist.m3u8"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m40_card1/playlist.m3u8"
 use_cookies="no"
-chan_name="RUPTLY LIVE 2";;
+chan_name="ROGERS Durham ON CA";;
 
-# 613) RUPTLY LIVE 3
-613)
-#link="https://streamc.gcdn.co/Encoder3/Enc3_Ch1_360p_logo.stream/playlist.m3u8" 
-#link="https://streamc.gcdn.co/Encoder3/Enc3_Ch1_480p_logo.stream/playlist.m3u8" 
-link="https://streamc.gcdn.co/Encoder3/Enc3_Ch1_720p_logo.stream/playlist.m3u8" 
-#link="https://streamc.gcdn.co/Encoder3/Enc3_Ch1_1080p_logo.stream/playlist.m3u8" 
-#link="https://streamc.gcdn.co/Encoder3/Enc3_Ch2_360p_logo.stream/playlist.m3u8" 
-use_cookies="no"
-chan_name="RUPTLY LIVE 3";;
-
-# 614) RUPTLY LIVE 4
+# 614) ROGERS TV Georgina CA
 614)
-#link="https://streamd.gcdn.co/Encoder4/Enc4_Ch1_360p_logo.stream/playlist.m3u8" 
-#link="https://streamd.gcdn.co/Encoder4/Enc4_Ch2_360p_logo.stream/playlist.m3u8" 
-#link="https://streamd.gcdn.co/Encoder4/Enc4_Ch2_480p_logo.stream/playlist.m3u8" 
-link="https://streamd.gcdn.co/Encoder4/Enc4_Ch2_720p_logo.stream/playlist.m3u8" 
-#link="https://streamd.gcdn.co/Encoder4/Enc4_Ch2_1080p_logo.stream/playlist.m3u8" 
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m42_card5/playlist.m3u8"
 use_cookies="no"
-chan_name="RUPTLY LIVE 4";;
+chan_name="ROGERS Georgina CA";;
 
-# 615) RUPTLY LIVE 5
+# 615) ROGERS TV Grey County 
 615)
-#link="https://streamd.gcdn.co/Encoder5/Enc5_Ch1_360p_logo.stream/playlist.m3u8" 
-#link="https://streame.gcdn.co/Encoder5/Enc5_Ch2_360p_logo.stream/playlist.m3u8"
-#link="https://streame.gcdn.co/Encoder5/Enc5_Ch2_480p_logo.stream/playlist.m3u8"
-link="https://streame.gcdn.co/Encoder5/Enc5_Ch2_720p_logo.stream/playlist.m3u8"
-#link="https://streame.gcdn.co/Encoder5/Enc5_Ch2_1080p_logo.stream/playlist.m3u8"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card1/playlist.m3u8"
 use_cookies="no"
-chan_name="RUPTLY LIVE 5";;
+chan_name="ROGERS Grey County CA";;
 
-# 616) RUPTLY LIVE 6
+# 616) ROGERS TV Geulph CA
 616)
-#link="https://streamd.gcdn.co/Encoder6/Enc6_Ch1_360p_logo.stream/playlist.m3u8" 
-#link="https://streamf.gcdn.co/Encoder6/Enc6_Ch2_360p_logo.stream/playlist.m3u8"
-#link="https://streamf.gcdn.co/Encoder6/Enc6_Ch2_480p_logo.stream/playlist.m3u8"
-link="https://streamf.gcdn.co/Encoder6/Enc6_Ch2_720p_logo.stream/playlist.m3u8"
-#link="https://streamf.gcdn.co/Encoder6/Enc6_Ch2_1080p_logo.stream/playlist.m3u8"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m40_card7/playlist.m3u8"
 use_cookies="no"
-chan_name="RUPTLY LIVE 6";;
+chan_name="ROGERS Geulph CA";;
 
-# 617) RUPTLY LIVE 7
+# 617) ROGERS TV Kawartha Lake CA
 617)
-#link="https://streamd.gcdn.co/Encoder7/Enc7_Ch1_360p_logo.stream/playlist.m3u8" 
-#link="https://streamf.gcdn.co/Encoder7/Enc7_Ch2_360p_logo.stream/playlist.m3u8"
-#link="https://streamf.gcdn.co/Encoder7/Enc7_Ch2_480p_logo.stream/playlist.m3u8"
-link="https://streamf.gcdn.co/Encoder7/Enc7_Ch2_720p_logo.stream/playlist.m3u8"
-#link="https://streamf.gcdn.co/Encoder7/Enc7_Ch2_1080p_logo.stream/playlist.m3u8"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card2/playlist.m3u8"
 use_cookies="no"
-chan_name="RUPTLY LIVE 7";;
+chan_name="ROGERS Kawartha Lake CA";;
 
-
-# 618) RUPTLY LIVE 8
+# 618) ROGERS TV Kincardine CA
 618)
-#link="https://streamd.gcdn.co/Encoder8/Enc8_Ch1_360p_logo.stream/playlist.m3u8" 
-#link="https://streamf.gcdn.co/Encoder8/Enc8_Ch2_360p_logo.stream/playlist.m3u8"
-#link="https://streamf.gcdn.co/Encoder8/Enc8_Ch2_480p_logo.stream/playlist.m3u8"
-link="https://streamf.gcdn.co/Encoder8/Enc8_Ch2_720p_logo.stream/playlist.m3u8"
-#link="https://streamf.gcdn.co/Encoder8/Enc8_Ch2_1080p_logo.stream/playlist.m3u8"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card8/playlist.m3u8"
 use_cookies="no"
-chan_name="RUPTLY LIVE 8";;
+chan_name="ROGERS Kincardine CA";;
 
-
-#######################################################################################################################
-
-# 581) NTV Newfoundland
-#581)
-#if [ "$getlink" = 1 ]
-#then
-#link=http://1-fss-fso35.streamhoster.com/lv_ntv/_definst_/broadcast1/chunklist.m3u8
-#fi
-#use_cookies="no"
-#chan_name="NTV Newfoundland" ;;
-
-# 582) Tele-Quebec
-#582)
-#link="https://teleqmmd.mmdlive.lldns.net/teleqmmd/f386e3b206814e1f8c8c1c71c0f8e748/chunklist_b2592000.m3u8"
-#use_cookies="no"
-#chan_name="Tele-Quebec" ;;
-
-# 583) Tele-V
-#583)
-#link="https://bcsecurelivehls-i.akamaihd.net/hls/live/551061/618566855001/master.m3u8"
-#use_cookies="no"
-#chan_name="Tele-V" ;;
-#Hard Knocks TV: https://vcnboutsports.teleosmedia.com/stream/boutsports/boutsports/playlist.m3u8
-
-## CTV
-## https://capi.9c9media.com/destinations/ctvnews_web/platforms/desktop/contents/64268/contentpackages/22710/manifest.mpd
-### https://capi.9c9media.com/destinations/ctvnews_web/platforms/desktop/contents/64268/contentpackages/22710/manifest.mpd
-###############################################################################
-
-
-
-# 619) Venevision VE
+# 619) ROGERS TV Kitchener CA
 619)
-keyword="Emisión"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/noticierovenevision/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m40_card8/playlist.m3u8"
 use_cookies="no"
-chan_name="Venevision VE" ;;
-# 620) Telediario AR
+chan_name="ROGERS Kitchener CA";;
+
+# 620) ROGERS TV London CA
 620)
-keyword="en directo"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/channel/UC1-SmZtkXTg2ufhLMpwiRIg/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 |cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m42_card6/playlist.m3u8"
 use_cookies="no"
-chan_name="Telediario AR" ;;
-# 621) TVeo Canal 41 Cordoba AR
+chan_name="ROGERS London CA";;
+
+# 621) ROGERS TV Midland CA
 621)
-keyword="Vivo"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/channel/UC9kgE-365dvz6zJEUX1dFiw/?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card5/playlist.m3u8"
 use_cookies="no"
-chan_name="TVeo Canal 41 Cordoba AR" ;;
-# 622) PSN Tijuana Mexico
+chan_name="ROGERS Midland CA";;
+
+# 622) ROGERS TV North Durham - Kawartha
 622)
-keyword="PSN"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/psntv1/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2 )"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card2/playlist.m3u8"
 use_cookies="no"
-chan_name="PSN Tijuana Mexico";;
-## 623) Senal de CNN en Espanol
+chan_name="ROGERS North Durham - Kawartha CA";;
+
+# 623) ROGERS TV Orillia
 623)
-keyword="CNN"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/cnnenespanolcom/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m42_card7/playlist.m3u8"
 use_cookies="no"
-chan_name="Senal de CNN en Espanol" ;;
-## 624) Paraguay Noticias
+chan_name="ROGERS Orillia CA";;
+
+# 624) ROGERS TV St. Thomas
 624)
-#link=https://livestream.com/accounts/25680986/events/7856569
-link="$( curl "https://livestream.com/accounts/25680986/events/7856569" | grep "secure_play_url" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /secure_m3u8_url/ && $(i+2) ~ /broadcasts/  )  print $(i+2) } ' | cut -d \? -f 1  | head -n 1  )"
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card4/playlist.m3u8"
 use_cookies="no"
-chan_name="Paraguay Noticias" ;;
-## 625) Canal Tr3ce
+chan_name="ROGERS St. Thomas CA";;
+
+# 625) ROGERS TV Stratford
 625)
-link=https://cdn.logicideas.media/canaltrece-live/smil:MNQW4.smil/chunklist_b1500000.m3u8
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m40_card8/playlist.m3u8"
 use_cookies="no"
-chan_name="Canal Tr3ce CO" ;;
-## 626) Cali TV
+chan_name="ROGERS Stratford CA";;
+
+# 626) ROGERS TV Strathory-Caradoc
 626)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m44_card4/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Strathory-Caradoc CA";;
+
+# 627) ROGERS TV Tilsonburg
+627)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m42_card2/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Tilsonburg CA";;
+
+# 628) ROGERS TV Waterloo
+628)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m40_card8/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Waterloo CA";;
+
+# 629) ROGERS TV Woodstock
+629)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m42_card1/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Woodstock CA";;
+
+# 630) ROGERS TV Cornerbrook NFLD
+630)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m37_card4/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Cornerbrook NFLD";;
+
+# 631) ROGERS TV Gander NFLD
+631)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m37_card1/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Gander NFLD CA";;
+
+# 632) ROGERS TV St. John's NFLD 
+632)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m37_card2/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS St. John's NFLD CA";;
+
+# 633) ROGERS TV Edmunston NB CA Francais
+633)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m43_card6/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Edmunston NB CA Francais CA";;
+
+# 634) ROGERS TV Fredericton NB CA
+634)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m43_card2/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Fredericton NB CA";;
+
+# 635) ROGERS Miramichi NB CA
+635)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m43_card3/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Miramichi NB CA";;
+
+# 636) ROGERS TV Moncton NB CA
+636)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m43_card7/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Moncton NB CA";;
+
+# 637) ROGERS TV Moncton NB CA Francais
+637)
+link="https://livedrm.akamaized.net/hls/live/1021686/rtv/m43_card4/playlist.m3u8"
+use_cookies="no"
+chan_name="ROGERS Moncton NB CA Francais";;
+
+## 638
+
+## 639
+
+## 640
+
+################################ LATINO III ###############################################################
+## 641) Cali TV
+641)
 link=http://vbox.cehis.net/live-calitv/calitv1/chunklist_w1780377540.m3u8
 use_cookies="no"
 chan_name="Cali TV CO" ;;
-## 627) Canal 12 CO
-627)
-link=http://edge.teveo.com.co/live/AeAAAgAJAAFFA1IAyADIVKgAAAAAAAAAAlqjj_e4Rz22AAAA/chunklist_w1858463102.m3u8
-use_cookies="no"
-chan_name="Canal 12 CO" ;;
-# 628) Imagen Radio Mexico
-628)
-keyword="En Vivo"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/ImagenNoticias/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2 )"
-use_cookies="no"
-chan_name="Imagen Radio Mexico" ;;
-# 629)Euronews Espanol
-629)
-keyword="Live"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/euronewses/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
-use_cookies="no"
-chan_name="Euronews Espanol" ;;
-# 630) Teleamazonas
-630)
-keyword="Live"
-#link=https://livestream.com/accounts/1359588/Noticiero24Horas
-link="$( curl "https://livestream.com/accounts/1359588/Noticiero24Horas" | grep "secure_play_url" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /secure_m3u8_url/ && $(i+2) ~ /broadcasts/  )  print $(i+2) } ' | cut -d \? -f 1  | head -n 1  )"
-use_cookies="no"
-chan_name="Teleamazonas" ;;
-# 631) TV Camara Paraguay
-631)
-keyword="DIRECTO"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/channel/UCRVeQhiqhUAxRRUod7F-K3A/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
-use_cookies="no"
-chan_name="TV Camara Paraguay" ;;
-# 632) Tu Canal Panama PA
-632)
-keyword="directo"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/elcanaldepanamatv/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
-use_cookies="no"
-chan_name="Tu Canal Panama PA" ;;
-# 633)Colosal TV 1
-633)
-#EXT-X-STREAM-INF:BANDWIDTH=745613,CODECS="avc1.77.31,mp4a.40.2",RESOLUTION=720x480
-link="http://k3.usastreams.com:1935/colosaltv1/colosaltv1/chunklist_w147840137.m3u8"
-#link="http://k3.usastreams.com:1935/colosaltv1/colosaltv1/chunklist_w516008458.m3u8"
-use_cookies="no"
-chan_name="Colosal TV 1" ;;
-# 634) WIPR Puerto Rico
-634)
-#link="https://livestream.com/accounts/16550960/events/8077197"
-link="$( curl "https://livestream.com/accounts/16550960/events/8077197"| grep "secure_play_url" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /secure_m3u8_url/ && $(i+2) ~ /broadcasts/  )  print $(i+2) } ' | cut -d \? -f 1  | head -n 1  )"
-use_cookies="no"
-chan_name="WIPR Puerto Rico" ;;
-# 635) Canal 8 San Juan Argentina
-635)
-keyword="EN VIVO"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/channel/UC5UKMEIoqvNDMSDz2_6Sn9g/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 |cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
-use_cookies="no"
-chan_name="Canal 8 San Juan Argentina" ;;
-# 636) Showsport Cordoba Argentina
-636)
-keyword="Showsport"
-link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/CanalShowsport/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d ? -f 2 | cut -d \" -f1 | cut -d = -f 2)"
-use_cookies="no"
-chan_name="Showsport Argentina" ;;
-# 637) La Mega Bogotá 90.9 FM CO
-637)
-#link="https://livestream.com/accounts/13907141/lamegabogota"
-link="$( curl "https://livestream.com/accounts/13907141/lamegabogota"| grep "secure_play_url" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /secure_m3u8_url/ && $(i+2) ~ /broadcasts/  )  print $(i+2) } ' | cut -d \? -f 1  | head -n 1  )"
-use_cookies="no"
-chan_name="La Mega Bogotá 90.9 FM CO" ;;
-# 638)TV UNAM MX
-638)
-#link="https://livestream.com/accounts/27177136/events/8157904"
-link="$( curl "https://livestream.com/accounts/27177136/events/8157904"| grep "secure_play_url" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /secure_m3u8_url/ && $(i+2) ~ /broadcasts/  )  print $(i+2) } ' | cut -d \? -f 1  | head -n 1  )"
-use_cookies="no"
-chan_name="TV UNAM MX" ;;
-# 639) Azteca 7 MX
-639)
-link="http://aztecalive-lh.akamaihd.net/i/0pq46e6vw_1@502477/index_3_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=528000,RESOLUTION=426x240,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://aztecalive-lh.akamaihd.net/i/0pq46e6vw_1@502477/index_1_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=528000,RESOLUTION=426x240,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://aztecalive-lh.akamaihd.net/i/0pq46e6vw_1@502477/index_1_av-b.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=877000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://aztecalive-lh.akamaihd.net/i/0pq46e6vw_1@502477/index_2_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=877000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://aztecalive-lh.akamaihd.net/i/0pq46e6vw_1@502477/index_2_av-b.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1128000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://aztecalive-lh.akamaihd.net/i/0pq46e6vw_1@502477/index_3_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1128000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://aztecalive-lh.akamaihd.net/i/0pq46e6vw_1@502477/index_3_av-b.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=128000,CODECS="mp4a.40.2"
-#link="http://aztecalive-lh.akamaihd.net/i/0pq46e6vw_1@502477/index_1_a-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=128000,CODECS="mp4a.40.2"
-#link="http://aztecalive-lh.akamaihd.net/i/0pq46e6vw_1@502477/index_1_a-b.m3u8?sd=10&rebase=on"
-use_cookies="no"
-chan_name="Azteca 7 MX" ;;
-# 640) Cinevision Canal 19 Dominican Republic
-640)
-#link="https://livestream.com/accounts/9430235/canal19"
-link="$( curl "https://livestream.com/accounts/9430235/canal19"| grep "secure_play_url" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /secure_m3u8_url/ && $(i+2) ~ /broadcasts/  )  print $(i+2) } ' | cut -d \? -f 1  | head -n 1  )"
-use_cookies="no"
-chan_name="Cinevision Canal 19 Dominican Republic" ;;
 
-################################ LATINO III ###############################################################
-# 641) Nuevolaredo.tv Flujo de Puentes Internacionales nuevo laredo MX
-641)
-#link="https://livestream.com/accounts/13480210/events/4837379"
-link="$( curl "https://livestream.com/accounts/13480210/events/4837379"| grep "secure_play_url" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /secure_m3u8_url/ && $(i+2) ~ /broadcasts/  )  print $(i+2) } ' | cut -d \? -f 1  | head -n 1  )"
-use_cookies="no"
-chan_name="Neuvo Larado TV MX" ;;
 # 642) Sinart Digital Señal Canal 13 CR
 642)
 #link="https://livestream.com/accounts/1532727/events/8158158"
@@ -11623,15 +11538,8 @@ use_cookies="no"
 ####method="Tor"
 chan_name="anncramling";;
 
-# 1264) Amouranth
+# 1264) TYT
 1264)
-link="https://www.twitch.tv/amouranth"
-use_cookies="no"
-####method="Tor"
-chan_name="Amouranth";;
-
-# 1265) TYT
-1265)
 if [ "$getlink" = 1 ]
 then
 link="https://www.twitch.tv/tyt"
@@ -11641,15 +11549,15 @@ fi
 TAG="TYT"
 chan_name="The Young Turks TYT" ;;
 
-# 1266) PekeASMR
-1266)
+# 1265) PekeASMR
+1265)
 link="https://www.twitch.tv/pekeasmr"
 #####method="Tor"
 use_cookies="no"
 chan_name="PekeASMR";;
 
-# 1267) Geek and Sundry
-1267)
+# 1266) Geek and Sundry
+1266)
 link="https://www.twitch.tv/geekandsundry"
 use_cookies="no"
 ####method="Tor"
