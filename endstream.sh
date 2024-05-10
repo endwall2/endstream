@@ -7,8 +7,8 @@
 # Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63585
-# Revision Date: December 31, 2023
+# Version: 0.63586
+# Revision Date: May 9, 2024
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63585"
-rev_date="31/12/2023"
+version="0.63586"
+rev_date="09/05/2024"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##################################################..
@@ -214,8 +214,8 @@ channel_matrix_0()
    echo "24)Ticker News AU     64)CBSN Bay Area    104)CPAC 1 CA        144)Telecafe CO      184)Current Time VOA  224)-------------             264)KSA Sports SA"
    echo "25)Arise News NG      65)CBSN Boston      105)Assemblee QC CA  145)Globovision VE   185)5 Live RU         225)-------------             265)KSA Sports 2 SA"
    echo "26)Africa News Eng    66)CBSN Chicago     106)BX1 BE           146)VPItv VE         186)News 24 UA        226)-------------             266)KSA Quaran SA"
-   echo "27)NEWSMAX USA        67)CBSN Dallas      107)France Info      147)TeleDiario MX    187)UA TV UA          227)-------------             267)KSA Sunna SA"
-   echo "28)Free Speech TV     68)CBSN Denver      108)CNEWS FR         148)Excelsior MX *   188)News 1 UA         228)-------------             268)KSA Al Ekhbariya SA"
+   echo "27)Free Speech TV     67)CBSN Dallas      107)France Info      147)TeleDiario MX    187)UA TV UA          227)-------------             267)KSA Sunna SA"
+   echo "28)NEWSMAX USA        68)CBSN Denver      108)CNEWS FR         148)Excelsior MX *   188)News 1 UA         228)-------------             268)KSA Al Ekhbariya SA"
    echo "29)Infowars Live      69)CBSN Minnesota   109)RTL BE           149)Brighteon ES     189)UA 5  UA          229)-------------             269)KSA Zikrayat SA"
    echo "30)American Journal   70)CBSN Philadelphia110)RTL 2 BE         150)-------------    190)TV Publica Moldova230)-------------             270)KSA SBC SA"
    echo "31)Infowars WarRoom   71)CBSN Pittsburgh  111)Europe 1 FR      151)-------------    191)RT Docs RU        231)-------------             271)KSA Saudi Radio SA"
@@ -875,6 +875,7 @@ chan_name="TRT World";;
 14)
 if [ "$getlink" = 1 ]
 then
+
 link="https://bcovlive-a.akamaihd.net/6e3dd61ac4c34d6f8fb9698b565b9f50/eu-central-1/5377161796001/profile_0/chunklist.m3u8"
 #link="https://bcovlive-a.akamaihd.net/6e3dd61ac4c34d6f8fb9698b565b9f50/eu-central-1/5377161796001/profile_1/chunklist.m3u8"
 #link="https://bcovlive-a.akamaihd.net/6e3dd61ac4c34d6f8fb9698b565b9f50/eu-central-1/5377161796001/profile_2/chunklist.m3u8"
@@ -1038,9 +1039,14 @@ chan_name="CGTN China English" ;;
 if [ "$getlink" = 1 ]
 then
 
+
+#link="https://cdn.nhkworld.jp/www11/nhkworld-tv/domestic/2003459/live.m3u8"
+link="https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index_2M.m3u8"
+#link="https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index_1M.m3u8"
+
 #link="https://nhkworld.webcdn.stream.ne.jp/www11/nhkworld-tv/global/2003458/live.m3u8"
 
-link="https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_2M.m3u8"
+#link="https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_2M.m3u8"
 #link="https://b-nhkwlive-xjp.webcdn.stream.ne.jp/hls/live/2003458-b/nhkwlive-xjp-en/index_2M.m3u8"
 #link="https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_1M.m3u8"
 #link="https://b-nhkwlive-xjp.webcdn.stream.ne.jp/hls/live/2003458-b/nhkwlive-xjp-en/index_1M.m3u8"
@@ -1049,45 +1055,10 @@ link="https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_
 #link="https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_1M.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=1086734,AVERAGE-BANDWIDTH=1240800,CODECS="avc1.4d401f,mp4a.40.5",RESOLUTION=1280x720,FRAME-RATE=29.970
 #link="https://b-nhkwlive-xjp.webcdn.stream.ne.jp/hls/live/2003458-b/nhkwlive-xjp-en/index_1M.m3u8"
-
-#EXT-X-STREAM-INF:BANDWIDTH=708360,AVERAGE-BANDWIDTH=800800,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=640x360,FRAME-RATE=29.970
-#link=https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_600k.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=708360,AVERAGE-BANDWIDTH=800800,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=640x360,FRAME-RATE=29.970
-#link="https://b-nhkwlive-xjp.webcdn.stream.ne.jp/hls/live/2003458-b/nhkwlive-xjp-en/index_600k.m3u8"
-
-#EXT-X-STREAM-INF:BANDWIDTH=294786,AVERAGE-BANDWIDTH=325600,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=320x180,FRAME-RATE=29.970
-#link="https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_200k.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=294786,AVERAGE-BANDWIDTH=325600,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=320x180,FRAME-RATE=29.970
-#link-="https://b-nhkwlive-xjp.webcdn.stream.ne.jp/hls/live/2003458-b/nhkwlive-xjp-en/index_200k.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=70400,CODECS="mp4a.40.5"
 #link="https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_audio.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=70400,CODECS="mp4a.40.5"
 #link="https://b-nhkwlive-xjp.webcdn.stream.ne.jp/hls/live/2003458-b/nhkwlive-xjp-en/index_audio.m3u8"
-
-
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_2100.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=1161261,AVERAGE-BANDWIDTH=1333200,CODECS="avc1.4d401f,mp4a.40.5",RESOLUTION=1280x720,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_1180.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=423432,AVERAGE-BANDWIDTH=475200,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=640x360,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_900.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=612619,AVERAGE-BANDWIDTH=695200,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=640x360,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_600.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=423432,AVERAGE-BANDWIDTH=475200,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=640x360,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_400.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=234246,AVERAGE-BANDWIDTH=255200,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=320x180,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_200.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=166402,AVERAGE-BANDWIDTH=176000,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=320x180,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_100.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=2032668,AVERAGE-BANDWIDTH=2340800,CODECS="avc1.4d401f,mp4a.40.5",RESOLUTION=1280x720,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_2M.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=1086734,AVERAGE-BANDWIDTH=1240800,CODECS="avc1.4d401f,mp4a.40.5",RESOLUTION=1280x720,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_1M.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=708360,AVERAGE-BANDWIDTH=800800,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=640x360,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_600k.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=294786,AVERAGE-BANDWIDTH=325600,CODECS="avc1.66.30,mp4a.40.5",RESOLUTION=320x180,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_200k.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=3992642,AVERAGE-BANDWIDTH=4620000,CODECS="avc1.4d4029,mp4a.40.2,mp4a.40.5",RESOLUTION=1920x1080,FRAME-RATE=29.970,AUDIO="program_audio"
-#link="https://b-nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp/index_4200.m3u8"
 
 fi
 ###method="Tor"
@@ -1219,7 +1190,6 @@ link="https://liveedge-arisenews.visioncdn.com/live-hls/arisenews/arisenews/aris
 #link="https://liveedge-arisenews.visioncdn.com/live-hls/arisenews/arisenews/arisenews_web/media_2.m3u8"
 #link="https://liveedge-arisenews.visioncdn.com/live-hls/arisenews/arisenews/arisenews_web/media_0.m3u8"
 
-
 fi
 #method="Tor"
 use_cookies="no"
@@ -1228,86 +1198,30 @@ chan_name="Arise News Nigeria";;
 
 # 26) Africa News Live
 26)
-keyword="africanews Live"
+keyword="Live"
 
-# DAILYMOTION
-#link=https://www.dailymotion.com/video/x6i7vf8
-#YOUTUBE
-#link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/channel/UC1_E8NeF5QHY2dtdLRBCCLA/videos?&view=2" |  grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
+## YOUTUBE
+#channelURL="https://www.youtube.com/@africanews/streams"
+#youTubeGrab
 
-# SOURCE 
+# UPSTREAM SOURCE 
 #https://www.africanews.com/api/watchlive.json
 #radix=$ ( curl "https://www.africanews.com/api/watchlive.json" ) 
 
-#link=$(curl  --socks5 "$torsocks_ip":"$torsocks_port" "https:$(curl "https://www.africanews.com/api/watchlive.json" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 )
+link="https:"$(curl -A "$UA" "https://www.africanews.com/api/watchlive.json" | cut -d : -f 3 | cut -d \} -f 1 |sed 's/[\\"]//g')""
 
-
-radix="$(curl -A "$UA" "https:"$(curl -A "$UA" "https://www.africanews.com/api/watchlive.json" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')"" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 | cut -d \/ -f 1,2,3,4,5,6,7,8 )"
-
-#link="$radix/playlist.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3300000,RESOLUTION=1280x720
-link="$radix/afrnabren_eng_720p33.m3u8"
-#link="$radix/ewnsabren_eng_720p33.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2000000,RESOLUTION=1280x720
-#link="$radix/afrnabren_eng_720p20.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=900000,RESOLUTION=1024x576
-#link="$radix/afrnabren_eng_576p.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=500000,RESOLUTION=848x480
-#link="$radix/afrnabren_eng_480p.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=250000,RESOLUTION=640x360
-#link="$radix/afrnabren_eng_360p.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=120000,RESOLUTION=432x240
-#link="$radix/afrnabren_eng_240p.m3u8"
-
+#### NOT WORKING // Investigate
+#base="https:"$(curl -A "$UA" "https://www.africanews.com/api/watchlive.json" | cut -d : -f 3 | cut -d \} -f 1 |sed 's/[\\"]//g' | cut -d \/ -f 1,2,3,4,5,6,7)"/"
+#speed=3300000
+#postfix="$(curl -A "$UA" "https:"$(curl -A "$UA" "https://www.africanews.com/api/watchlive.json" | cut -d : -f 3 | cut -d \} -f 1 |sed 's/[\\"]//g')""|grep "$speed")"
+#link="$base"/"$postfix"
 
 use_cookies="no"
 chan_name="Africa News English";;
 
-
-
 ##################    ALTERNATIVE MEDIA   ##################################################
-# 27) NEWSMAX USA
+# 27)Free Speech TV
 27)
-
-if [ "$getlink" = 1 ]
-then
-#link=httpS://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/a.m3u8
-#link=http://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_720.m3u8
-##link=http://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_480.m3u8
-#link=http://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_360.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=5640800,AVERAGE-BANDWIDTH=5640800,CODECS="avc1.4d4028,mp4a.40.2",RESOLUTION=1920x1080,FRAME-RATE=30.000,SUBTITLES="subs"
-link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_1080.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=2890800,AVERAGE-BANDWIDTH=2890800,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=1280x720,FRAME-RATE=30.000,SUBTITLES="subs"
-#link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_720.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=1425600,AVERAGE-BANDWIDTH=1425600,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=720x404,FRAME-RATE=30.000,SUBTITLES="subs"
-#link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_404.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=875600,AVERAGE-BANDWIDTH=875600,CODECS="avc1.4d4015,mp4a.40.2",RESOLUTION=512x288,FRAME-RATE=30.000,SUBTITLES="subs"
-#link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_288.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=589600,AVERAGE-BANDWIDTH=589600,CODECS="avc1.4d400d,mp4a.40.2",RESOLUTION=384x216,FRAME-RATE=30.000,SUBTITLES="subs"
-#link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_218.m3u8
-#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="English",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="eng",URI="index_cc.m3u8"
-
-# link=https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
-
-# "https://www.newsmaxtv.com/"
-# link=https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
-#link="http://ooyalahd2-f.akamaihd.net/i/newsmax02_delivery@119568/master.m3u8"
-# link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/NewsmaxTV/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
-
-############## YOUTUBE
-#keyword="LIVE"
-#channelURL="https://www.youtube.com/c/NewsmaxtvLive/videos?view=2&live_view=501"
-#youTubeGrab
-
-
-fi
-##method="Tor"
-use_cookies="no"
-TAG="NEWSMAX___"
-chan_name="NEWSMAX USA";;
-
-# 28)Free Speech TV
-28)
 if [ "$getlink" = 1 ]
 then
 
@@ -1326,6 +1240,46 @@ fi
 use_cookies="no"
 TAG="FREESPEECH"
 chan_name="Free Speech TV" ;;
+
+# 28) NEWSMAX USA
+28)
+
+if [ "$getlink" = 1 ]
+then
+#link=httpS://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/a.m3u8
+#link=http://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_720.m3u8
+##link=http://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_480.m3u8
+#link=http://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_360.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=5640800,AVERAGE-BANDWIDTH=5640800,CODECS="avc1.4d4028,mp4a.40.2",RESOLUTION=1920x1080,FRAME-RATE=30.000,SUBTITLES="subs"
+#link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_1080.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2890800,AVERAGE-BANDWIDTH=2890800,CODECS="avc1.4d401f,mp4a.40.2",RESOLUTION=1280x720,FRAME-RATE=30.000,SUBTITLES="subs"
+#link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_720.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1425600,AVERAGE-BANDWIDTH=1425600,CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=720x404,FRAME-RATE=30.000,SUBTITLES="subs"
+#link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_404.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=875600,AVERAGE-BANDWIDTH=875600,CODECS="avc1.4d4015,mp4a.40.2",RESOLUTION=512x288,FRAME-RATE=30.000,SUBTITLES="subs"
+#link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_288.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=589600,AVERAGE-BANDWIDTH=589600,CODECS="avc1.4d400d,mp4a.40.2",RESOLUTION=384x216,FRAME-RATE=30.000,SUBTITLES="subs"
+#link=https://cdnapi.kaltura.com/p/2216081/sp/221608100/playManifest/entryId/1_f19eeulz/format/applehttp/protocol/http/uiConfId/28428751/index_218.m3u8
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="English",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="eng",URI="index_cc.m3u8"
+
+link=https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
+
+# "https://www.newsmaxtv.com/"
+# link=https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8
+#link="http://ooyalahd2-f.akamaihd.net/i/newsmax02_delivery@119568/master.m3u8"
+# link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/NewsmaxTV/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
+
+############## YOUTUBE
+#keyword="LIVE"
+#channelURL="https://www.youtube.com/c/NewsmaxtvLive/videos?view=2&live_view=501"
+#youTubeGrab
+
+
+fi
+##method="Tor"
+use_cookies="no"
+TAG="NEWSMAX___"
+chan_name="NEWSMAX USA";;
 
 # 29)  Infowars Live Alex Jones Show
 29)
