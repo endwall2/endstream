@@ -7,8 +7,8 @@
 # Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63587
-# Revision Date: July 12, 2024
+# Version: 0.63589
+# Revision Date: July 14, 2024
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63587"
-rev_date="12/07/2024"
+version="0.63589"
+rev_date="14/07/2024"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##########################################################
@@ -196,8 +196,8 @@ channel_matrix_0()
    echo "4)Bloomberg USA       44)CGTN Documentary 84)RT France         124)France24 Espanol 164)Tagesschau/MOMA DE204)RTM Arcevia IT            244)DW Arabic"
    echo "5)Newsy USA           45)CBC CA           85)France Info TV    125)TeleSUR VE       165)RT DE             205)Udinese IT                245)CGTN Arabic"
    echo "6)Cheddar News        46)CPAC 1 CA        86)CGTN Francais     126)Hispan TV IR     166)QVC DE            206)50NewsVersiliaViareggio IT246)Al Jazeera QA"
-   echo "7)Global News CA      47)DC Network       87)Africa News       127)Malaga TV ES     167)ADR Alpha DE      207)50 Canale Pisa IT         247)Al Jazeera Mubasher QA"
-   echo "8)CBC NewsNet CA      48)DC Capitol       88)RDI ICI CA        128)C5N AR           168)Radio 21 DE       208)Teleliberta Piacenza IT   248)Al Arabiya AE"
+   echo "7)CBC NewsNet CA      47)DC Network       87)Africa News       127)Malaga TV ES     167)ADR Alpha DE      207)50 Canale Pisa IT         247)Al Jazeera Mubasher QA"
+   echo "8)Global News CA      48)DC Capitol       88)RDI ICI CA        128)C5N AR           168)Radio 21 DE       208)Teleliberta Piacenza IT   248)Al Arabiya AE"
    echo "9)CityNews East CA    49)DC Knowledge     89)ICI Tele AB CA    129)AcequiaMendozaAR 169)DW Deutsch + DE   209)Top News Albania          249)Al Mayadeen LB"
    echo "10)CityNews West CA   50)MNN HD NY USA    90)TVA CA            130)Todo Noticias AR 170)Baden TV DE       210)Star Lamia GR             250)Belqees TV YE"
    echo "11)TeleSUR Eng VE     51)MNN 1 NY USA     91)France 2          131)La Nacion AR     171)W24 Wein AT       211)Action 24 GR              251)Sky Arabic AE"
@@ -558,10 +558,10 @@ chan_name="CBSN" ;;
 
 # 2) NBC News Live
 2)
-keyword="LIVE"
+keyword="LIVE:"
 ## YOUTUBE
-channelURL="https://www.youtube.com/@NBCNews/featured"
-youTubeGrab3
+channelURL="https://www.youtube.com/@NBCNews/streams"
+youTubeNBCGrab
 use_cookies="no"
 chan_name="NBC News Live";;
 
@@ -819,11 +819,11 @@ chan_name="Euronews English";;
 
 # 13) GB News
 13)
-keyword="GB News Live"
+keyword="Live"
 ## YOUTUBE
-channelURL="https://www.youtube.com/@GBNewsOnline/streams"
-#youTubeGrab3
-googleGBNews2
+channelURL="https://www.youtube.com/@GBNewsOnline/featured"
+youTubeGrab
+#googleGBNews2
 use_cookies="no"
 chan_name="GB News";;
 
@@ -2391,21 +2391,10 @@ then
 
 #link="https://www.dailymotion.com/video/x6i37o5"
 
-radix="$(curl -A "$UA" "https:"$(curl -A "$UA" "https://fr.africanews.com/api/watchlive.json" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')"" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 | cut -d \/ -f 1,2,3,4,5,6,7,8 )"
+## Broken
+#radix="$(curl -A "$UA" "https:"$(curl -A "$UA" "https://fr.africanews.com/api/watchlive.json" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')"" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 | cut -d \/ -f 1,2,3,4,5,6,7,8 )"
 
-#link="$radix/playlist.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3300000,RESOLUTION=1280x720
-#link="$radix/afrnabrfr_fre_720p33.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2000000,RESOLUTION=1280x720
-link="$radix/afrnabrfr_fre_720p20.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=900000,RESOLUTION=1024x576
-#link="$radix/afrnabrfr_fre_576p.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=500000,RESOLUTION=848x480
-#link="$radix/afrnabrfr_fre_480p.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=250000,RESOLUTION=640x360
-#link="$radix/afrnabrfr_fre_360p.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=120000,RESOLUTION=432x240
-#link="$radix/afrnabrfr_fre_240p.m3u8"
+link="https:"$(curl -A "$UA" "https://fr.africanews.com/api/watchlive.json" | cut -d : -f 3 | cut -d \} -f 1 |sed 's/[\\"]//g')""
 
 fi
 
@@ -2457,15 +2446,11 @@ chan_name="ICI Tele Alberta" ;;
 
 if [ "$getlink" = 1 ]
 then
-
-link="https://tvalive-nondai.akamaized.net/Content/HLS/Live/channel(a7315e07-037c-12a8-bdc8-da7bd513da9d)/index.m3u8"
-#link="https://tvalive-nondai.akamaized.net/Content/HLS/Live/channel(a7315e07-037c-12a8-bdc8-da7bd513da9d)/01.m3u8"
-#link="https://tvalive-nondai.akamaized.net/Content/HLS/Live/channel(a7315e07-037c-12a8-bdc8-da7bd513da9d)/02.m3u8"
-#link="https://tvalive-nondai.akamaized.net/Content/HLS/Live/channel(a7315e07-037c-12a8-bdc8-da7bd513da9d)/03.m3u8"
-#link="https://tvalive-nondai.akamaized.net/Content/HLS/Live/channel(a7315e07-037c-12a8-bdc8-da7bd513da9d)/04.m3u8"
-#link="https://tvalive-nondai.akamaized.net/Content/HLS/Live/channel(a7315e07-037c-12a8-bdc8-da7bd513da9d)/05.m3u8"
-
-
+website="https://www.tvaplus.ca/tva/en-direct"
+eventID="5DUWih-wSeOUg9zszuE-Jw"
+ppid="3bfa058d-32e0-445f-8916-182983ced72c"
+api_key="0A753C2A9BE994A75562DD9EAE366396307A3E2F489D692A561E2D3665AB1069"
+googleGrab2
 fi
 use_cookies="no"
 #method="Tor"
@@ -2549,11 +2534,11 @@ chan_name="Alsace 20 France" ;;
 # 97) Mosaik TV Francais
 97)
 keyword="Cristal"
-channelURL="https://www.youtube.com/user/mosaiktv/videos?&view=2&live_view=501"
+channelURL="https://www.youtube.com/user/mosaiktv/streams"
 if [ "$getlink" = 1 ]
 then
 # set the link
-youTubeGrab
+youTubeGrab3
 fi
 
 ## method="Tor"
@@ -2649,7 +2634,7 @@ chan_name="Assemblee Nationale du Quebec Francais Canada" ;;
 
 if [ "$getlink" = 1 ]
 then
-link=http://149.202.81.107:1935/stream/live/playlist.m3u8
+link="https://149.202.81.107:1935/stream/live/playlist.m3u8"
 
 fi
 use_cookies="no"
@@ -2661,7 +2646,7 @@ chan_name="BX1 BE" ;;
 
 if [ "$getlink" = 1 ]
 then
-link=https://www.dailymotion.com/video/x26eox4_live-franceinfo-direct-radio_news
+link="https://www.dailymotion.com/video/x26eox4_live-franceinfo-direct-radio_news"
 fi
 format=hls-380
 use_cookies="no"
@@ -2673,7 +2658,7 @@ chan_name="France Info Radio" ;;
 
 if [ "$getlink" = 1 ]
 then
-link=https://www.dailymotion.com/video/xqjkfz_europe-1-live_news
+link="https://www.dailymotion.com/video/xqjkfz_europe-1-live_news"
 fi
 use_cookies="no"
 #format=hls-720
@@ -2713,7 +2698,7 @@ chan_name="France Inter" ;;
 
 if [ "$getlink" = 1 ]
 then
-link=https://players.brightcove.net/876630703001/SkKvZlxI_default/index.html?videoId=2623007265001
+link="https://players.brightcove.net/876630703001/SkKvZlxI_default/index.html?videoId=2623007265001"
 fi
 use_cookies="no"
 chan_name="RMC INFO TALK SPORT France" ;;
@@ -2750,7 +2735,7 @@ chan_name="RTL2";;
 115)
 if [ "$getlink" = 1 ]
 then
-link=https://www.dailymotion.com/video/x13x1q2
+link="https://www.dailymotion.com/video/x13x1q2"
 fi
 use_cookies="no"
 #method="Tor"
@@ -2792,8 +2777,11 @@ if [ "$getlink" = 1 ]
 then
 #link="http://fr.euronews.com/live"
 
-base_url="https://fr.euronews.com/api/watchlive.json"
-radix="$(curl --socks5 "$torsocks_ip":"$torsocks_port" -A "$UA" "https:$(curl -A "$UA"  "$base_url" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 | cut -d \/ -f 1,2,3,4,5,6,7,8 )"
+#base_url="https://fr.euronews.com/api/watchlive.json"
+#radix="$(curl --socks5 "$torsocks_ip":"$torsocks_port" -A "$UA" "https:$(curl -A "$UA"  "$base_url" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 | cut -d \/ -f 1,2,3,4,5,6,7,8 )"
+
+link="https:"$(curl -A "$UA" "https://fr.euronews.com/api/watchlive.json" | cut -d : -f 3 | cut -d \} -f 1 |sed 's/[\\"]//g')""
+
 
 #link="$radix/playlist.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3300000,RESOLUTION=1280x720
@@ -2801,7 +2789,7 @@ radix="$(curl --socks5 "$torsocks_ip":"$torsocks_port" -A "$UA" "https:$(curl -A
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2000000,RESOLUTION=1280x720
 #link="$radix/ewnsabrfr_fre_720p20.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=900000,RESOLUTION=1024x576
-link="$radix/ewnsabrfr_fre_576p.m3u8"
+#link="$radix/ewnsabrfr_fre_576p.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=500000,RESOLUTION=848x480
 #link="$radix/ewnsabrfr_fre_480p.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=250000,RESOLUTION=640x360
@@ -2906,8 +2894,8 @@ then
 #link=http://static.france24.com/live/F24_ES_HI_HLS/live_tv.m3u8
 
 keyword="VIVO"
-channelURL="https://www.youtube.com/c/FRANCE24Espa%C3%B1ol/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/c/FRANCE24Espa%C3%B1ol/streams"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -2939,11 +2927,10 @@ keyword="HispanTV"
 
 if [ "$getlink" = 1 ]
 then
-#link="https://cdnlive.presstv.ir/cdnlive/smil:live.smil/playlist.m3u8"
-link="https://cdnlive.presstv.ir/cdnlive/smil:live.smil/playlist.m3u8"
+link="https://live.presstv.ir/hls/hispantv_5_482/index.m3u8"
 
 #channelURL="https://www.youtube.com/user/hispantv/featured"
-#youtubeGrab
+#youtubeGrab3
 fi
 use_cookies="no"
 chan_name="HispanTV Iran" ;;
@@ -2956,7 +2943,7 @@ if [ "$getlink" = 1 ]
 then
 
 channelURL="https://www.youtube.com/Malaga24h/featured"
-youTubeGrab
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -2972,7 +2959,7 @@ if [ "$getlink" = 1 ]
 then
 
 channelURL="https://www.youtube.com/user/c5n/featured"
-youTubeGrab
+youTubeGrab3
 
 # link=http://www.c5n.com/
 fi
@@ -2999,8 +2986,8 @@ keyword="vivo"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCj6PcyLvpnIRT_2W_mwa9Aw/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCj6PcyLvpnIRT_2W_mwa9Aw/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3014,7 +3001,7 @@ if [ "$getlink" = 1 ]
 then
 
 channelURL="https://www.youtube.com/user/LaNacionTV/featured"
-youTubeGrab
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3024,8 +3011,8 @@ chan_name="La Nacion TV Argentina";;
 132)
 keyword="A24"
 
-channelURL="https://www.youtube.com/channel/UCR9120YBAqMfntqgRTKmkjQ/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCR9120YBAqMfntqgRTKmkjQ/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="A24 Argentina";;
@@ -3038,8 +3025,8 @@ keyword="VIVO"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCv0zRACOVWmhu1Ilufm40-w/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCv0zRACOVWmhu1Ilufm40-w/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3085,8 +3072,8 @@ keyword="VIVO"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/webcanal7mendoza/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/webcanal7mendoza/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3098,8 +3085,8 @@ keyword="directo"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCnfpjpEMfxPXAI3Nc23MTWA/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCnfpjpEMfxPXAI3Nc23MTWA/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3112,8 +3099,8 @@ keyword="CN23"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCC05qIa00qEB06CtCi01NbQ/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCC05qIa00qEB06CtCi01NbQ/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3142,8 +3129,8 @@ keyword="EN VIVO"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCvCTWHCbBC0b9UIeLeNs8ug/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCvCTWHCbBC0b9UIeLeNs8ug/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3156,8 +3143,8 @@ keyword="VIVO"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/TVPublicaArgentina/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/TVPublicaArgentina/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3173,8 +3160,8 @@ keyword="Mega"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/programasmega/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/programasmega/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3189,8 +3176,8 @@ keyword="Telemedellin"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCW_16ow2scNATL0NSxlBtPg/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCW_16ow2scNATL0NSxlBtPg/featured"
+youTubeGrab3
 
 #channelURL="https://livestream.com/accounts/4608897/events/7111788/"
 #liveStreamGrab
@@ -3216,8 +3203,8 @@ keyword="Globovisión"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCfJtBtmhnIyfUB6RqXeImMw/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCfJtBtmhnIyfUB6RqXeImMw/featured"
+youTubeGrab3
 
 #link=http://www.dailymotion.com/video/xio7e2_senal-en-vivo_news
 fi
@@ -3232,8 +3219,8 @@ keyword="Vivo"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCVFiIRuxJ2GmJLUkHmlmj4w/videos?&view=2&live"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCVFiIRuxJ2GmJLUkHmlmj4w/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3260,8 +3247,8 @@ keyword="Transmisión en directo de Excélsior TV"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UClqo4ZAAZ01HQdCTlovCgkA/videos?&view=2&live"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UClqo4ZAAZ01HQdCTlovCgkA/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3300,8 +3287,8 @@ if [ "$getlink" = 1 ]
 then
 #link="http://es.euronews.com/live"
 
-base_url="https://es.euronews.com/api/watchlive.json"
-radix="$(curl --socks5 "$torsocks_ip":"$torsocks_port" -A "$UA" "https:$(curl -A "$UA"  "$base_url" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 | cut -d \/ -f 1,2,3,4,5,6,7,8 )"
+#base_url="https://es.euronews.com/api/watchlive.json"
+#radix="$(curl --socks5 "$torsocks_ip":"$torsocks_port" -A "$UA" "https:$(curl -A "$UA"  "$base_url" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 | cut -d \/ -f 1,2,3,4,5,6,7,8 )"
 
 #link="$radix/playlist.m3u8"
 #EXTM3U
@@ -3310,13 +3297,18 @@ radix="$(curl --socks5 "$torsocks_ip":"$torsocks_port" -A "$UA" "https:$(curl -A
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2000000,RESOLUTION=1280x720
 #link="$radix/ewnsabres_spa_720p20.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=900000,RESOLUTION=1024x576
-link="$radix/ewnsabres_spa_576p.m3u8"
+#link="$radix/ewnsabres_spa_576p.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=500000,RESOLUTION=848x480
 #link="$radix/ewnsabres_spa_480p.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=250000,RESOLUTION=640x360
 #link="$radix/#link="$radix/ewnsabres_spa_360p.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=120000,RESOLUTION=432x240
 #link="$radix/ewnsabres_spa_240p.m3u8"
+
+link="https:"$(curl -A "$UA" "https://es.euronews.com/api/watchlive.json" | cut -d : -f 3 | cut -d \} -f 1 |sed 's/[\\"]//g')""
+
+
+
 
 fi
 
@@ -3664,8 +3656,11 @@ then
 #link="http://ru.euronews.com/live"
 
 #link=http://evronovosti.mediacdn.ru/sr1/evronovosti/playlist.m3u8
-link=http://evronovosti.mediacdn.ru/sr1/evronovosti/playlist_2m.m3u8
+#link=http://evronovosti.mediacdn.ru/sr1/evronovosti/playlist_2m.m3u8
 #link=http://evronovosti.mediacdn.ru/sr1/evronovosti/playlist_1m.m3u8
+
+link="https:"$(curl -A "$UA" "https://ru.euronews.com/api/watchlive.json" | cut -d : -f 3 | cut -d \} -f 1 |sed 's/[\\"]//g')""
+
 fi
 use_cookies="no"
 chan_name="Euronews Russian" ;;
@@ -3677,13 +3672,13 @@ then
 #link=https://live.russia.tv/index/index/channel_id/3
 #link=https://www.filmon.com/tv/rossiya-24
 
-link="https://vk.com/video-80246985_456239779"
+#link="https://vk.com/video-80246985_456239779"
 # link="https://vk.com/video-24136539_456239830"
 # link="https://vk.com/rossia24online"
 
 
-channelURL="https://www.youtube.com/user/Russia24TV/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/Russia24TV/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3718,8 +3713,8 @@ if [ "$getlink" = 1 ]
 then
 #link=https://live.russia.tv/index/index/channel_id/199
 
-channelURL="https://www.youtube.com/user/vestifm/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/vestifm/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3778,8 +3773,8 @@ if [ "$getlink" = 1 ]
 then
 #link=http://www.ontvtime.ru/general/channel5.html
 
-channelURL="https://www.youtube.com/channel/UCGM8ZTtduKll7X8RiGe6N8g/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCGM8ZTtduKll7X8RiGe6N8g/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3791,8 +3786,8 @@ keyword="24"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/news24ru/videos?flow=grid&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/news24ru/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3815,8 +3810,8 @@ keyword="NEWSONE"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UC9oI0Du20oMOlzsLDTQGfug/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UC9oI0Du20oMOlzsLDTQGfug/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3828,8 +3823,8 @@ keyword="live"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/5channel/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/5channel/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3862,8 +3857,8 @@ keyword="LIVE"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/HromadskeTV/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/HromadskeTV/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3875,8 +3870,8 @@ keyword="LIVE"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/espresotv/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/espresotv/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -3892,13 +3887,13 @@ if [ "$getlink" = 1 ]
 then
 #link="http://de.euronews.com/live"
 
-base_url="https://de.euronews.com/api/watchlive.json"
-radix="$(curl --socks5 "$torsocks_ip":"$torsocks_port" -A "$UA" "https:$(curl -A "$UA"  "$base_url" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 | cut -d \/ -f 1,2,3,4,5,6,7,8 )"
+#base_url="https://de.euronews.com/api/watchlive.json"
+#radix="$(curl --socks5 "$torsocks_ip":"$torsocks_port" -A "$UA" "https:$(curl -A "$UA"  "$base_url" | cut -d : -f 2 | cut -d \} -f 1 |sed 's/[\\"]//g')" | cut -d \: -f 4,5 | sed 's/[\\"]//g' | cut -d \, -f 1 | cut -d \/ -f 1,2,3,4,5,6,7,8 )"
 
 #link="$radix/playlist.m3u8"
 #EXTM3U
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3300000,RESOLUTION=1280x720
-link="$radix/ewnsabrde_ger_720p33.m3u8"
+#link="$radix/ewnsabrde_ger_720p33.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2000000,RESOLUTION=1280x720
 #link="$radix/ewnsabrde_ger_720p20.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=900000,RESOLUTION=1024x576
@@ -3909,6 +3904,8 @@ link="$radix/ewnsabrde_ger_720p33.m3u8"
 #link="$radix/ewnsabrde_ger_360p.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=120000,RESOLUTION=432x240
 #link="$radix/ewnsabrde_ger_240p.m3u8"
+
+link="https:"$(curl -A "$UA" "https://de.euronews.com/api/watchlive.json" | cut -d : -f 3 | cut -d \} -f 1 |sed 's/[\\"]//g')""
 
 ### YOUTUBE
 #channelURL="https://www.youtube.com/user/euronewsde/videos?&view=2&live_view=501" 
@@ -4003,8 +4000,8 @@ keyword="QVC in diretta"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/qvcitalia/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/qvcitalia/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4147,8 +4144,8 @@ keyword="TRT"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/trthaber/videos?&view=2" 
-youTubeGrab
+channelURL="https://www.youtube.com/user/trthaber/featured" 
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4159,8 +4156,8 @@ keyword="NTV"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/ntv/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ntv/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4171,8 +4168,8 @@ keyword="Habertürk"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/TVhaberturk/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/TVhaberturk/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4183,8 +4180,8 @@ keyword="Canlı Yayın"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/STARTVSTAR/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/STARTVSTAR/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4196,8 +4193,8 @@ keyword="KRT"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCVKWwHoLwUMMa80cu_1uapA/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCVKWwHoLwUMMa80cu_1uapA/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4209,8 +4206,8 @@ keyword="TGRT"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCzgrZ-CndOoylh2_e72nSBQ/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCzgrZ-CndOoylh2_e72nSBQ/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4222,8 +4219,8 @@ keyword="TVNET Canlı Yayın"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/tvnethaber/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/tvnethaber/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4235,8 +4232,8 @@ keyword="Show"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/ShowTVShowTV/videos?flow=grid&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ShowTVShowTV/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4290,8 +4287,8 @@ then
 #link=http://static.france24.com/live/F24_AR_HI_HLS/live_tv.m3u8
 
 keyword="الأخبار "
-channelURL="https://www.youtube.com/c/FRANCE24Arabic/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/c/FRANCE24Arabic/featured"
+youTubeGrab3
 
 
 fi
@@ -4310,8 +4307,8 @@ then
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=800000,RESOLUTION=640x360,CODECS="avc1.66.30, mp4a.40.2"
 #link="https://bbcwshdlive01-lh.akamaihd.net/i/atv_1@61433/index_800_av-p.m3u8?sd=10&rebase=on"
 
-channelURL="https://www.youtube.com/user/BBCArabicNews/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/BBCArabicNews/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4334,8 +4331,8 @@ link="https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/stream04
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=6898557,AVERAGE-BANDWIDTH=5748798,CODECS="avc1.100.42,mp4a.40.2",RESOLUTION=1920x1080,FRAME-RATE=50.000,SUBTITLES="subs"
 #link="https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/stream05/streamPlaylist.m3u8"
 
-#channelURL="https://www.youtube.com/user/deutschewellearabic/videos?&view=2" 
-#youTubeGrab
+#channelURL="https://www.youtube.com/user/deutschewellearabic/featured" 
+#youTubeGrab3
 
 fi
 
@@ -4345,9 +4342,9 @@ chan_name="DW Arabic" ;;
 245)
 if [ "$getlink" = 1 ]
 then
-#link=https://live.cgtn.com/cctv-a.m3u8
+link=https://live.cgtn.com/cctv-a.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1096000,RESOLUTION=1280x720,NAME="720p HD"
-link=https://livear.cgtn.com/1000a/prog_index.m3u8
+#link=https://livear.cgtn.com/1000a/prog_index.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=564000,RESOLUTION=640x360,NAME="360p SD"
 #link=https://livear.cgtn.com/500a/prog_index.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=192000,RESOLUTION=320x180,NAME="180p 3G"
@@ -4392,8 +4389,8 @@ chan_name="Al Jazeera Arabic" ;;
 keyword="HD"
 if [ "$getlink" = 1 ]
 then
-channelURL="https://www.youtube.com/c/ajmubasher/videos?view=2&flow=grid&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/c/ajmubasher/featured"
+youTubeGrab3
 fi
 
 use_cookies="no"
@@ -4407,8 +4404,8 @@ keyword="قناة"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/AlArabiya/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/AlArabiya/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4420,8 +4417,8 @@ keyword="Live"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UC9YbjpvsFZytS0DnO1FnTKw/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UC9YbjpvsFZytS0DnO1FnTKw/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4433,8 +4430,8 @@ keyword="قناة بلقيس "
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/c/BelqeesTV/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/c/BelqeesTV/featured"
+youTubeGrab3
 
 #channelURL="https://livestream.com/accounts/12233888/events/3819374"
 #liveStreamGrab
@@ -4449,8 +4446,8 @@ keyword="البث المباشر"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/skynewsarabia/videos?&view=2&live_view=501" 
-youTubeGrab
+channelURL="https://www.youtube.com/user/skynewsarabia/featured" 
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4462,8 +4459,8 @@ keyword="Alghad"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UCH4UNKBHSNwstan99YDoCVg/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCH4UNKBHSNwstan99YDoCVg/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4475,8 +4472,8 @@ keyword="Live Stream"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UC65F33K2cXk9hGDbOQYhTOw/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UC65F33K2cXk9hGDbOQYhTOw/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4488,8 +4485,8 @@ keyword="Live"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/CBCSofraStream/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/CBCSofraStream/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4501,8 +4498,8 @@ keyword="Live"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/CBCDramaStream/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/CBCDramaStream/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4514,8 +4511,8 @@ keyword="dmc"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/channel/UClWxVmz6anf2M58vK_LHZJg/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UClWxVmz6anf2M58vK_LHZJg/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4526,9 +4523,8 @@ chan_name="DMC LIVE EG" ;;
 keyword="Afaq Tv Live"
 if [ "$getlink" = 1 ]
 then
-channelURL="https://www.youtube.com/user/afaqiraq/videos?&view=2&live_view=501"
-#channelURL="https://www.youtube.com/user/afaqiraq/videos?&view=2&live_view=503"
-youTubeGrab
+channelURL="https://www.youtube.com/user/afaqiraq/featured"
+youTubeGrab3
 fi
 use_cookies="no"
 chan_name="AFAQ TV IRAQ" ;;
@@ -4544,8 +4540,8 @@ then
 #link=https://www.bbc.com/persian/media-49522521
 link="https://vs-cmaf-pushb-ww-live.akamaized.net/x=3/i=urn:bbc:pips:service:bbc_persian_tv/pc_hd_abr_v2.mpd"
 
-#channelURL="https://www.youtube.com/user/BBCPersian/videos?&view=2&live_view=501"
-#youTubeGrab
+#channelURL="https://www.youtube.com/user/BBCPersian/featured"
+#youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4592,8 +4588,8 @@ keyword="Live"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/user/TOLOnewsLive/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/TOLOnewsLive/featured"
+youTubeGrab3
 
 fi
 use_cookies="no"
@@ -4804,8 +4800,8 @@ chan_name="KSA Quaran Radio";;
 281)
 keyword="SAMAA"
 
-channelURL="https://www.youtube.com/Samaatv/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/Samaatv/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="SAMAA TV Pakistan" ;;
@@ -4860,8 +4856,8 @@ chan_name="NDTV Profit" ;;
 287)
 keyword="Sakshi"
 
-channelURL="https://www.youtube.com/channel/UCQ_FATLW83q-4xJ2fsi8qAw/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCQ_FATLW83q-4xJ2fsi8qAw/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Shaski India" ;;
@@ -4869,8 +4865,8 @@ chan_name="Shaski India" ;;
 288)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/channel/UCYlh4lH762HvHt6mmiecyWQ/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCYlh4lH762HvHt6mmiecyWQ/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="SunNews" ;;
@@ -4878,8 +4874,8 @@ chan_name="SunNews" ;;
 289)
 keyword="TV9"
 
-channelURL="https://www.youtube.com/user/tv9telugulive/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/tv9telugulive/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="TV9 Live India";;
@@ -4887,16 +4883,16 @@ chan_name="TV9 Live India";;
 290)
 keyword="Rajya"
 
-channelURL="https://www.youtube.com/user/rajyasabhatv/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/rajyasabhatv/featured"
+youTubeGrab3
 use_cookies="no"
 chan_name="Rajya Sabha" ;;
 # 291) TV9 Gujarat
 291)
 keyword="Gujarat"
 
-channelURL="https://www.youtube.com/user/tv9gujaratlive/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/tv9gujaratlive/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="TV 9 Gujarat" ;;
@@ -4905,8 +4901,8 @@ chan_name="TV 9 Gujarat" ;;
 294)
 keyword="Aaj"
 
-channelURL="https://www.youtube.com/user/aajtaktv/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/aajtaktv/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Aaj Tak" ;;
@@ -4914,8 +4910,8 @@ chan_name="Aaj Tak" ;;
 295)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/ntvteluguhd/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ntvteluguhd/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="NTV Telugu" ;;
@@ -4923,8 +4919,8 @@ chan_name="NTV Telugu" ;;
 296)
 keyword="ABN"
 
-channelURL="https://www.youtube.com/user/abntelugutv/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/abntelugutv/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="ABN Telugu" ;;
@@ -4932,8 +4928,8 @@ chan_name="ABN Telugu" ;;
 297)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/VanithaTvChannel/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/VanithaTvChannel/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Vanitha TV" ;;
@@ -4944,8 +4940,8 @@ chan_name="Vanitha TV" ;;
 
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/IndiaTV/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/IndiaTV/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="India TV IN" ;;
@@ -4954,8 +4950,8 @@ chan_name="India TV IN" ;;
 301)
 keyword="iNews"
 
-channelURL="https://www.youtube.com/user/inews/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/inews/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="iNews Telugu" ;;
@@ -4964,8 +4960,8 @@ chan_name="iNews Telugu" ;;
 303)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/user/DDNewsofficial/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/DDNewsofficial/featured"
+youTubeGrab3
 
 use_cookies="no"
  chan_name="DD News" ;;
@@ -4973,8 +4969,8 @@ use_cookies="no"
 304)
 keyword="Live"
 
-channelURL="https://www.youtube.com/channel/UCFx1nseXKTc1Culiu3neeSQ/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCFx1nseXKTc1Culiu3neeSQ/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Reporter Live" ;;
@@ -4982,8 +4978,8 @@ chan_name="Reporter Live" ;;
 305)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/asianetnews/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/asianetnews/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="AsiaNet News" ;;
@@ -4993,8 +4989,8 @@ chan_name="AsiaNet News" ;;
 keyword="Aaj Tak"
 # AJTAK TV
 
-channelURL="https://www.youtube.com/user/aajtaktv/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/aajtaktv/featured"
+youTubeGrab3
 
 #channelURL= "https://player-api.new.livestream.com/accounts/13982572/events/4169984/"
 #liveStreamGrab
@@ -5005,8 +5001,8 @@ chan_name="Aaj Tak TV IN" ;;
 308)
 keyword="ETV"
 
-channelURL="https://www.youtube.com/user/newsetv/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/newsetv/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="ETV Andhra Pradesh" ;;
@@ -5014,8 +5010,8 @@ chan_name="ETV Andhra Pradesh" ;;
 309)
 keyword="News18"
 
-channelURL="https://www.youtube.com/channel/UCat88i6_rELqI_prwvjspRA/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCat88i6_rELqI_prwvjspRA/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="News 18 Tamilnadu" ;;
@@ -5023,8 +5019,8 @@ chan_name="News 18 Tamilnadu" ;;
 310)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/jayapluschennai/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/jayapluschennai/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Jaya Plus" ;;
@@ -5033,8 +5029,8 @@ chan_name="Jaya Plus" ;;
 keyword="Live"
 # Tez TV
 
-channelURL="https://www.youtube.com/user/teztvnews/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/teztvnews/featured"
+youTubeGrab3
 
 #channelURL="https://player-api.new.livestream.com/accounts/13995833/events/4198957/"
 #liveStreamGrab
@@ -5046,8 +5042,8 @@ chan_name="TEZ TV" ;;
 keyword="Live"
 # Dili AajTak
 
-channelURL="https://www.youtube.com/user/DilliAajtak/videos?view=2" 
-youTubeGrab
+channelURL="https://www.youtube.com/user/DilliAajtak/featured" 
+youTubeGrab3
 
 #channelURL="https://player-api.new.livestream.com/accounts/14014394/events/4198951/"
 #liveStreamGrab
@@ -5058,8 +5054,8 @@ chan_name="Dilli Aaj Tak";;
 313)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/tvderanavideos/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/tvderanavideos/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Derana Sri Lanka" ;;
@@ -5068,8 +5064,8 @@ chan_name="Derana Sri Lanka" ;;
 314)
 keyword="Live"
 
-channelURL="https://www.youtube.com/channel/UCAH7R88V7gz7RqJv78nNOzg/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCAH7R88V7gz7RqJv78nNOzg/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Swarnavahini Sri Lanka " ;;
@@ -5078,7 +5074,7 @@ chan_name="Swarnavahini Sri Lanka " ;;
 keyword="LIVE"
 
 channelURL="https://www.youtube.com/@KalaignarTVNews/streams"
-youTubeGrab
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Kalaignar News" ;;
@@ -5099,8 +5095,8 @@ chan_name="Sangat Television Birmingham England" ;;
 318)
 keyword="Live"
 
-channelURL="https://www.youtube.com/channel/UCYqujAD5831EywH1jldBu5w/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCYqujAD5831EywH1jldBu5w/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="NTV Bangladesh" ;;
@@ -5109,8 +5105,8 @@ chan_name="NTV Bangladesh" ;;
 319)
 keyword="Live"
 
-channelURL="https://www.youtube.com/channel/UCKlhfq1ILoAFav7iw5iCnfA/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCKlhfq1ILoAFav7iw5iCnfA/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="ATN Bangladesh" ;;
@@ -5119,8 +5115,8 @@ chan_name="ATN Bangladesh" ;;
 320)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/channel/UCBUJipGCEK09A8qlI6PkS4Q/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCBUJipGCEK09A8qlI6PkS4Q/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Channel 24 IN" ;;
@@ -5135,8 +5131,8 @@ chan_name="Channel 24 IN" ;;
 321)
 keyword="CCTV"
 
-channelURL="https://www.youtube.com/user/ChineseInternatioify/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ChineseInternatioify/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="CCTV 4 China" ;;
@@ -5144,9 +5140,8 @@ chan_name="CCTV 4 China" ;;
 # 322) EBC 51 News Taiwan
 322)
 keyword="EBC"
-
-channelURL="https://www.youtube.com/user/newsebc/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/newsebc/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="EBC 51 News Taiwan" ;;
@@ -5154,8 +5149,8 @@ chan_name="EBC 51 News Taiwan" ;;
 323)
 keyword="EBC"
 
-channelURL="https://www.youtube.com/user/57ETFN/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/57ETFN/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="EBC Finance News Taiwan" ;;
@@ -5163,8 +5158,8 @@ chan_name="EBC Finance News Taiwan" ;;
 324)
 keyword="TTV"
 
-channelURL="https://www.youtube.com/channel/UCzZe-zMu-YgVFQfDmsFG_VQ/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCzZe-zMu-YgVFQfDmsFG_VQ/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="TTV News Taiwan"  ;;
@@ -5172,8 +5167,8 @@ chan_name="TTV News Taiwan"  ;;
 325)
 keyword="中視新聞台 LIVE直播"
 
-channelURL="https://www.youtube.com/channel/UCmH4q-YjeazayYCVHHkGAMA/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCmH4q-YjeazayYCVHHkGAMA/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="CTV Taiwan" ;;
@@ -5181,8 +5176,8 @@ chan_name="CTV Taiwan" ;;
 326)
 keyword="live"
 
-channelURL="https://www.youtube.com/channel/UClIfopQZlkkSpM1VgCFLRJA/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UClIfopQZlkkSpM1VgCFLRJA/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="FTV Taiwan Live";;
@@ -5190,8 +5185,8 @@ chan_name="FTV Taiwan Live";;
 327)
 keyword="Live"
 
-channelURL="https://www.youtube.com/channel/UCA_hK5eRICBdSOLlXKESvEg/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCA_hK5eRICBdSOLlXKESvEg/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="CTS World News HD" ;;
@@ -5199,8 +5194,8 @@ chan_name="CTS World News HD" ;;
 328)
 keyword="SET"
 
-channelURL="https://www.youtube.com/user/setnews159/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/setnews159/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="SET News Taiwan" ;;
@@ -5208,8 +5203,8 @@ chan_name="SET News Taiwan" ;;
 329)
 keyword="CTI"
 
-channelURL="https://www.youtube.com/user/ctitv/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ctitv/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="CTI Taiwan" ;;
@@ -5217,8 +5212,8 @@ chan_name="CTI Taiwan" ;;
 330)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/user/setmoney159/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/setmoney159/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="SET iNEWS Taiwan" ;;
@@ -5226,8 +5221,8 @@ chan_name="SET iNEWS Taiwan" ;;
 331)
 keyword="Formosa"
 
-channelURL="https://www.youtube.com/channel/UClIfopQZlkkSpM1VgCFLRJA/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UClIfopQZlkkSpM1VgCFLRJA/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Formosa News HD Taiwan";;
@@ -5236,8 +5231,8 @@ chan_name="Formosa News HD Taiwan";;
 keyword="大愛海外頻道"
 #link=https://www.dailymotion.com/video/x5crdro
 
-channelURL="https://www.youtube.com/user/DaAiVideo/videos?&view=2&live_view=501" 
-youTubeGrab
+channelURL="https://www.youtube.com/user/DaAiVideo/featured" 
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Tzu Chi DaAi World Taiwan" ;;
@@ -5245,8 +5240,8 @@ chan_name="Tzu Chi DaAi World Taiwan" ;;
 333)
 keyword="全球直播"
 
-channelURL="https://www.youtube.com/user/DaAiVideo/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/DaAiVideo/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Tzu Chi DaAiVideo 1" ;;
@@ -5254,8 +5249,8 @@ chan_name="Tzu Chi DaAiVideo 1" ;;
 334)
 keyword="直播"
 
-channelURL="https://www.youtube.com/user/DaAiVideo/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/DaAiVideo/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Tzu Chi DaAiVideo 2" ;;
@@ -5263,8 +5258,8 @@ chan_name="Tzu Chi DaAiVideo 2" ;;
 335)
 keyword="信大電視台"
 
-channelURL="https://www.youtube.com/channel/UCZIvbuuP-xGgMG-_0tLLadg/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCZIvbuuP-xGgMG-_0tLLadg/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Sinda Television" ;;
@@ -5272,8 +5267,8 @@ chan_name="Sinda Television" ;;
 336)
 keyword="Live"
 
-channelURL="https://www.youtube.com/channel/UCA_hK5eRICBdSOLlXKESvEg/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCA_hK5eRICBdSOLlXKESvEg/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="CTS World News HD 2" ;;
@@ -5281,8 +5276,8 @@ chan_name="CTS World News HD 2" ;;
 337)
 keyword="SJTV"
 
-channelURL="https://www.youtube.com/user/SJTVonline/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/SJTVonline/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="SJTV TW";;
@@ -5298,8 +5293,8 @@ chan_name="LLBN Chinese  TV" ;;
 339)
 keyword="04CH"
 
-channelURL="https://www.youtube.com/channel/UCBWzi-vMywDa05QYA2jHxwQ/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCBWzi-vMywDa05QYA2jHxwQ/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="SDTV 04CH TW" ;;
@@ -5307,8 +5302,8 @@ chan_name="SDTV 04CH TW" ;;
 340)
 keyword="番薯衛星電視台現場直播"
 
-channelURL="https://www.youtube.com/channel/UC2UCHUxTWVkSqP6MILU5Bqw/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UC2UCHUxTWVkSqP6MILU5Bqw/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Fans TV TW" ;;
@@ -5322,8 +5317,8 @@ chan_name="Hong Kong TV" ;;
 342)
 keyword="ontv"
 
-channelURL="https://www.youtube.com/channel/UCZ79ABUb7OO4iMiNK2QPM7g/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCZ79ABUb7OO4iMiNK2QPM7g/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="OnTV Hong Kong";;
@@ -5348,8 +5343,8 @@ chan_name="KCTV North Korea Central Television";;
 345)
 keyword="Arirang TV"
 
-channelURL="https://www.youtube.com/user/arirangkorean/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/arirangkorean/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Arirang Culture TV Korean" ;;
@@ -5359,8 +5354,8 @@ chan_name="Arirang Culture TV Korean" ;;
 346)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/channel/UC5HSw5OY2vfVFSihpiB-AVQ/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UC5HSw5OY2vfVFSihpiB-AVQ/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="TBS Live Korea" ;;
@@ -5369,8 +5364,8 @@ chan_name="TBS Live Korea" ;;
 347)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/user/ytndmb/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ytndmb/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="YTN DMB Korea" ;;
@@ -5379,8 +5374,8 @@ chan_name="YTN DMB Korea" ;;
 348)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/user/ytnscience/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ytnscience/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="YTN Science Korea" ;;
@@ -5389,8 +5384,8 @@ chan_name="YTN Science Korea" ;;
 349)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/channel/UCTHCOPwqNfZ0uiKOvFyhGwg/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCTHCOPwqNfZ0uiKOvFyhGwg/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Channel 23 Korea" ;;
@@ -5398,8 +5393,8 @@ chan_name="Channel 23 Korea" ;;
 350)
 keyword="On-Air"
 
-channelURL="https://www.youtube.com/channel/UCWw_gejTX29Yn89LLpcINZQ/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCWw_gejTX29Yn89LLpcINZQ/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="KBS World 24 News" ;;
@@ -5408,8 +5403,8 @@ chan_name="KBS World 24 News" ;;
 351)
 keyword="YTN LIVE"
 
-channelURL="https://www.youtube.com/user/ytnnews24/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ytnnews24/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="YTN LIVE Korea" ;;
@@ -5447,8 +5442,8 @@ chan_name="YTV America Live Korean LA CA USA" ;;
 356)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/user/ANNnewsCH/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ANNnewsCH/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="ANN News 24 Japan" ;;
@@ -5457,8 +5452,8 @@ chan_name="ANN News 24 Japan" ;;
 357)
 keyword="LIVE"
 
-channelURL="https://www.youtube.com/channel/UCNsidkYpIAQ4QaufptQBPHQ/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCNsidkYpIAQ4QaufptQBPHQ/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Sol!ve 24 Japan";;
@@ -5467,8 +5462,8 @@ chan_name="Sol!ve 24 Japan";;
 358)
 keyword="KBSLIVE24"
 
-channelURL="https://www.youtube.com/channel/UChSodm7QfwnUqD63BpqZC6Q/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UChSodm7QfwnUqD63BpqZC6Q/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="KBS Live 24 Japan" ;;
@@ -5478,8 +5473,8 @@ chan_name="KBS Live 24 Japan" ;;
 keyword="QVC"
 #link="https://cdn-live1.qvc.jp/iPhone/1501/1501.m3u8"
 
-channelURL="https://www.youtube.com/user/QVCJapan/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/QVCJapan/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="QVC JAPAN SHOPPING CHANNEL" ;;
@@ -5488,8 +5483,8 @@ chan_name="QVC JAPAN SHOPPING CHANNEL" ;;
 360)
 keyword="BSC24-第1"
 
-channelURL="https://www.youtube.com/user/bousaishare/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/bousaishare/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="BSC 24 1" ;;
@@ -5500,8 +5495,8 @@ chan_name="BSC 24 1" ;;
 361)
 keyword="DZMM Audio Streaming"
 
-channelURL="https://www.youtube.com/channel/UCs_VNu-FQ0WcJnD4QkmIL5w/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCs_VNu-FQ0WcJnD4QkmIL5w/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="DZMM Philippeans" ;;
@@ -5509,8 +5504,8 @@ chan_name="DZMM Philippeans" ;;
 362)
 keyword="PTV Live Stream"
 
-channelURL="https://www.youtube.com/user/PTVPhilippines/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/PTVPhilippines/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="PTV Philippines";;
@@ -5520,8 +5515,8 @@ chan_name="PTV Philippines";;
 363)
 keyword="NET"
 
-channelURL="https://www.youtube.com/user/NetTVInsight/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/NetTVInsight/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Net TV Jakarta Indonesia" ;;
@@ -5556,8 +5551,8 @@ chan_name="Viet Sky TV Anaheim California" ;;
 370)
 keyword="地震監視・24時間LIVE"
 
-channelURL="https://www.youtube.com/channel/UCmw7DsSCQzRcRG6-SHE_ksg/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCmw7DsSCQzRcRG6-SHE_ksg/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Earthquake 24" ;;
@@ -5565,8 +5560,8 @@ chan_name="Earthquake 24" ;;
 371)
 keyword="Arirang TV"
 
-channelURL="https://www.youtube.com/user/arirangnews/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/arirangnews/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Arirang News TV" ;;
@@ -5591,8 +5586,8 @@ chan_name="Arirang TV Korea" ;;
 373)
 keyword="BSC24-第2"
 
-channelURL="https://www.youtube.com/channel/UCeEkbpBLgTEHy9NP-JHnPYQ/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCeEkbpBLgTEHy9NP-JHnPYQ/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="BSC 24 2" ;;
@@ -5605,16 +5600,16 @@ chan_name="BSC 24 2" ;;
 keyword="africanews Live"
 #link=https://www.dailymotion.com/video/x6i7vf8
 
-channelURL="https://www.youtube.com/channel/UC1_E8NeF5QHY2dtdLRBCCLA/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UC1_E8NeF5QHY2dtdLRBCCLA/featured"
+youTubeGrab3
 use_cookies="no"
 chan_name="Africa News English";;
 # 379) Africa24 Francaise
 379)
 keyword="Africa24 Live"
 
-channelURL="https://www.youtube.com/user/Africa24/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/Africa24/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Africa24 Francais" ;;
@@ -5622,8 +5617,8 @@ chan_name="Africa24 Francais" ;;
 380)
 keyword="SIKKA TV"
 
-channelURL="https://www.youtube.com/channel/UCplwKOWLV8s2XZBMsimOjvg/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCplwKOWLV8s2XZBMsimOjvg/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="SIKKA TV Afrique Francais" ;;
@@ -5634,8 +5629,8 @@ keyword="Channels Television"
 #link=http://31.24.228.207:1935/live/smil:channelstv.smil/playlist.m3u8
 #link=http://31.24.228.207:1935/live/mobile_240p/playlist.m3u8
 
-channelURL="https://www.youtube.com/user/channelsweb/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/channelsweb/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Channels 24 Nigeria NG";;
@@ -5644,8 +5639,8 @@ chan_name="Channels 24 Nigeria NG";;
 keyword="TVC News Nigeria"
 #link=http://77.92.76.135:1935/tvcnews/livestream/playlist.m3u8
 
-channelURL="https://www.youtube.com/channel/UCgp4A6I8LCWrhUzn-5SbKvA/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCgp4A6I8LCWrhUzn-5SbKvA/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="TVC News Nigeria NG";;
@@ -5653,8 +5648,8 @@ chan_name="TVC News Nigeria NG";;
 383)
 keyword="NTV"
 
-channelURL="https://www.youtube.com/user/ntvuganda/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ntvuganda/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="NTV Uganda UG" ;;
@@ -5662,8 +5657,8 @@ chan_name="NTV Uganda UG" ;;
 384)
 keyword="SPARK TV"
 
-channelURL="https://www.youtube.com/user/ntvuganda/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ntvuganda/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="SPARK TV Uganda UG" ;;
@@ -5671,8 +5666,8 @@ chan_name="SPARK TV Uganda UG" ;;
 385)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/standardgroupkenya/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/standardgroupkenya/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="KTN Kenya KE" ;;
@@ -5699,8 +5694,8 @@ chan_name="KTN Home Kenya KE" ;;
 388)
 keyword="Joy News"
 
-channelURL="https://www.youtube.com/user/myjoyonlinetube/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/myjoyonlinetube/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Joy News Ghana GH";;
@@ -5708,8 +5703,8 @@ chan_name="Joy News Ghana GH";;
 389)
 keyword="Adom"
 
-channelURL="https://www.youtube.com/user/adomtvtube/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/adomtvtube/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="ADOM TV Ghana GH" ;;
@@ -5717,8 +5712,8 @@ chan_name="ADOM TV Ghana GH" ;;
 390)
 keyword="Bukedde"
 
-channelURL="https://www.youtube.com/user/bukeddetv/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/bukeddetv/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Bukedde TV GH";;
@@ -5726,8 +5721,8 @@ chan_name="Bukedde TV GH";;
 391)
 keyword="\#EBC"
 
-channelURL="https://www.youtube.com/channel/UCOhrz3uRCOHmK6ueUstw7_Q/videos?view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCOhrz3uRCOHmK6ueUstw7_Q/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="EBC Ethiopia";;
@@ -5743,10 +5738,10 @@ use_cookies="yes"
 chan_name="EriTV Eritrea ET" ;;
 # 394)SABC Digital News South Africa ZA
 394)
-keyword="2019"
+keyword="LIVE"
 
-channelURL="https://www.youtube.com/user/sabcdigitalnews/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/sabcdigitalnews/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="SABC News South Africa ZA" ;;
@@ -5762,8 +5757,8 @@ chan_name="iTV Networks South Africa ZA" ;;
 396)
 keyword="Plenary"
 
-channelURL="https://www.youtube.com/user/ParliamentofRSA/videos?flow=grid&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/ParliamentofRSA/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Parliament of the Republic of South Africa ZA" ;;
@@ -5791,8 +5786,8 @@ chan_name="DBM TV" ;;
 401)
 keyword="RSBN"
 
-channelURL="https://www.youtube.com/user/rightsideradio/videos?&view=2&live_view=501"
-youTubeGrab
+channelURL="https://www.youtube.com/user/rightsideradio/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="RSBN Right Side Broadcasting Auburn Alabama USA"  ;;
@@ -5801,8 +5796,8 @@ chan_name="RSBN Right Side Broadcasting Auburn Alabama USA"  ;;
 402)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/NBC2swfl/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/NBC2swfl/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="NBC2 South West Florida" ;;
@@ -5811,7 +5806,7 @@ chan_name="NBC2 South West Florida" ;;
 # 403) PBS NewsHour Video
 403)
 keyword="PBS NewsHour"
-channelURL="https://www.youtube.com/user/PBSNewsHour/videos?&view=2"
+channelURL="https://www.youtube.com/user/PBSNewsHour/videos"
 youTubeGrab
 
 use_cookies="no"
@@ -5820,10 +5815,8 @@ chan_name="PBS NewsHour Video" ;;
 # 404)  CBC The National
 404)
 keyword="The National"
-
-channelURL="https://www.youtube.com/user/CBCTheNational/videos?&view=2"
-youTubeGrab
-
+channelURL="https://www.youtube.com/user/CBCTheNational/videos"
+youTubeGrab3
 use_cookies="no"
 chan_name="CBC The National" ;;
 
@@ -5831,7 +5824,7 @@ chan_name="CBC The National" ;;
 405)
 keyword="Top"
 channelURL="https://www.youtube.com/user/AssociatedPress/videos"
-youTubeGrab
+youTubeGrab3
 use_cookies="no"
 chan_name="AP Top Stories" ;;
 
@@ -5839,7 +5832,7 @@ chan_name="AP Top Stories" ;;
 406)
 keyword="Headlines"
 channelURL="https://www.youtube.com/user/democracynow/videos"
-youTubeGrab
+youTubeGrab3
 use_cookies="no"
 chan_name="Democracy Now Headlines" ;;
 
@@ -6101,8 +6094,8 @@ link="https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn1us/high.m3u8"
 #link="https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn1us/medlow.m3u8"
 
 #### YOUTUBE
-#channelURL="https://www.youtube.com/user/hsntv/videos?view=2&live_view=501"
-#youTubeGrab2
+#channelURL="https://www.youtube.com/user/hsntv/featured"
+#youTubeGrab3
 
 use_cookies="no"
 chan_name="Home Shopping Network HSN" ;;
@@ -6123,8 +6116,8 @@ link="https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn2us/high.m3u8"
 
 ############### YOUTUBE
 #keyword="HSN2"
-#channelURL="https://www.youtube.com/user/hsntv/videos?view=2&live_view=501"
-#youTubeGrab
+#channelURL="https://www.youtube.com/user/hsntv/featured"
+#youTubeGrab3
 
 use_cookies="no"
 chan_name="HSN2" ;;
@@ -6657,8 +6650,8 @@ chan_name="rhinospirit" ;;
 481)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/vatican/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/vatican/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Vatican Media" ;;
@@ -6790,47 +6783,47 @@ chan_name="TRWAM TV 2 Poland" ;;
 #########################  CHRISTIAN ################################################
 # 496) CBN
 496)
-#link=http://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/master.m3u8
+link="https://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/master.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=564000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_500_av-p.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_500_av-p.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=564000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_500_av-b.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_500_av-b.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1264000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-link="http://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_1200_av-p.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_1200_av-p.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1264000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_1200_av-b.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_1200_av-b.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2064000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_2000_av-p.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_2000_av-p.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2064000,RESOLUTION=1280x720,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_2000_av-b.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_2000_av-b.m3u8?sd=10&rebase=on"
 use_cookies="no"
 chan_name="CBN" ;;
 # 497)CBN News
 497)
-#link=http://bcliveuniv-lh.akamaihd.net/i/news_1@194050/master.m3u8
+link="https://bcliveuniv-lh.akamaihd.net/i/news_1@194050/master.m3u8"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=364000,RESOLUTION=480x270,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_150_av-p.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_150_av-p.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=364000,RESOLUTION=480x270,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_150_av-b.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_150_av-b.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=664000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_500_av-p.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_500_av-p.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=664000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_500_av-b.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_500_av-b.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1264000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-link="http://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_900_av-p.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_900_av-p.m3u8?sd=10&rebase=on"
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1264000,RESOLUTION=854x480,CODECS="avc1.77.30, mp4a.40.2"
-#link="http://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_900_av-b.m3u8?sd=10&rebase=on"
+#link="https://bcliveuniv-lh.akamaihd.net/i/news_1@194050/index_900_av-b.m3u8?sd=10&rebase=on"
 use_cookies="no"
 chan_name="CBN News" ;;
 # 498)NRB Network
 498)
-#link=http://uni6rtmp.tulix.tv/nrbnetwork/myStream.sdp/playlist.m3u8
-link=http://uni6rtmp.tulix.tv/nrbnetwork/myStream.sdp/chunklist_w1520783238.m3u8
+#link=https://uni6rtmp.tulix.tv/nrbnetwork/myStream.sdp/playlist.m3u8
+link="https://uni6rtmp.tulix.tv/nrbnetwork/myStream.sdp/chunklist_w1520783238.m3u8"
 use_cookies="no"
 chan_name="NRB Network" ;;
 # 499) Trinity Channel
 499)
-link=http://rtmp1.abnsat.com/hls/trinity.m3u8
+link="https://rtmp1.abnsat.com/hls/trinity.m3u8"
 use_cookies="no"
 chan_name="Trinity Channel" ;;
 # 500) International House of Prayer (IHOP) (Christian)
@@ -6862,8 +6855,8 @@ keyword="AFTV"
 #link=http://amazingfacts.live-s.cdn.bitgravity.com/cdn-live/_definst_/amazingfacts/live/feed01/master.m3u8
 #link=http://amazingfacts.live-s.cdn.bitgravity.com/cdn-live/_definst_/amazingfacts/live/feed01/chunklist_w1134820847.m3u8
 
-channelURL="https://www.youtube.com/user/AmazingFacts/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/AmazingFacts/featored"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Amzaing Facts TV (Christian)" ;;
@@ -6871,8 +6864,8 @@ chan_name="Amzaing Facts TV (Christian)" ;;
 502)
 keyword="Supernatural"
 
-channelURL="https://www.youtube.com/user/SidRoth/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/SidRoth/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="It's Supernatural! (Christian)" ;;
@@ -6881,8 +6874,8 @@ chan_name="It's Supernatural! (Christian)" ;;
 keyword="Chapel"
 #link="https://livestream.com/accounts/14403440/events/4227022"
 
-channelURL="https://www.youtube.com/user/TheShepherdsChapel/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/TheShepherdsChapel/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Shepherd's Chapel, Gravette Arkansas" ;;
@@ -6890,8 +6883,8 @@ chan_name="Shepherd's Chapel, Gravette Arkansas" ;;
 504)
 keyword="Live"
 
-channelURL="https://www.youtube.com/channel/UCvYVGf_JFME9dVe3WtljP1Q/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCvYVGf_JFME9dVe3WtljP1Q/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Belivers Voice of Victory Network" ;;
@@ -6900,8 +6893,8 @@ chan_name="Belivers Voice of Victory Network" ;;
 keyword="Live"
 #link=http://moiptvus-lh.akamaihd.net:80/i/3abnlive_1@328342/index_800_av-p.m3u8
 
-channelURL="https://www.youtube.com/user/3ABNVideos/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/3ABNVideos/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Three Angels Broadcasting Network" ;;
@@ -6909,8 +6902,8 @@ chan_name="Three Angels Broadcasting Network" ;;
 506)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/3abnlatino/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/3abnlatino/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="3ABN Latino" ;;
@@ -6919,8 +6912,8 @@ chan_name="3ABN Latino" ;;
 #link="http://aos01.3abn.adaptive.level3.net/hls-live/mediaoppremux-fre_multi/_definst_/live/stream3.m3u8"
 keyword="Live"
 
-channelURL="https://www.youtube.com/channel/UCMgaz88skVo7HF6ZWlioetw/videos"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCMgaz88skVo7HF6ZWlioetw/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="3ABN Francais" ;;
@@ -6990,8 +6983,8 @@ chan_name="LLBN Latino TV" ;;
 512)
 keyword="Salt"
 
-channelURL="https://www.youtube.com/channel/UCS1_M4LZ3o3gNmfKbZX6QGw/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCS1_M4LZ3o3gNmfKbZX6QGw/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Salt and Light TV Portage Michigan" ;;
@@ -6999,8 +6992,8 @@ chan_name="Salt and Light TV Portage Michigan" ;;
 513)
 keyword="Harbour Light Radio Live Stream"
 
-channelURL="https://www.youtube.com/channel/UCoGlUDLHffMYyJBD4j3zeDw/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCoGlUDLHffMYyJBD4j3zeDw/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Harbor Light Radio" ;;
@@ -7008,8 +7001,8 @@ chan_name="Harbor Light Radio" ;;
 514)
 keyword="Live"
 
-channelURL="https://www.youtube.com/channel/UClk9kRoKydqQgZb6bG6GQ-g/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UClk9kRoKydqQgZb6bG6GQ-g/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="St. Marys and St. Antonios Coptic" ;;
@@ -7017,8 +7010,8 @@ chan_name="St. Marys and St. Antonios Coptic" ;;
 515)
 keyword="Word"
 
-channelURL="https://www.youtube.com/user/WordofGodGreece/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/WordofGodGreece/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Word of God Greek" ;;
@@ -7042,8 +7035,8 @@ chan_name="Shalom Media Catholic India" ;;
 518)
 keyword="POWERVISION"
 
-channelURL="https://www.youtube.com/channel/UCzxfpzSF7mz8j7bNIXyZWmA/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCzxfpzSF7mz8j7bNIXyZWmA/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Powervision TV" ;;
@@ -7078,8 +7071,8 @@ chan_name="LLBN South Asian TV" ;;
 # 521) Vatican Media English
 521)
 
-channelURL="https://www.youtube.com/channel/UCxIsefyl9g9A5SGWA4FvGIA/videos"
-youTubeGrab
+channelURL="https://www.youtube.com/channel/UCxIsefyl9g9A5SGWA4FvGIA/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Vatican Media English" ;;
@@ -7087,8 +7080,8 @@ chan_name="Vatican Media English" ;;
 522)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/vaticande/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/vaticande/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Vatican Media Deutsch" ;;
@@ -7096,16 +7089,16 @@ chan_name="Vatican Media Deutsch" ;;
 523)
 keyword="Live"
 
-channelURL="https://www.youtube.com/user/vaticanit/videos?&view=2"
-youTubeGrab
+channelURL="https://www.youtube.com/user/vaticanit/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Vatican Media Italiano" ;;
 # 524) Temple Institute
 524)
 
-channelURL="https://www.youtube.com/user/henryporter2/videos"
-youTubeGrab
+channelURL="https://www.youtube.com/user/henryporter2/featured"
+youTubeGrab3
 
 use_cookies="no"
 chan_name="Temple Institute" ;;
@@ -11940,7 +11933,7 @@ youTubeGrab()
 ## current link grabbing formula
 base="$(curl -A "$UA"  "$channelURL"| grep "$keyword" | grep "watch?v=" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /videoId/  )  print $(i+2) } '| head -n 1)"
 #echo "$base"
-link="https://www.youtube.com/watch?v=""$base"
+link="https://www.youtube.com/watch?v="$base""
 }
 
 youTubeGrab2()
@@ -11948,17 +11941,23 @@ youTubeGrab2()
 ## current link grabbing formula
 base="$(curl -A "$UA"  "$channelURL"| grep "$keyword" | grep "watch?v=" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /videoId/  )  print $(i+2) } '| tail -n 1)"
 #echo "$base"
-link="https://www.youtube.com/watch?v=""$base"
+link="https://www.youtube.com/watch?v="$base""
 }
 
 youTubeGrab3()
 {
 ## current link grabbing formula
-base="$(curl -A "$UA" "$channelURL"| grep "$keyword" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /videoId/  )  print $(i+2) } '| head -n 1)"
+base="$(curl -A "$UA" "$channelURL"| grep -E "$keyword" | awk ' BEGIN { FS="\"" } { for (i=1 ; i<=NF ; i++ )  if ( $i ~ /videoId/  )  print $(i+2) } '| head -n 1)"
 #echo "$base"
-link="https://www.youtube.com/watch?v=""$base"
+link="https://www.youtube.com/watch?v="$base""
 }
 
+youTubeNBCGrab()
+{
+## current link grabbing formula
+base="$(curl -A "$UA" "$channelURL"| grep -E "$keyword" | awk -v a="$keyword" 'BEGIN { FS="\"" }  { for (i=1 ; i<=NF ; i++ )   if ( $i~/videoId/ && $(i+16)~/a/ )  print $(i+2) } ' | uniq | head -n 5 |tail -n 1)"
+link="https://www.youtube.com/watch?v="$base""
+}
 
 KSAGrab(){
 # set the link
