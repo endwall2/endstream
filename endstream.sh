@@ -7,8 +7,8 @@
 # Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63589
-# Revision Date: July 14, 2024
+# Version: 0.63590
+# Revision Date: September 4, 2024
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63589"
-rev_date="14/07/2024"
+version="0.63590"
+rev_date="04/08/2024"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##########################################################
@@ -202,7 +202,7 @@ channel_matrix_0()
    echo "10)CityNews West CA   50)MNN HD NY USA    90)TVA CA            130)Todo Noticias AR 170)Baden TV DE       210)Star Lamia GR             250)Belqees TV YE"
    echo "11)TeleSUR Eng VE     51)MNN 1 NY USA     91)France 2          131)La Nacion AR     171)W24 Wein AT       211)Action 24 GR              251)Sky Arabic AE"
    echo "12)Euronews EN        52)MNN 2 NY USA     92)France 3          132)A24 AR           172)Tirol TV AT       212)TRT Haber TR              252)Alghad EG"
-   echo "13)GBNews GB          53)MNN 3 NY USA     93)ARTE Francais     133)KZO AR           173)Musig24 CH        213)NTV TR                    253)Extra News EG"
+   echo "13)GB News            53)MNN 3 NY USA     93)ARTE Francais     133)KZO AR           173)Musig24 CH        213)NTV TR                    253)Extra News EG"
    echo "14)France 24 EN       54)MNN 4 NY USA     94)IL TV FR          134)Canal 2 AR       174)RTL LU            214)HaberTurk TV              254)CBC Sofra EG"
    echo "15)DW English         55)BronxNet NY USA  95)BFM Paris FR      135)TV5 AR           175)TV OOST BE        215)Star TV TR                255)CBC Drama EG"
    echo "16)Russia Today EN    56)BronxNet Culture 96)Alsace 20 FR      136)Canal 7 AR       176)RTV OOST NL       216)KRT Kulture TR            256)DMC Live EG"
@@ -263,7 +263,7 @@ channel_matrix_1()
    echo "302)-------------    342)OnTV HK CN     382)TVC News NG       422)QVC5               462)--------------     502)It's Supernatural 542)-------------"
    echo "303)DD News          343)GET TV USA *   383)NTV Uganda UG     423)QVC6               463)--------------     503)Shepherd's Chapel 543)-------------"
    echo "304)REPORTER LIVE    344)KCTV KP        384)SPARK UG  *       424)--------------     464)--------------     504)BVOVN             544)------------"
-   echo "305)AsiaNet News     345)Arirang Korea  385)EbruTV KE  *      425)--------------     465)--------------     505)3ABN              545)------------"
+   echo "305)AsiaNet News     345)Arirang Korea  385)EbruTV KE  *      425)CGTN Israel Live   465)--------------     505)3ABN              545)------------"
    echo "306)-------------    346)TBS KR   *     386)KTN Kenya KE *    426)--------------     466)--------------     506)3ABN Latino       546)------------"
    echo "307)Aaj Tak IN       347)YTN DMB KR     387)KTN Home KE *     427)Bloomberg BNN      467)--------------     507)3ABN Francais     547)------------"
    echo "308)ETV AndhraPradesh348)YTN Sci KR     388)Joy News GH  *    428)Overcomers TV      468)--------------     508)LLBN SmartLife    548)------------"
@@ -558,10 +558,10 @@ chan_name="CBSN" ;;
 
 # 2) NBC News Live
 2)
-keyword="LIVE:"
+keyword="LIVE"
 ## YOUTUBE
 channelURL="https://www.youtube.com/@NBCNews/streams"
-youTubeNBCGrab
+youTubeNBCGrab 1
 use_cookies="no"
 chan_name="NBC News Live";;
 
@@ -640,7 +640,8 @@ then
 #link="$(curl -A "$UA" "$url"| grep e.m3u8 | head -n 1 ) "
 #link="$url"
 
-link="https://content-ause1-uc-1.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37.m3u8"
+#link="https://content-ause1-uc-1.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37.m3u8"
+link="https://content.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37.m3u8"
 
 #link="https://content-auso3.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37/h.m3u8"
 
@@ -812,7 +813,8 @@ chan_name="Telesur English" ;;
 12)
 keyword="Live"
 ## YOUTUBE
-channelURL="https://www.youtube.com/@euronews/streams"
+channelURL="https://www.youtube.com/@euronews/featured"
+#youTubeNBCGrab 2
 youTubeGrab3
 use_cookies="no"
 chan_name="Euronews English";;
@@ -911,6 +913,7 @@ then
 
 channelURL="https://www.youtube.com/@trtworld/streams"
 youTubeGrab
+#youTubeNBCGrab 2
 
 #link="https://api.trtworld.com/livestream/v1/WcM3Oa2LHD9iUjWDSRUI335NkMWVTUV351H56dqC/master.m3u8"
 #https://api.trtworld.com/livestream/v1/WcM3Oa2LHD9iUjWDSRUI335NkMWVTUV351H56dqC/master.m3u8?secondary=1
@@ -1075,18 +1078,13 @@ chan_name="India TODAY English" ;;
 keyword="Live"
 if [ "$getlink" = 1 ]
 then
-#link=https://live.cgtn.com/manifest.m3u8
-#https://news.cgtn.com/resource/live/english/cgtn-news.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1096000,NAME="720p HD"
-link=https://live.cgtn.com/1000/prog_index.m3u8
-#link=https://128.1.78.40/1000/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=2,BANDWIDTH=564000,NAME="360p SD"
-#link=https://live.cgtn.com/500/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=3,BANDWIDTH=192000,NAME="180p 3G"
-#link=https://live.cgtn.com/200/prog_index.m3u8
+link="https://english-livetx.cgtn.com/hls/yypdyyctzb_hd.m3u8"
+#link="https://english-livews.cgtn.com/hls/yypdyyctzbhd/playlist.m3u8?wsApp=HLS"
+
+### RADIO
+#link="https://sk.cri.cn/am846.m3u8"
+
 #link=https://www.filmon.com/tv/cctv-news
-#link="https://api.new.livestream.com/accounts/7082210/events/7115682/live.m3u8?BANDWIDTH=1756000"
-#link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/CCTVNEWSbeijing/videos?&view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1 )"
 fi
 ###method="Tor"
 use_cookies="no"
@@ -1179,6 +1177,7 @@ then
 #link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/user/NewsOnABC/videos?&view=2" | grep "$keyword"  | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1)"
 
 #link="https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index.m3u8"
+link="https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/7c7a6abe4d604faca4d6b91f6567558f/index.m3u8"
 
 #EXT-X-STREAM-INF:BANDWIDTH=1910620,AVERAGE-BANDWIDTH=1826545,RESOLUTION=1024x576,FRAME-RATE=25.000,CODECS="avc1.4D401F,mp4a.40.2",SUBTITLES="subtitles"
 #link="https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index_42.m3u8"
@@ -1187,20 +1186,9 @@ then
 #EXT-X-STREAM-INF:BANDWIDTH=737286,AVERAGE-BANDWIDTH=726545,RESOLUTION=512x288,FRAME-RATE=25.000,CODECS="avc1.4D4015,mp4a.40.2",SUBTITLES="subtitles"
 #link="https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index_44.m3u8"
 #EXT-X-STREAM-INF:BANDWIDTH=4806436,AVERAGE-BANDWIDTH=4541380,RESOLUTION=1280x720,FRAME-RATE=25.000,CODECS="avc1.4D401F,mp4a.40.2",SUBTITLES="subtitles"
-link="https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index_45.m3u8"
+#link="https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index_45.m3u8"
 #EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subtitles",NAME="English",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="eng",URI="index_7_0.m3u8"
 
-
-#link=https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/master.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=306000,RESOLUTION=320x180,CODECS="avc1.66.30, mp4a.40.2"
-#link="https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/index_250_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=514000,RESOLUTION=400x224,CODECS="avc1.77.30, mp4a.40.2"
-####link="https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/index_450_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=730000,RESOLUTION=512x288,CODECS="avc1.66.30, mp4a.40.2"
-#link="https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/index_650_av-p.m3u8?sd=10&rebase=on"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=846000,RESOLUTION=640x360,CODECS="avc1.77.30, mp4a.40.2"
-#link="https://abcnews24mha-lh.akamaihd.net/i/abcnews24nospe_1@70019/index_750_av-p.m3u8?sd=10&rebase=on"
-#BANDWIDTH=295680
 
 ###################YOUTUBE
 #keyword="ABC"
@@ -1524,13 +1512,7 @@ chan_name="RT Documentary" ;;
 
 if [ "$getlink" = 1 ]
 then
-#link=https://live.cgtn.com/cctv-d.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1096000,RESOLUTION=1280x720,NAME="720p HD"
-link=https://livedoc.cgtn.com/1000d/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=564000,RESOLUTION=640x360,NAME="360p SD"
-#link=https://livedoc.cgtn.com/500d/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=192000,RESOLUTION=320x180,NAME="180p 3G"
-#link=https://livedoc.cgtn.com/200d/prog_index.m3u8
+link="https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8"
 fi
 ###method="Tor"
 use_cookies="no"
@@ -2176,10 +2158,10 @@ chan_name="CBSN Miami" ;;
 
 # 79) NBC Dateline
 79)
-keyword="Dateline"
+keyword="LIVE"
 ## YOUTUBE
-channelURL="https://www.youtube.com/@DatelineNBC/featured"
-youTubeGrab3
+channelURL="https://www.youtube.com/DatelineNBC/streams"
+youTubeNBCGrab 1
 use_cookies="no"
 chan_name="NBC Dateline";;
 
@@ -2369,13 +2351,7 @@ chan_name="France Info TV" ;;
 
 if [ "$getlink" = 1 ]
 then
-#link=https://live.cgtn.com/cctv-f.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1096000,RESOLUTION=1280x720,NAME="720p HD"
-link=https://livefr.cgtn.com/1000f/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=564000,RESOLUTION=640x360,NAME="360p SD"
-#link=https://livefr.cgtn.com/500f/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=192000,RESOLUTION=320x180,NAME="180p 3G"
-#link=https://livefr.cgtn.com/200f/prog_index.m3u8
+link="https://francais-livews.cgtn.com/hls/LSvev95OuFZtKLc6CeKEFYXj220802LSTeV6PO0Ut9r71Uq3k5goCA220802cd/playlist.m3u8"
 fi
 use_cookies="no"
 #method="Tor"
@@ -2512,7 +2488,7 @@ chan_name="IL TV" ;;
 
 if [ "$getlink" = 1 ]
 then
-link=https://players.brightcove.net/5132998232001/H1bPo8t6_default/index.html?videoId=5152968636001
+link="https://players.brightcove.net/5132998232001/H1bPo8t6_default/index.html?videoId=5152968636001"
 #link=http://bfmparishdslive-lh.akamaihd.net/i/DVMR_PARIS@429747/master.m3u8
 fi
 use_cookies="no"
@@ -2868,13 +2844,7 @@ chan_name="DW Espanol" ;;
 
 if [ "$getlink" = 1 ]
 then
-#link=https://live.cgtn.com/cctv-e.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1096000,RESOLUTION=1280x720,NAME="720p HD"
-link="https://livees.cgtn.com/1000e/prog_index.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=564000,RESOLUTION=640x360,NAME="360p SD"
-#link="https://livees.cgtn.com/500e/prog_index.m3u8"
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=192000,RESOLUTION=320x180,NAME="180p 3G"
-###link="https://livees.cgtn.com/200e/prog_index.m3u8"
+link="https://espanol-livews.cgtn.com/hls/LSveOGBaBw41Ea7ukkVAUdKQ220802LSTexu6xAuFH8VZNBLE1ZNEa220802cd/playlist.m3u8"
 fi
 use_cookies="no"
 #method="Tor"
@@ -3648,6 +3618,7 @@ chan_name="AT5 TV NETHERLANDS" ;;
 
 #######################   EASTERN EUROPE ############################################
 ############### RUSSIAN ################################
+
 # 178)  Euronews Russian
 178)
 #method="Tor"
@@ -3664,6 +3635,7 @@ link="https:"$(curl -A "$UA" "https://ru.euronews.com/api/watchlive.json" | cut 
 fi
 use_cookies="no"
 chan_name="Euronews Russian" ;;
+
 # 179) Россия 24
 179)
 keyword="24"
@@ -3675,14 +3647,13 @@ then
 #link="https://vk.com/video-80246985_456239779"
 # link="https://vk.com/video-24136539_456239830"
 # link="https://vk.com/rossia24online"
-
-
 channelURL="https://www.youtube.com/user/Russia24TV/featured"
 youTubeGrab3
 
 fi
 use_cookies="no"
 chan_name="POCCNR 24 Russia" ;;
+
 # 180) RBC TV RUSSIA
 180)
 if [ "$getlink" = 1 ]
@@ -3692,20 +3663,16 @@ link=http://online.video.rbc.ru/online/rbctv_480p/index.m3u8
 fi
 use_cookies="no"
 chan_name="RBC TV Russia" ;;
+
 # 181) CGTN Russian
 181)
 if [ "$getlink" = 1 ]
 then
-#link=https://live.cgtn.com/cctv-r.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1096000,RESOLUTION=1280x720,NAME="720p HD"
-link=https://liveru.cgtn.com/1000r/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=564000,RESOLUTION=640x360,NAME="360p SD"
-#link=https://liveru.cgtn.com/500r/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=192000,RESOLUTION=320x180,NAME="180p 3G"
-#link=https://liveru.cgtn.com/200r/prog_index.m3u8
+link="https://russian-livews.cgtn.com/hls/LSvexABhNipibK5KRuUkvHZ7220802LSTeze9o8tdFXMHsb1VosgoT220802cd/playlist.m3u8"
 fi
 use_cookies="no"
 chan_name="CGTN Russian" ;;
+
 # 182) Vesti FM Russia
 182)
 keyword="Вести ФМ"
@@ -3719,6 +3686,7 @@ youTubeGrab3
 fi
 use_cookies="no"
 chan_name="Vesti FM Russia" ;;
+
 # 183) Perviy Kanal Europa
 183)
 if [ "$getlink" = 1 ]
@@ -4342,13 +4310,7 @@ chan_name="DW Arabic" ;;
 245)
 if [ "$getlink" = 1 ]
 then
-link=https://live.cgtn.com/cctv-a.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1096000,RESOLUTION=1280x720,NAME="720p HD"
-#link=https://livear.cgtn.com/1000a/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=564000,RESOLUTION=640x360,NAME="360p SD"
-#link=https://livear.cgtn.com/500a/prog_index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=192000,RESOLUTION=320x180,NAME="180p 3G"
-#link=https://livear.cgtn.com/200a/prog_index.m3u8
+link="https://arabic-livews.cgtn.com/hls/LSveq57bErWLinBnxosqjisZ220802LSTefTAS9zc9mpU08y3np9TH220802cd/playlist.m3u8"
 fi
 use_cookies="no"
 chan_name="CGTN Arabic" ;;
@@ -6166,6 +6128,12 @@ TAG="QVC6______"
 chan_name="QVC6" ;;
 
 # 425)
+425)
+link="https://live-stream.cgtn.com/event-live/CGTN_1_1wnHqvELSdq/index.m3u8"
+#####method="Tor"
+use_cookies="no"
+chan_name="CGTN Israel Feed";;
+
 
 # 426)
 
@@ -11954,8 +11922,10 @@ link="https://www.youtube.com/watch?v="$base""
 
 youTubeNBCGrab()
 {
+position="$1"
 ## current link grabbing formula
-base="$(curl -A "$UA" "$channelURL"| grep -E "$keyword" | awk -v a="$keyword" 'BEGIN { FS="\"" }  { for (i=1 ; i<=NF ; i++ )   if ( $i~/videoId/ && $(i+16)~/a/ )  print $(i+2) } ' | uniq | head -n 5 |tail -n 1)"
+base="$(curl -A "$UA" "$channelURL"| grep -E "$keyword" | awk -v a="$keyword" 'BEGIN { FS="\"" }  { for (i=1 ; i<=NF ; i++ )   if ( $i~/videoId/ && $(i+16)~/a/ )  print $(i+2) } ' | uniq | head -n "$position" |tail -n 1)"
+## echo "$base"
 link="https://www.youtube.com/watch?v="$base""
 }
 
