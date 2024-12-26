@@ -7,8 +7,8 @@
 # Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63592
-# Revision Date: December 22, 2024
+# Version: 0.63593
+# Revision Date: December 26, 2024
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63592"
-rev_date="22/12/2024"
+version="0.63593"
+rev_date="26/12/2024"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##########################################################
@@ -920,18 +920,16 @@ keyword="TRT"
 if [ "$getlink" = 1 ]
 then
 
-channelURL="https://www.youtube.com/@trtworld/streams"
-youTubeGrab
+#channelURL="https://www.youtube.com/@trtworld/streams"
+#youTubeGrab
 #youTubeNBCGrab 2
 
 #link="https://api.trtworld.com/livestream/v1/WcM3Oa2LHD9iUjWDSRUI335NkMWVTUV351H56dqC/master.m3u8"
 #https://api.trtworld.com/livestream/v1/WcM3Oa2LHD9iUjWDSRUI335NkMWVTUV351H56dqC/master.m3u8?secondary=1
 
+link="https://tv-trtworld.medya.trt.com.tr/master.m3u8"
+
 #link="https://tv-trtworld.live.trt.com.tr/master.m3u8"
-#link="https://tv-trtworld.live.trt.com.tr/master_1080.m3u8"
-#link="https://tv-trtworld.live.trt.com.tr/master_720.m3u8"
-#link="https://tv-trtworld.live.trt.com.tr/master_480.m3u8"
-#link="https://tv-trtworld.live.trt.com.tr/master_360.m3u8"
 #link=https://trtcanlitv-lh.akamaihd.net/master.m3u8
 
 #link=https://www.youtube.com/watch?v="$(curl -A "$UA" "https://www.youtube.com/channel/UC7fWeaHhqgM4Ry-RMpM2YYw/videos?view=2" | grep "$keyword" | grep "watch?v=" | head -n 1 | cut -d = -f 11 | cut -d \" -f 1 )"
