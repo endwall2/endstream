@@ -7,8 +7,8 @@
 # Copyright: 2017-2023, The Endware Development Team,
 # All Rights Reserved
 # Creation Date: February 22, 2017
-# Version: 0.63593
-# Revision Date: December 26, 2024
+# Version: 0.63594
+# Revision Date: January 07, 2024
 #####################################################################
 # Dependencies: youtube-dl, mpv, streamlink, read , curl, sed, awk, grep
 #####################################################################
@@ -145,8 +145,8 @@
 ######################################## BEGINNING OF PROGRAM    ##########################################################
 
 ###############  VERSION INFORMATION  ##############
-version="0.63593"
-rev_date="26/12/2024"
+version="0.63594"
+rev_date="07/01/2025"
 branch="gnu/linux"
 product="ENDSTREAM"
 ##########################################################
@@ -264,10 +264,10 @@ channel_matrix_1()
    echo "303)DD News          343)GET TV USA *   383)NTV Uganda UG     423)QVC6               463)--------------     503)Shepherd's Chapel 543)-------------"
    echo "304)REPORTER LIVE    344)KCTV KP        384)SPARK UG  *       424)--------------     464)--------------     504)BVOVN             544)------------"
    echo "305)AsiaNet News     345)Arirang Korea  385)EbruTV KE  *      425)CGTN Israel Live   465)--------------     505)3ABN              545)------------"
-   echo "306)-------------    346)TBS KR   *     386)KTN Kenya KE *    426)NBC Dateline       466)SharonQueen Kick   506)3ABN Latino       546)------------"
-   echo "307)Aaj Tak IN       347)YTN DMB KR     387)KTN Home KE *     427)Bloomberg BNN      467)Alia_ASMR          507)3ABN Francais     547)------------"
-   echo "308)ETV AndhraPradesh348)YTN Sci KR     388)Joy News GH  *    428)Overcomers TV      468)Litchglimmer       508)LLBN SmartLife    548)------------"
-   echo "309)News 18 Tamil    349)Channel 23 KR  389)ADOM GH           429)ROGERS TV Ottawa   469)Yarify             509)LLBN His Word     549)------------"
+   echo "306)-------------    346)TBS KR   *     386)KTN Kenya KE *    426)NBC Dateline       466)--------------     506)3ABN Latino       546)------------"
+   echo "307)Aaj Tak IN       347)YTN DMB KR     387)KTN Home KE *     427)Bloomberg BNN      467)Cherie Lorraine    507)3ABN Francais     547)------------"
+   echo "308)ETV AndhraPradesh348)YTN Sci KR     388)Joy News GH  *    428)Overcomers TV      468)Alia_ASMR          508)LLBN SmartLife    548)------------"
+   echo "309)News 18 Tamil    349)Channel 23 KR  389)ADOM GH           429)ROGERS TV Ottawa   469)SharonQueen Kick   509)LLBN His Word     549)------------"
    echo "310)Jaya Plus        350)KBS World24 KR*390)Bukedde TV GH     430)ROGERS TV Kitchner 470)Amouranth Kick     510)LLBN His Light    550)-------------"
    echo "311)TEZ TV           351)YTN 27 KR      391)EBC ET   *        431)OMNI TV East       471)Amouranth Twitch   511)LLBN Latino TV    551)-------------"
    echo "312)Dili Aaj Tak     352)CGNTV *        392)Walf SN           432)OMNI TV West       472)Mirys              512)Salt and Light    552)-------------"
@@ -561,7 +561,7 @@ chan_name="CBSN" ;;
 keyword="LIVE"
 ## YOUTUBE
 channelURL="https://www.youtube.com/@NBCNews/streams"
-youTubeNBCGrab 1
+youTubeNBCGrab 2
 use_cookies="no"
 chan_name="NBC News Live";;
 
@@ -991,18 +991,10 @@ if [ "$getlink" = 1 ]
 then
 #link=https://www.filmon.com/tv/press-tv
 
-#link="https://cdnlive.presstv.ir/cdnlive/smil:cdnlive.smil/playlist.m3u8"
-
-link="https://cdnlive.presstv.ir/cdnlive/smil:cdnlive.smil/playlist.m3u8"
-
-##EXT-X-STREAM-INF:BANDWIDTH=944100,CODECS="avc1.77.31,mp4a.40.2",RESOLUTION=1280x720
-#link="https://cdnlive.presstv.ir/cdnlive/smil:cdnlive.smil/chunklist_b944100_slen.m3u8"
-##EXT-X-STREAM-INF:BANDWIDTH=644100,CODECS="avc1.77.31,mp4a.40.2",RESOLUTION=854x480
-#link="https://cdnlive.presstv.ir/cdnlive/smil:cdnlive.smil/chunklist_b644100_slen.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=394100,CODECS="avc1.77.31,mp4a.40.2",RESOLUTION=640x360
-#link="https://cdnlive.presstv.ir/cdnlive/smil:cdnlive.smil/chunklist_b394100_slen.m3u8"
-#EXT-X-STREAM-INF:BANDWIDTH=344100,CODECS="avc1.77.31,mp4a.40.2",RESOLUTION=426x240
-#link="https://cdnlive.presstv.ir/cdnlive/smil:cdnlive.smil/chunklist_b344100_slen.m3u8"
+link="https://live.presstv.ir/hls/presstv.m3u8"
+#link="https://live.presstv.ir/hls/presstv_2_482/index.m3u8"
+#link="https://rumble.com/live-hls-dvr/5zwjw2/playlist.m3u8"
+#link="https://cloud.odysee.live/content/26bcbcc342a5b143578f27dbfaf000201f06e417/master.m3u8"
 
 fi
 use_cookies="no"
@@ -6499,35 +6491,26 @@ chan_name="PJ Masks" ;;
 
 ###############################################################################################################
 
-
-# 466) Sharon Queen Kick
-466)
-link="https://kick.com/sharonqueen/"
+# 467) Cherie Lorraine
+467)
+link="https://www.twitch.tv/cherielorraine"
 use_cookies="no"
 ####method="Tor"
-chan_name="Sharonqueen Kick";;
+chan_name="Cherie Lorraine";;
 
-
-# 467) Litchiglimmer
-467)
+# 468) Alia ASMR
+468)
 link="https://www.twitch.tv/alia_asmr"
 use_cookies="no"
 ####method="Tor"
 chan_name="Alia ASMR";;
 
-# 468) Litchiglimmer
-468)
-link="https://www.twitch.tv/litchiglimmer"
-use_cookies="no"
-####method="Tor"
-chan_name="Litchiglimmer";;
-
-# 469) Yarify
+# 469) Sharon Queen Kick
 469)
-link="https://www.twitch.tv/yarifyh"
+link="https://kick.com/sharonqueen/"
 use_cookies="no"
 ####method="Tor"
-chan_name="Yarify";;
+chan_name="Sharonqueen Kick";;
 
 # 470) Amouranth Twitch
 470)
